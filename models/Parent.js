@@ -1,8 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt'); //Hashes password
 const sequelize = require('../config/connection');
 
 // create our parent model
-class Parent extends Model {}
+class Parent extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 // create fields/columns for parent model
 // 2 columns one is id and the other is parent name
@@ -16,11 +21,15 @@ Parent.init(
     },
     username: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        len: [8, 16], //passwords should be between 8-16 characters
+      },
     },
     pic_hyperlink: {
       type: DataTypes.STRING,
@@ -34,7 +43,7 @@ Parent.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    parents_gender: {
+    gender: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -60,6 +69,12 @@ Parent.init(
     }
   },
   {
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
