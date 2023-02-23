@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Parent } = require('../../models');
 
 router.get('/', async (req, res) => {
+
   // find all parents
   // The Category will include its associated products
   try {
