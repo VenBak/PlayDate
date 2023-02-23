@@ -1,13 +1,14 @@
 // Import all of the models
-const Parent = require('./Parent');
-const Child = require('./Child');
+const Owner = require('./Owner');
+const Dog = require('./Dog');
 
-Parent.hasMany(Child, {
-    foreignKey: 'parent_id',
-});
+// Owner.hasMany(Dog, {
+//     foreignKey: 'owner_id',
+//     onDelete: 'CASCADE',
+// });
 
-Child.belongsTo(Parent, {
-    foreignKey: 'parent_id',
-});
+// Dog.belongsTo(Owner, {
+//     foreignKey: 'owner_id',
+// });
 
-module.exports = { Parent, Child }
+module.exports = { Owner, Dog }

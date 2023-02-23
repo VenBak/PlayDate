@@ -2,16 +2,16 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt'); //Hashes password
 const sequelize = require('../config/connection');
 
-// create our parent model
-class Parent extends Model {
+// create our owner model
+class Owner extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-// create fields/columns for parent model
-// 2 columns one is id and the other is parent name
-Parent.init(
+// create fields/columns for owner model
+// 2 columns one is id and the other is owner name
+Owner.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -29,7 +29,7 @@ Parent.init(
       allowNull: false,
       validate: {
         len: [8, 16], //passwords should be between 8-16 characters
-      },
+      }
     },
     pic_hyperlink: {
       type: DataTypes.STRING,
@@ -47,20 +47,12 @@ Parent.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    marital_status: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     location_zip: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    children: {
+    dogs: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    postpartum: {
-      type: DataTypes.BOOLEAN,
       allowNull: false
     },
     description: {
@@ -79,8 +71,8 @@ Parent.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'parent'
+    modelName: 'owner'
   }
 );
 
-module.exports = Parent;
+module.exports = Owner;
