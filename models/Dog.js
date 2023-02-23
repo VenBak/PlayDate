@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our child model
-class Child extends Model { }
+// create our dog model
+class Dog extends Model { }
 
-// create fields/columns for child model
-Child.init(
+// create fields/columns for dog model
+Dog.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -17,11 +17,15 @@ Child.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        first_name: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        last_name: {
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        breed: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -29,10 +33,10 @@ Child.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        parent_id: {
+        owner_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'parent',
+                model: 'owner',
                 key: 'id',
             },
         },
@@ -42,8 +46,8 @@ Child.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'child'
+        modelName: 'dog'
     }
 );
 
-module.exports = Child;
+module.exports = Dog;

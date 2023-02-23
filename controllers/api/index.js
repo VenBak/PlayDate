@@ -1,7 +1,7 @@
 // Create the different routes under the /api route
 const router = require('express').Router();
-const parent = require('./parent-routes');
+const owner = require('./owner-routes');
 
-router.use('/parent', parent);
+router.use('/owner', owner);
 
 module.exports = router;
