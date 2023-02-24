@@ -30,4 +30,4 @@ Event.belongsToMany(Owner, {
   through: 'event_attendees'
 });
 
-module.exports = { Owner, Dog }
+module.exports = { Owner, Dog, Event }
