@@ -34,6 +34,13 @@ Event.init(
     end_date: {
       type: DataTypes.DATE,
       allowNull: false
+    },
+    owner_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'owner',
+            key: 'id',
+        },
     }
   },
   {
