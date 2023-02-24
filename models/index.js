@@ -26,7 +26,7 @@ Event.belongsToMany(Owner, {
 });
 
 // Owners can attend many events, regardless of who created the event
-Event.belongsToMany(Owner, {
+Owner.belongsToMany(Event, {
   through: 'event_attendees'
 });
 
