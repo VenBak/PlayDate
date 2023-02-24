@@ -1,17 +1,78 @@
 const router = require('express').Router();
-const { Owner } = require('../../models');
+const { Owner, Dog } = require('../../models');
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
+  // find all owners, include their dogs
+  Owner.findAll({
+    include: Dog
+  })
+  .then((owners) => {
+    res.status(200).json(owners);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
+});
 
-  // find all owners
-  // The Category will include its associated products
-  try {
-    const ownerData = await Owner.findAll();
-    // respond wit the data
-    res.status(200).json(ownerData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+router.get('/:id', (req, res) => {
+  // find one owner by their `id` value (primary key)
+  // include their dogs
+  Owner.findOne({
+    where: {id: req.params.id},
+    include: Dog
+  })
+  .then((owner) => {
+    res.status(200).json(owner);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
+});
+
+router.post('/', (req, res) => {
+  // create a new owner
+  Owner.create(req.body)
+  .then((owner) => {
+    res.status(200).json(owner);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
+});
+
+router.put('/:id', (req, res) => {
+  // update a owner by its `id` value
+  Owner.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then((owner) => {
+    res.status(200).json(owner);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
+});
+
+router.delete('/:id', (req, res) => {
+  // delete a owner by its `id` value
+  Owner.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then((owner) => {
+    res.status(200).json(owner);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
 });
 
 module.exports = router;
