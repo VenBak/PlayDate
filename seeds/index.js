@@ -17,6 +17,9 @@ const seedAll = async () => {
   await seedDog();
   console.log('\n----- DOG SEEDED -----\n');
 
+  await seedEvent();
+  console.log('\n----- EVENT SEEDED -----\n');
+
   process.exit(0);
 };
 

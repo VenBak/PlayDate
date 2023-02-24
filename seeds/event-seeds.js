@@ -1,6 +1,6 @@
-const { Owner } = require('../models');
+const { Event } = require('../models');
 // Create an array with the data we're going to seed
-const ownerData = [
+const eventData = [
   {
     name: 'Fun time at the park!',
     pic_hyperlink: './images/1',
@@ -31,6 +31,6 @@ const ownerData = [
 ];
 
 // Export the function
-const seedOwner = () => Owner.bulkCreate(ownerData);
+const seedEvent = () => Event.bulkCreate(eventData);
 
-module.exports = seedOwner
+module.exports = seedEvent;
