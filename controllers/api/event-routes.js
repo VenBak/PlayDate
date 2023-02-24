@@ -4,7 +4,10 @@ const { Event, Owner, Dog } = require('../../models');
 router.get('/', (req, res) => {
   // find all events, include their dogs
   Event.findAll({
-    include: Owner
+    include: {
+      model: Owner,
+      include: Dog
+    }
   })
   .then((events) => {
     res.status(200).json(events);
@@ -20,7 +23,10 @@ router.get('/:id', (req, res) => {
   // include their dogs
   Event.findOne({
     where: {id: req.params.id},
-    include: Owner
+    include: {
+      model: Owner,
+      include: Dog
+    }
   })
   .then((event) => {
     res.status(200).json(event);
