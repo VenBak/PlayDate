@@ -1,27 +1,27 @@
-const newFormHandler = async (event) => {
+const newDogFormHandler = async (event) => {
     event.preventDefault();
   
-    const owner = document.querySelector('#owner-name').value.trim();
-    const dog = document.querySelector('#dog-name').value.trim();
-  
-    // CREATE a dog
-    if (owner && dog) {
-      const response = await fetch(`/api/dogs`, {
+    const name = document.querySelector('#dog-name').value.trim();
+    const age = document.querySelector('#dog-age').value.trim();
+    const breed = document.querySelector('#dog-breed').value.trim();
+    const gender = document.querySelector('#dog-gender').value.trim();
+
+    // CREATE-POST a dog from OWNER profile page
+    if (name && age && breed && gender) {
+      const response = await fetch('/api/dogs', {
         method: 'POST',
-        body: JSON.stringify({ owner, dog }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-  
+        body: JSON.stringify({ name, age, breed, gender }),
+        headers: { 'Content-Type': 'application/json' },
+    });
+      // IF response is successful, then go to the profile
       if (response.ok) {
-        document.location.replace('/profile');
+        location.reload;
       } else {
-        alert('Failed to create dog profile');
+        alert(response.statusText);
       }
     }
   };
-  
+
   // DELETE a dog
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
@@ -41,7 +41,7 @@ const newFormHandler = async (event) => {
   
   document
     .querySelector('.new-dog-form')
-    .addEventListener('submit', newFormHandler);
+    .addEventListener('submit', newDogFormHandler);
   
   document
     .querySelector('.dog-list')
