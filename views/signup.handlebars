@@ -1,0 +1,110 @@
+<div>
+  <h2>Register</h2>
+
+
+  <form id="owner-form">
+    <h3>Let's Get to Know You</h3>
+
+    <div>
+      <label for="ownerPic">Select a file:</label>
+      <input type="file" id="ownerPic" name="ownerPic">
+    </div>
+
+    <div>
+      <input type="text" required>
+      <label>Username</label>
+    </div>
+
+    <div>
+      {{!-- <span class="icon" onclick="showPassword()">
+        <img src=" /images/secured-lock-freepik.png" alt="Lock pad icon">
+      </span> --}}
+      <input class="password" type="password" required>
+      <label>Password</label>
+    </div>
+
+    <div>
+      <input type="text" required>
+      <label>First Name</label>
+    </div>
+
+    <div>
+      <input type="text" required>
+      <label>Last Name</label>
+    </div>
+
+    <div class="gender-input">
+      <div>
+        <label>Gender</label>
+      </div>
+
+      <input type="radio" name="gender" id="male" required>
+      <label for="male">Male</label>
+
+      <input type="radio" name="gender" id="female">
+      <label for="female">Female</label>
+
+      <input type="radio" name="gender" id="other">
+      <label for="other">Other</label>
+    </div>
+
+
+    <div>
+      <input type="text" required>
+      <label>Zip Code</label>
+    </div>
+
+    <div>
+      <div>
+        <label>Description</label>
+      </div>
+      <textarea rows="6" required></textarea>
+    </div>
+
+  </form>
+
+  <form id="dog-form">
+    <h3>Now Tell Us About Your Furry Friend</h3>
+
+    <div>
+      <label for="dogPic">Select a file:</label>
+      <input type="file" id="dogPic" name="dogPic">
+    </div>
+
+    <div>
+      <input type="text" required>
+      <label>Name</label>
+    </div>
+
+    <div>
+      <input type="number" required>
+      <label>Age</label>
+    </div>
+
+    <div>
+      <input type="text" required>
+      <label>Breed</label>
+    </div>
+
+    <div class="gender-input">
+      <div>
+        <label>Gender</label>
+      </div>
+
+      <input type="radio" name="gender" id="male" required>
+      <label for="male">Male</label>
+
+      <input type="radio" name="gender" id="female">
+      <label for="female">Female</label>
+
+    </div>
+
+  </form>
+
+  <button type="submit">Sign Up</button>
+
+  <div>
+    <p>Already have an account? <a href="../login">Log In</a></p>
+  </div>
+
+</div>
