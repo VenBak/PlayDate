@@ -23,10 +23,13 @@ router.get('/:id', (req, res) => {
   // include their dogs
   Event.findOne({
     where: {id: req.params.id},
-    include: {
-      model: Owner,
-      include: Dog
-    }
+    include:
+      {
+        model: Owner,
+        through: 'event_attendees',
+        as: 'attendees',
+        foreignKey: 'owner_id'
+      }
   })
   .then((event) => {
     res.status(200).json(event);

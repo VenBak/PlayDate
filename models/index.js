@@ -20,13 +20,13 @@ Owner.hasMany(Event, {
 
 // Events belong to many owners as people attending the event
 Event.belongsToMany(Owner, {
-  as: 'attendees',
-  foreignKey: 'attendee_id',
   through: 'event_attendees'
 });
 
 // Owners can attend many events, regardless of who created the event
 Owner.belongsToMany(Event, {
+  as: 'attendees',
+  foreignKey: 'attendee_id',
   through: 'event_attendees'
 });
 
