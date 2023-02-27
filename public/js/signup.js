@@ -37,7 +37,7 @@ const signupFormHandler = async (event) => {
             const gender = document.querySelector('#dog-gender-signup').value.trim();
 
               // POST to Dog table
-              if (name && age && breed && dogGender) {
+              if (name && age && breed && gender) {
                 const response = await fetch('/api/dogs', {
                   method: 'POST',
                   body: JSON.stringify({ name, age, breed, gender }),
