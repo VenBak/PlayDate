@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayDate</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/paws-icongeek26.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h2 class="nav-logo">
+            PLAY
+            <img class="logo-img" src="/images/paws-icongeek26.png" alt="Two paw prints diagonally ajar">
+            DATE
+        </h2>
+        <nav class="navigation">
+            <a id="home-anchor" href="/">Home</a>
+            {{#if logged_in}}
+            <a id="dashboard-anchor" href="/dashboard">Dashboard</a>
+            <a id="logout-anchor" href="/logout"> <button class="logout-btn">Log Out</button></a>
+            {{else}}
+            <a id="login-anchor" href="/login"> <button class="login-btn">Log In</button></a>
+            {{/if}}
+        </nav>
+    </header>
+
+    <main class="container">
+        {{{ body }}}
+    </main>
+
+    <!-- Render script for logged in users only - Allows the Log Out button to function -->
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    <script src="/js/password.js"></script>
+</body>
+
+</html>
