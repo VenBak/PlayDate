@@ -1,13 +1,15 @@
 const router = require('express').Router();
 const { Owner, Dog } = require('../../models');
 
+// The `/api/dogs` endpoint
+
 router.get('/', (req, res) => {
-  // find all owners, include their dogs
-  Owner.findAll({
-    include: Dog
+  // find all dogs, include their owners
+  Dog.findAll({
+    include: Owner
   })
-  .then((owners) => {
-    res.status(200).json(owners);
+  .then((dogs) => {
+    res.status(200).json(dogs);
   })
   .catch((err) => {
     console.log(err);
@@ -16,14 +18,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  // find one owner by their `id` value (primary key)
-  // include their dogs
-  Owner.findOne({
+  // find one dog by its `id` value, include their owners
+  Dog.findOne({
     where: {id: req.params.id},
-    include: Dog
+    include: Owner
   })
-  .then((owner) => {
-    res.status(200).json(owner);
+  .then((dog) => {
+    res.status(200).json(dog);
   })
   .catch((err) => {
     console.log(err);
@@ -32,10 +33,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new owner
-  Owner.create(req.body)
-  .then((owner) => {
-    res.status(200).json(owner);
+  // create a new dog
+  Dog.create(req.body)
+  .then((dog) => {
+    res.status(200).json(dog);
   })
   .catch((err) => {
     console.log(err);
@@ -44,14 +45,14 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // update a owner by its `id` value
-  Owner.update(req.body, {
+  // update a dog by its `id` value
+  Dog.update(req.body, {
     where: {
       id: req.params.id
     }
   })
-  .then((owner) => {
-    res.status(200).json(owner);
+  .then((dog) => {
+    res.status(200).json(dog);
   })
   .catch((err) => {
     console.log(err);
@@ -60,14 +61,14 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  // delete a owner by its `id` value
-  Owner.destroy({
+  // delete a dog by its `id` value
+  Dog.destroy({
     where: {
       id: req.params.id
     }
   })
-  .then((owner) => {
-    res.status(200).json(owner);
+  .then((dog) => {
+    res.status(200).json(dog);
   })
   .catch((err) => {
     console.log(err);
