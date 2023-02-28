@@ -1,16 +1,23 @@
 {{#if dogs.length}}
-<div>
+<div class="dog-list">
+    <div>
     Dog Cards
     <br></br>
-    {{#each dogs as |dog|}}
-    <a style="text-decoration: none" href="profile/dog/{{dog.id}}">
-        <img height="32px" src="/images/default-dog.png" alt="Dog Profile icon">
-    </a>
-    {{dog.name}}
-    {{dog.age}}
-    {{dog.breed}}
-    {{dog.gender}}
-    <br></br>
-    {{/each}}
-</div>
+        {{#each dogs as |dog|}}
+        <div>
+            <a style="text-decoration: none" href="profile/dog/{{dog.id}}">
+                <img height="32px" src="/images/default-dog.png" alt="Dog Profile icon">
+            </a>
+            {{dog.name}}
+            {{dog.age}}
+            {{dog.breed}}
+            {{dog.gender}}
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-sm btn-danger" data-id="{{dog.id}}">DELETE</button>
+        </div>
+        <br></br>
+        {{/each}}
+    </div>
 {{/if}}
+</div>

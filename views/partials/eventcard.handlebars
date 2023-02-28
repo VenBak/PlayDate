@@ -1,0 +1,23 @@
+{{#if events.length}}
+<div class="event-list">
+    <div>
+    Events Cards
+    <br></br>
+        {{#each events as |event|}}
+        <a style="text-decoration: none" href="profile/event/{{event.id}}">
+            <img height="32px" src="" alt="Event Profile icon">
+        </a>
+        {{event.name}}
+        {{event.location_zip}}
+        {{event.description}}
+        {{event.start_date}}
+        {{event.end_date}}
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-sm btn-danger" data-id="{{dog.id}}">DELETE</button>
+        </div>
+        <br></br>
+        {{/each}}
+    </div>
+{{/if}}
+</div>
