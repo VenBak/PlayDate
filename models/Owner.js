@@ -53,7 +53,7 @@ Owner.init(
       validate: {
         isNumeric: true,
         isInt: true,
-        len: [5,5]
+        len: [5, 5]
       }
     },
     description: {

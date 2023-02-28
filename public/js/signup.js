@@ -7,8 +7,7 @@ signupBtn.addEventListener('click', (event) => {
   signupFormHandler(event);
 });
 
-
-const signupFormHandler = async (event) => {
+async function signupFormHandler(event) {
   console.log("IN HERE");
   event.preventDefault();
   // OWNER Model columns for the intake form - 
@@ -23,20 +22,20 @@ const signupFormHandler = async (event) => {
 
   console.log(username, password, first_name, last_name, gender, location_zip, description)
   // // POST to Owner table
-  // if (username && password && first_name && last_name && gender && location_zip && description) {
-  //   const response = await fetch('/api/owners', {
-  //     method: 'POST',
-  //     body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description }),
-  //     headers: { 'Content-Type': 'application/json' },
-  //   });
+  if (username && password && first_name && last_name && gender && location_zip && description) {
+    const response = await fetch('/api/owners', {
+      method: 'POST',
+      body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  //   // IF response is successful, then call posting to DOG table
-  //   if (response.ok) {
-  //     location.reload();
-  //   } else {
-  //     alert(response.statusText);
-  //   }
-  // }
+    // IF response is successful, then call posting to DOG table
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  }
 
 
   //   const postDog = async (event) => {
