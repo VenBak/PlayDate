@@ -35,13 +35,13 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new dog
   Dog.create(req.body)
-  .then((dog) => {
-    res.status(200).json(dog);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  // .then((dog) => {
+  //   res.status(200).json(dog);
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  //   res.status(400).json(err);
+  // });
 });
 
 router.put('/:id', (req, res) => {

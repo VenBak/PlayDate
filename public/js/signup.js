@@ -5,6 +5,7 @@ signupBtn.addEventListener('click', (event) => {
   console.log("Check 2");
 
   signupFormHandler(event);
+  postDog(event);
 });
 
 async function signupFormHandler(event) {
@@ -38,32 +39,33 @@ async function signupFormHandler(event) {
   }
 
 
-  //   const postDog = async (event) => {
-  //     event.preventDefault();
 
-  //     // DOG Model columns for the intake form - 
-  //     // we are not initially asking for picture 
-  //     const name = document.querySelector('#dog-name-signup').value.trim();
-  //     const age = document.querySelector('#dog-age-signup').value.trim();
-  //     const breed = document.querySelector('#dog-breed-signup').value.trim();
-  //     const gender = document.querySelector('#dog-gender-signup').value.trim();
+}
 
-  //     // POST to Dog table
-  //     if (name && age && breed && gender) {
-  //       const response = await fetch('/api/dogs', {
-  //         method: 'POST',
-  //         body: JSON.stringify({ name, age, breed, gender }),
-  //         headers: { 'Content-Type': 'application/json' },
-  //       });
+const postDog = async (event) => {
+  event.preventDefault();
 
-  //       // IF response is successful, then go to the profile
-  //       if (response.ok) {
-  //         document.location.replace('/profile');
-  //       } else {
-  //         alert(response.statusText);
-  //       }
-  //     }
-  //   }
-  // }
-};
+  // DOG Model columns for the intake form - 
+  // we are not initially asking for picture 
+  const name = document.querySelector('#dog-name-signup').value.trim();
+  const age = document.querySelector('#dog-age-signup').value.trim();
+  const breed = document.querySelector('#dog-breed-signup').value.trim();
+  const gender = document.querySelector('#dog-gender-signup').value.trim();
 
+  console.log(name, age, breed, gender)
+  // POST to Dog table
+  if (name && age && breed && gender) {
+    const response = await fetch('/api/dogs', {
+      method: 'POST',
+      body: JSON.stringify({ name, age, breed, gender }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    // IF response is successful, then go to the profile
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+  }
+}
