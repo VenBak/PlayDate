@@ -1,7 +1,10 @@
 {
-  "name": "sequelize",
+  "name": "playdate",
   "version": "1.0.0",
-  "description": "SQL",
+  "description": "PlayDate is a social application where users, dog owners, can connect with other dog owners to coordinate play dates.  Users can post dog profiles, create events at parks, leave comments for other users, and leave comments for other user's events.",
+  "engines": {
+    "node": "16.18.0"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,19 +13,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "02-Project"
+    "url": "https://github.com/VenBak/PlayDate"
   },
   "keywords": [
-    "project",
-    "2"
+    "Node.js", "Express.js", "CRUD", "MVC", "Handlebars.js", "MySQL", "Sequelize ORM", "Express Session"
   ],
-  "author": "VenBak",
+  "contributors": ["leeclaire156", "mewing0328", "smithm4949", "VenBak"],
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.0",
-    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
     "mysql2": "^3.1.2",
-    "sequelize": "^6.28.2"
+    "sequelize": "^6.28.0",
+    "dotenv": "^16.0.3",
+    "bcrypt": "^5.1.0",
+    "express-session": "^1.17.3",
+    "connect-session-sequelize": "^7.1.5"
+  },
+  "devDependencies": {
+    "jshint": "^2.13.6"
   }
 }

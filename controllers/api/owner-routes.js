@@ -32,16 +32,52 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new owner
+  // create a new owner and log them in
   Owner.create(req.body)
   .then((owner) => {
-    res.status(200).json(owner);
+    req.session.save(() => {
+      req.session.user_id = owner.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(owner);
+    });
   })
   .catch((err) => {
     console.log(err);
     res.status(400).json(err);
   });
 });
+
+router.post('/login', (req, res) => {
+  Owner.findOne({
+    where: {username: req.body.username}
+  })
+  .then((owner) => {
+    owner.checkPassword(req.body.password)
+    .then((ownerObj) => {
+      req.session.save(() => {
+        req.session.user_id = ownerObj.id;
+        req.session.logged_in = true;
+  
+        res.status(200).json({user: ownerObj, message: 'Succesfully logged in'});
+      });
+    })
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+})
 
 router.put('/:id', (req, res) => {
   // update a owner by its `id` value

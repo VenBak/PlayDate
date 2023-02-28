@@ -5,10 +5,13 @@ const Event = require('./Event');
 
 Owner.hasMany(Dog, {
     foreignKey: 'owner_id',
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
 });
 
-Dog.belongsTo(Owner);
+Dog.belongsTo(Owner, {
+  foreignKey: 'owner_id',
+    onDelete: 'CASCADE'
+});
 
 // Each event was created by and belongs to only one user (owner)
 Event.belongsTo(Owner);

@@ -15,7 +15,7 @@ Dog.init(
         },
         pic_hyperlink: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         name: {
             type: DataTypes.STRING,
