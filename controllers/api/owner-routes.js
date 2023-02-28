@@ -33,7 +33,14 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new owner and log them in
-  Owner.create(req.body)
+  Owner.create(
+    {
+      ...req.body
+    },
+    {
+      include: [ Dog ]
+    }
+  )
   .then((owner) => {
     req.session.save(() => {
       req.session.user_id = owner.id;

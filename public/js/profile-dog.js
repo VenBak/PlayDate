@@ -1,5 +1,3 @@
-
-
 // Show the dog form and reset the fields
 function showForm() {
   const dogForm = document.querySelector('form');
@@ -32,7 +30,7 @@ const addDogFormHandler = async (event) => {
     });
       // IF response is successful, then go to the profile
       if (response.ok) {
-        document.location.replace('/profile');
+        location.reload();
       } else {
         alert(response.statusText);
       }
