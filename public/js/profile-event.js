@@ -42,22 +42,22 @@ const addEventFormHandler = async (event) => {
   document.querySelector('#submitEvent-btn').addEventListener('click', addEventFormHandler);
 
 
-  // DELETE an event
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+  // // DELETE an event
+  // const delButtonHandler = async (event) => {
+  //   if (event.target.hasAttribute('data-id')) {
+  //     const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/events/${id}`, {
-        method: 'DELETE',
-      });
+  //     const response = await fetch(`/api/events/${id}`, {
+  //       method: 'DELETE',
+  //     });
   
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to delete event profile');
-      }
-    }
-  };
+  //     if (response.ok) {
+  //       document.location.replace('/profile');
+  //     } else {
+  //       alert('Failed to delete event profile');
+  //     }
+  //   }
+  // };
   
   document
     .querySelector('.event-list').addEventListener('click', delButtonHandler);

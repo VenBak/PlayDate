@@ -56,7 +56,7 @@ header a,
 }
 
 #home-anchor,
-#dashboard-anchor,
+#events-anchor,
 #profile-anchor {
     position: relative;
     font-size: 1.1em;
@@ -68,7 +68,7 @@ header a,
 
 /* Underlines show under nav anchors */
 #home-anchor::after,
-#dashboard-anchor::after,
+#events-anchor::after,
 #profile-anchor::after {
     content: '';
     position: absolute;
@@ -91,7 +91,7 @@ header a,
 
 /* Underlines show under hovered nav anchors */
 #home-anchor:hover::after,
-#dashboard-anchor:hover::after,
+#events-anchor:hover::after,
 #profile-anchor:hover::after {
     /*Transform sets lines under nav bar anchors*/
     transform: scaleX(1);
