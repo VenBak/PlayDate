@@ -3,6 +3,9 @@
     Dog Cards
     <br></br>
     {{#each dogs as |dog|}}
+    <a style="text-decoration: none" href="profile/dog/{{dog.id}}">
+        <img height="32px" src="/images/default-dog.png" alt="Dog Profile icon">
+    </a>
     {{dog.name}}
     {{dog.age}}
     {{dog.breed}}

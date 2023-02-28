@@ -24,6 +24,24 @@ router.get('/', withAuth, async (req, res) => {
 }
 );
 
+//Gets ALL posts and displays it on homepage
+router.get("/dog/:id", async (req, res) => {
+    // Send the rendered Handlebars.js template back as the response
+    try {
+        // Find the user's dog based on the request parameter called dog_id
+        const dogData = await Dog.findByPk(req.params.id, {
+        });
+        //  res.status(200).json(dogData); //For testing only
+        const dog = dogData.get({ plain: true });
 
+        res.render('dogprofile', {
+            ...dog,
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+);
 
 module.exports = router;

@@ -23,5 +23,11 @@ router.get('/signup', (req, res) => {
     });
 });
 
+router.get('/dashboard', (req, res) => {
+    //Renders signup handlebars template on the signup page
+    res.render('homepage', {
+        logged_in: req.session.logged_in
+    });
+});
 
 module.exports = router;
