@@ -38,29 +38,23 @@ const addDogFormHandler = async (event) => {
   };
   document.querySelector('#submitDog-btn').addEventListener('click', addDogFormHandler);
 
-
-
-
-  // // DELETE a dog
-  // const delButtonHandler = async (event) => {
-  //   if (event.target.hasAttribute('data-id')) {
-  //     const id = event.target.getAttribute('data-id');
+// DELETE a dog
+  const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
   
-  //     const response = await fetch(`/api/dogs/${id}`, {
-  //       method: 'DELETE',
-  //     });
+      const response = await fetch(`/api/dogs/${id}`, {
+        method: 'DELETE',
+      });
   
-  //     if (response.ok) {
-  //       document.location.replace('/profile');
-  //     } else {
-  //       alert('Failed to delete dog profile');
-  //     }
-  //   }
-  // };
-  
- 
-  
-  // document
-  //   .querySelector('.dog-list')
-  //   .addEventListener('click', delButtonHandler);
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete dog profile');
+      }
+    }
+  };
+    
+  document
+    .querySelector('.dog-list').addEventListener('click', delButtonHandler);
   
