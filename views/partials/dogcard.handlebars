@@ -1,5 +1,6 @@
+{{#if dogs.length}}
 <div>
-    DogCards
+    Dog Cards
     <br></br>
     {{#each dogs as |dog|}}
     {{dog.name}}
@@ -8,5 +9,5 @@
     {{dog.gender}}
     <br></br>
     {{/each}}
-
 </div>
+{{/if}}
