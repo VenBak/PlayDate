@@ -2,7 +2,7 @@
   <h2>Register</h2>
 
 
-  <form id="owner-form">
+  <form id="owner-form" class="signup-form">
     <h3>Let's Get to Know You</h3>
 
     <div>
@@ -11,7 +11,7 @@
     </div>
 
     <div>
-      <input type="text" required>
+      <input id="username-signup" type="text" required>
       <label>Username</label>
     </div>
 
@@ -19,38 +19,42 @@
       {{!-- <span class="icon" onclick="showPassword()">
         <img src=" /images/secured-lock-freepik.png" alt="Lock pad icon">
       </span> --}}
-      <input class="password" type="password" required>
+      <input id="password-signup" class="password" type="password" required>
       <label>Password</label>
     </div>
 
     <div>
-      <input type="text" required>
+      <input id="first_name-signup" type="text" required>
       <label>First Name</label>
     </div>
 
     <div>
-      <input type="text" required>
+      <input id="last_name-signup" type="text" required>
       <label>Last Name</label>
     </div>
 
     <div class="gender-input">
-      <div>
+      {{!-- <div>
         <label>Gender</label>
-      </div>
+      </div> --}}
 
-      <input type="radio" name="gender" id="male" required>
+      <input id="gender-signup" type="text" required>
+      <label>Gender</label>
+
+      {{!-- <input type="radio" name="gender" id="male" value="male">
       <label for="male">Male</label>
 
-      <input type="radio" name="gender" id="female">
+      <input type="radio" name="gender" id="female" value="female">
       <label for="female">Female</label>
 
-      <input type="radio" name="gender" id="other">
-      <label for="other">Other</label>
+      <input type="radio" name="gender" id="other" value="other">
+      <label for="other">Other</label> --}}
+
     </div>
 
 
     <div>
-      <input type="text" required>
+      <input id="location_zip-signup" type="text" required>
       <label>Zip Code</label>
     </div>
 
@@ -58,7 +62,7 @@
       <div>
         <label>Description</label>
       </div>
-      <textarea rows="6" required></textarea>
+      <textarea id="description-signup" type="text" rows="6" required></textarea>
     </div>
 
   </form>
@@ -72,21 +76,25 @@
     </div>
 
     <div>
-      <input type="text" required>
+      <input id="dog-name-signup" type="text" required>
       <label>Name</label>
     </div>
 
     <div>
-      <input type="number" required>
+      <input id="dog-age-signup" type="number" required>
       <label>Age</label>
     </div>
 
     <div>
-      <input type="text" required>
+      <input id="dog-breed-signup" type="text" required>
       <label>Breed</label>
     </div>
 
-    <div class="gender-input">
+    {{!-- <div id="dog-breed-signup" class="gender-input"> --}}
+    <div>  
+      <input id="dog-gender-signup" type="text" required>
+      <label>Gender</label>
+{{!-- 
       <div>
         <label>Gender</label>
       </div>
@@ -95,7 +103,7 @@
       <label for="male">Male</label>
 
       <input type="radio" name="gender" id="female">
-      <label for="female">Female</label>
+      <label for="female">Female</label> --}}
 
     </div>
 

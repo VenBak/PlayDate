@@ -13,7 +13,7 @@ const signupFormHandler = async (event) => {
   
     // POST to Owner table
     if (username && password && first_name && last_name && gender && location_zip && description) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/owners', {
         method: 'POST',
         body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description }),
         headers: { 'Content-Type': 'application/json' },
