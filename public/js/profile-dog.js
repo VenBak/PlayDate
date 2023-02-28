@@ -1,19 +1,20 @@
+var dogForm = document.querySelector('form');
 
 
-
-
-// Functions for showing and hiding the dog form
+// Show the dog form and reset the fields
 function showForm() {
+    dogForm.reset();
     document.querySelector('.dogForm').style.display = 'block';
     document.querySelector('#submitDog-btn').style.display = 'block';
   }
 
+// Hide the dog form after the form has been submitted
 function hideForm() {
   document.querySelector('.dogForm').style.display = 'none';
   document.querySelector('#submitDog-btn').style.display = 'none';
 }
 
-// ADD ANOTHER DOG - 2/28 ME tested and it works
+// POST a new DOG to table
 const addDogFormHandler = async (event) => {
     event.preventDefault();
     
