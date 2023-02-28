@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Owner, Dog } = require('../../models');
 
-// The `/api/dogs` endpoint
-
 router.get('/', (req, res) => {
   // find all dogs, include their owners
   Dog.findAll({
@@ -34,14 +32,19 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new dog
-  Dog.create(req.body)
-  // .then((dog) => {
-  //   res.status(200).json(dog);
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  //   res.status(400).json(err);
-  // });
+  let user_id = req.body.user_id || req.session.user_id; 
+  if (!req.body.user_id) {
+    res.send(400).json({message: 'No user_id included in req.body or req.session'});
+    return;
+  }
+  Dog.create({...req.body, user_id})
+  .then((dog) => {
+    res.status(200).json(dog);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
 });
 
 router.put('/:id', (req, res) => {
