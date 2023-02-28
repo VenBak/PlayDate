@@ -1,8 +1,8 @@
-<div>
+<div class="signup-form">
   <h2>Register</h2>
 
 
-  <form id="owner-form" class="signup-form">
+  <form id="owner-form">
     <h3>Let's Get to Know You</h3>
 
     <div>
@@ -65,9 +65,7 @@
       <textarea id="description-signup" type="text" rows="6" required></textarea>
     </div>
 
-  </form>
 
-  <form id="dog-form">
     <h3>Now Tell Us About Your Furry Friend</h3>
 
     <div>
@@ -91,29 +89,33 @@
     </div>
 
     {{!-- <div id="dog-breed-signup" class="gender-input"> --}}
-    <div>  
-      <input id="dog-gender-signup" type="text" required>
-      <label>Gender</label>
-{{!-- 
       <div>
+        <input id="dog-gender-signup" type="text" required>
         <label>Gender</label>
+        {{!--
+        <div>
+          <label>Gender</label>
+        </div>
+
+        <input type="radio" name="gender" id="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" name="gender" id="female">
+        <label for="female">Female</label> --}}
+
       </div>
-
-      <input type="radio" name="gender" id="male" required>
-      <label for="male">Male</label>
-
-      <input type="radio" name="gender" id="female">
-      <label for="female">Female</label> --}}
-
-    </div>
 
   </form>
 
-  <button type="submit">Sign Up</button>
+
 
   <div>
     <p>Already have an account? <a href="../login">Log In</a></p>
   </div>
 
 </div>
-<script src="/js/signup.js"></script>
+
+<button id="submit-btn" type="submit">Sign Up</button>
+
+
+
