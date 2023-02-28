@@ -16,9 +16,21 @@
     "url": "https://github.com/VenBak/PlayDate"
   },
   "keywords": [
-    "Node.js", "Express.js", "CRUD", "MVC", "Handlebars.js", "MySQL", "Sequelize ORM", "Express Session"
+    "Node.js",
+    "Express.js",
+    "CRUD",
+    "MVC",
+    "Handlebars.js",
+    "MySQL",
+    "Sequelize ORM",
+    "Express Session"
   ],
-  "contributors": ["leeclaire156", "mewing0328", "smithm4949", "VenBak"],
+  "contributors": [
+    "leeclaire156",
+    "mewing0328",
+    "smithm4949",
+    "VenBak"
+  ],
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
@@ -27,11 +39,11 @@
     "sequelize": "^6.28.2"
   },
   "devDependencies": {
-    "jshint": "^2.13.6",
-    "sequelize": "^6.28.0",
-    "dotenv": "^16.0.3",
     "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
     "express-session": "^1.17.3",
-    "connect-session-sequelize": "^7.1.5"
+    "jshint": "^2.13.6",
+    "sequelize": "^6.28.0"
   }
 }

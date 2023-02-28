@@ -31,16 +31,29 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create a new owner
-  Owner.create(req.body)
-  .then((owner) => {
-    res.status(200).json(owner);
+  try {
+  const newOwner = await Owner.create({
+    username: req.body.username,
+    password: req.body.password,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    gender: req.body.gender,
+    location_zip: req.body.location_zip,
+    description: req.body.description
   })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+
+  req.session.save(() => {
+    req.session.OwnerId = newOwner.id;
+    req.session.username = newOwner.username;
+    req.session.loggedIn = true;
+
+  res.json(newOwner)
+  })
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.put('/:id', (req, res) => {

@@ -7,7 +7,7 @@ const loginFormHandler = async (event) => {
 
     if (username && password) {
         // Send a POST request to the API endpoint
-        const response = await fetch('/api/users/login', { // TO DO - get the name of the route used for logging in
+        const response = await fetch('/api/owners/login', { // TO DO - get the name of the route used for logging in
             method: 'POST',
             body: JSON.stringify({ username, password}),
             headers: { 'Content-Type': 'application/json' },
