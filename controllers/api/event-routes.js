@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
   Event.findAll({
     include: {
       model: Owner,
+      as: 'host',
       include: Dog
     }
   })

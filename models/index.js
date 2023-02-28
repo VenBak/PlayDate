@@ -21,7 +21,7 @@ Event.belongsTo(Owner, {
 
 // Owners can create many events
 Owner.hasMany(Event, {
-  foreignKey: 'owner_id'
+  foreignKey: 'host_id'
 });
 
 // Events belong to many owners as people attending the event

@@ -40,7 +40,7 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false
     },
-    owner_id: {
+    host_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'owner',
