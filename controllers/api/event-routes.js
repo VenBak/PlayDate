@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
     include:
       {
         model: Owner,
-        as: 'attendee'
+        as: 'attendees'
       }
   })
   .then((event) => {

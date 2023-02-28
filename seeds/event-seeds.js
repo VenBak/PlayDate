@@ -42,9 +42,6 @@ const eventAttendees = [
 ];
 
 // Export the function
-const seedEvent = () => {
-  Event.bulkCreate(eventData);
-  
-};
+const seedEvent = () => Event.bulkCreate(eventData);
 
-module.exports = seedEvent;
+module.exports = seedEvent

@@ -33,11 +33,13 @@ const ownerData = [
     location_zip: 77001,
     dogs: "3",
     description: 'I love wine and tapas, but preferrably enjoy it with company and distracted doggos'
-  },
-
+  }
 ];
 
 // Export the function
-const seedOwner = () => Owner.bulkCreate(ownerData);
+const seedOwner = () => Owner.bulkCreate(ownerData, {
+  individualHooks: true,
+  returning: true
+});
 
 module.exports = seedOwner
