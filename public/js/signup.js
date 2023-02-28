@@ -32,7 +32,7 @@ const signupFormHandler = async (event) => {
 
   //   // IF response is successful, then call posting to DOG table
   //   if (response.ok) {
-  //     location.reload;
+  //     location.reload();
   //   } else {
   //     alert(response.statusText);
   //   }
