@@ -24,6 +24,7 @@
             <a id="home-anchor" href="/">Home</a>
             {{#if logged_in}}
             <a id="dashboard-anchor" href="/dashboard">Dashboard</a>
+            <a id="profile-anchor" href="/profile">Profile</a>
             <!--a id="logout-anchor" href="/logout"-->
             <button class="logout-btn">Log Out</button></a>
             {{else}}
@@ -40,7 +41,6 @@
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
-    <script src="/js/signup.js"></script>
     <script src="/js/password.js"></script>
 </body>
 

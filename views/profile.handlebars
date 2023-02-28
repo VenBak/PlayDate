@@ -1,0 +1,16 @@
+<div>
+    Welcome {{owner.username}}.
+
+    {{> ownercard}}
+
+    <button>Update Profile</button>
+
+    <button>Delete Profile</button>
+    
+    {{> dogcard}}
+    <button>Add Dog</button>
+
+</div>
+
+{{!-- Allows users to add another dog or delete a dog --}}
+<script src="/js/profile-dog.js"></script>
