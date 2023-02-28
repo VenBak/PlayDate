@@ -20,16 +20,16 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   // find one dog by its `id` value, include their owners
   Dog.findOne({
-    where: {id: req.params.id},
+    where: { id: req.params.id },
     include: Owner
   })
-  .then((dog) => {
-    res.status(200).json(dog);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((dog) => {
+      res.status(200).json(dog);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
 router.post('/', (req, res) => {
@@ -51,13 +51,13 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then((dog) => {
-    res.status(200).json(dog);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((dog) => {
+      res.status(200).json(dog);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
 router.delete('/:id', (req, res) => {
@@ -67,13 +67,13 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then((dog) => {
-    res.status(200).json(dog);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((dog) => {
+      res.status(200).json(dog);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
 module.exports = router;

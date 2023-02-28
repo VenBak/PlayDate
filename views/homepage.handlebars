@@ -10,18 +10,21 @@
 
     <div>
         <h2>Events</h2>
+        {{#if logged_in}}
+        <a href="/#"></a><button>New Event</button></a>
+        {{/if}}
         <section class="current-events">
 
         </section>
     </div>
 
-
+    {{#unless logged_in}}
     <div>
         <h2 class="text-center">
             Set up your account today!
         </h2>
 
         <a href="/signup"><button class="btn">Get Started</button></a>
-
     </div>
+    {{/unless}}
 </div>
