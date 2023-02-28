@@ -20,8 +20,13 @@ Event.init(
       allowNull: false
     },
     location_zip: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+        isInt: true,
+        len: [5,5]
+      }
     },
     description: {
       type: DataTypes.STRING,

@@ -14,7 +14,10 @@ Dog.belongsTo(Owner, {
 });
 
 // Each event was created by and belongs to only one user (owner)
-Event.belongsTo(Owner);
+Event.belongsTo(Owner, {
+  as: 'host',
+  foreignKey: 'host_id'
+});
 
 // Owners can create many events
 Owner.hasMany(Event, {
@@ -23,14 +26,17 @@ Owner.hasMany(Event, {
 
 // Events belong to many owners as people attending the event
 Event.belongsToMany(Owner, {
-  through: 'event_attendees'
+  through: 'event_attendees',
+  as: 'attendees',
+  foreignKey: 'event_id',
+  otherKey: 'attendee_id'
 });
 
 // Owners can attend many events, regardless of who created the event
 Owner.belongsToMany(Event, {
-  as: 'attendees',
-  foreignKey: 'attendee_id',
-  through: 'event_attendees'
+  through: 'event_attendees',
+  foreignKey: 'event_id',
+  otherKey: 'attendee_id'
 });
 
 module.exports = { Owner, Dog, Event }

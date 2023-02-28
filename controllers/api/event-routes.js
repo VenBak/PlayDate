@@ -26,9 +26,7 @@ router.get('/:id', (req, res) => {
     include:
       {
         model: Owner,
-        through: 'event_attendees',
-        as: 'attendees',
-        foreignKey: 'owner_id'
+        as: 'attendee'
       }
   })
   .then((event) => {
