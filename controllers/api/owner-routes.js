@@ -34,18 +34,18 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new owner and log them in
   Owner.create(req.body)
-  // .then((owner) => {
-  //   req.session.save(() => {
-  //     req.session.user_id = owner.id;
-  //     req.session.logged_in = true;
+  .then((owner) => {
+    req.session.save(() => {
+      req.session.user_id = owner.id;
+      req.session.logged_in = true;
 
-  //     res.status(200).json(owner);
-  //   });
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  //   res.status(400).json(err);
-  // });
+      res.status(200).json(owner);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
 });
 
 router.post('/login', (req, res) => {
