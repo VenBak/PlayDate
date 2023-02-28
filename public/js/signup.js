@@ -1,10 +1,11 @@
 console.log("Check 1");
 
-var signupBtn = document.querySelector("#submit-btn");
-signupBtn.addEventListener('click', (event) => {
+let signupBtn = document.querySelector("#submit-btn");
+signupBtn.addEventListener('click', async (event) => {
   console.log("Check 2");
 
-  signupFormHandler(event);
+  let newOwner = await signupFormHandler(event);
+  postDog(event, newOwner.id);
 });
 
 async function signupFormHandler(event) {
@@ -31,39 +32,38 @@ async function signupFormHandler(event) {
 
     // IF response is successful, then call posting to DOG table
     if (response.ok) {
-      document.location.replace('/');
+      // document.location.replace('/');
+      return response;
     } else {
       alert(response.statusText);
     }
   }
+}
 
+const postDog = async (event, owner_id) => {
+  event.preventDefault();
 
-  //   const postDog = async (event) => {
-  //     event.preventDefault();
+  // DOG Model columns for the intake form - 
+  // we are not initially asking for picture 
+  const name = document.querySelector('#dog-name-signup').value.trim();
+  const age = document.querySelector('#dog-age-signup').value.trim();
+  const breed = document.querySelector('#dog-breed-signup').value.trim();
+  const gender = document.querySelector('#dog-gender-signup').value.trim();
 
-  //     // DOG Model columns for the intake form - 
-  //     // we are not initially asking for picture 
-  //     const name = document.querySelector('#dog-name-signup').value.trim();
-  //     const age = document.querySelector('#dog-age-signup').value.trim();
-  //     const breed = document.querySelector('#dog-breed-signup').value.trim();
-  //     const gender = document.querySelector('#dog-gender-signup').value.trim();
+  console.log(name, age, breed, gender)
+  // POST to Dog table
+  if (name && age && breed && gender) {
+    const response = await fetch('/api/dogs', {
+      method: 'POST',
+      body: JSON.stringify({ name, age, breed, gender, owner_id }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  //     // POST to Dog table
-  //     if (name && age && breed && gender) {
-  //       const response = await fetch('/api/dogs', {
-  //         method: 'POST',
-  //         body: JSON.stringify({ name, age, breed, gender }),
-  //         headers: { 'Content-Type': 'application/json' },
-  //       });
-
-  //       // IF response is successful, then go to the profile
-  //       if (response.ok) {
-  //         document.location.replace('/profile');
-  //       } else {
-  //         alert(response.statusText);
-  //       }
-  //     }
-  //   }
-  // }
-};
-
+    // IF response is successful, then go to the profile
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+  }
+}
