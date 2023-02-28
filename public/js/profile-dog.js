@@ -1,8 +1,8 @@
-var dogForm = document.querySelector('form');
 
 
 // Show the dog form and reset the fields
 function showForm() {
+  const dogForm = document.querySelector('form');
     dogForm.reset();
     document.querySelector('.dogForm').style.display = 'block';
     document.querySelector('#submitDog-btn').style.display = 'block';
