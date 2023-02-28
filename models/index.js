@@ -4,9 +4,12 @@ const Dog = require('./Dog');
 
 Owner.hasMany(Dog, {
     foreignKey: 'owner_id',
-    onDelete: 'CASCADE',
+    onDelete: 'CASCADE'
 });
 
-Dog.belongsTo(Owner);
+Dog.belongsTo(Owner, {
+  foreignKey: 'owner_id',
+    onDelete: 'CASCADE'
+});
 
 module.exports = { Owner, Dog }

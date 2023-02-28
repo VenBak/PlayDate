@@ -53,15 +53,18 @@ router.post('/login', (req, res) => {
     where: {username: req.body.username}
   })
   .then((owner) => {
-    owner.checkPassword(req.body.password)
-    .then((ownerObj) => {
+    let passMatch = owner.checkPassword(req.body.password);
+
+    if (passMatch) {
       req.session.save(() => {
-        req.session.user_id = ownerObj.id;
+        req.session.user_id = owner.id;
         req.session.logged_in = true;
   
-        res.status(200).json({user: ownerObj, message: 'Succesfully logged in'});
+        res.status(200).json({user: owner, message: 'Succesfully logged in'});
       });
-    })
+    } else {
+      res.status(400).json({message: 'Invalid password or email'});
+    }
   })
   .catch((err) => {
     console.log(err);
