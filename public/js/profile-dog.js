@@ -15,7 +15,7 @@ const newDogFormHandler = async (event) => {
     });
       // IF response is successful, then go to the profile
       if (response.ok) {
-        location.reload;
+        location.reload();
       } else {
         alert(response.statusText);
       }
