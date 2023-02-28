@@ -32,12 +32,13 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new dog
-  let user_id = req.body.user_id || req.session.user_id; 
-  if (!req.body.user_id) {
-    res.send(400).json({message: 'No user_id included in req.body or req.session'});
+  let data = req.body;
+  data.owner_id = req.body.owner_id || req.session.user_id; 
+  if (!data.owner_id) {
+    res.status(400).json({message: 'No user_id included in req.body or req.session'});
     return;
   }
-  Dog.create({...req.body, user_id})
+  Dog.create(data)
   .then((dog) => {
     res.status(200).json(dog);
   })
