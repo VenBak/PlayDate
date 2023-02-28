@@ -1,6 +1,7 @@
 // Import all of the functions which will seed the array within each document
 const seedOwner = require('./owner-seeds');
 const seedDog = require('./dog-seeds');
+const seedEvent = require('./event-seeds');
 
 // Make sure to import sequelize in order to connect to the sql database
 const sequelize = require('../config/connection');
@@ -16,6 +17,9 @@ const seedAll = async () => {
 
   await seedDog();
   console.log('\n----- DOG SEEDED -----\n');
+
+  await seedEvent();
+  console.log('\n----- EVENT SEEDED -----\n');
 
   process.exit(0);
 };
