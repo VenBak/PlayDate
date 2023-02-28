@@ -1,6 +1,6 @@
 console.log("Check 1");
 
-var signupBtn = document.querySelector("#submit-btn");
+let signupBtn = document.querySelector("#submit-btn");
 signupBtn.addEventListener('click', (event) => {
   console.log("Check 2");
 
