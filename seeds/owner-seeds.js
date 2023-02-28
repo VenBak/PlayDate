@@ -38,8 +38,7 @@ const ownerData = [
 
 // Export the function
 const seedOwner = () => Owner.bulkCreate(ownerData, {
-  individualHooks: true,
-  returning: true
+  individualHooks: true
 });
 
 module.exports = seedOwner
