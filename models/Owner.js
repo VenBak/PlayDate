@@ -32,8 +32,14 @@ Owner.init(
       }
     },
     pic_hyperlink: {
-      type: DataTypes.STRING,
-      allowNull: true
+      public_id: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      url: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
     },
     first_name: {
       type: DataTypes.STRING,

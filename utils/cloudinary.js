@@ -49,7 +49,7 @@ cloudinary.config({
     api_secret: process.env.API_SECRET,
     secure: true
 });
-
+/*
 /////////////////////////
 // Uploads an image file
 /////////////////////////
@@ -144,3 +144,5 @@ const createImageTag = (publicId, ...colors) => {
     console.log(imageTag);
 
 })();
+*/
+module.exports = cloudinary;

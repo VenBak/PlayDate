@@ -11,7 +11,7 @@
     "start": "node server.js",
     "seed": "node seeds/index.js",
     "watch": "nodemon server.js",
-    "lint": "jshint server.js"
+    "lint": "jshint routes/controllers/ownerController.js"
   },
   "repository": {
     "type": "git",
