@@ -18,10 +18,11 @@ button:hover {
 }
 
 
-body{
-    padding:100px;
+body {
+    padding: 100px;
     margin: 70px;
 }
+
 #main-area {
     padding: 100px 100px 100px 0;
 
@@ -123,8 +124,8 @@ header a,
     cursor: pointer;
 }
 
-.login-container{
-    display:flex;
+.login-container {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -271,4 +272,14 @@ textarea {
 .dog-card-container {
     display: flex;
     flex-direction: row;
+}
+
+.dog-anchor > * {
+    font-weight: 800;
+    font-size: 1.75em;
+    color: var(--nav-text-color);
+}
+
+.dog-buttons > {
+    z-index: 2;
 }
