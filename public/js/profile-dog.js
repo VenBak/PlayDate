@@ -1,5 +1,5 @@
 // Show the dog form and reset the fields
-function showForm() {
+function showNewDogForm() {
   const dogForm = document.querySelector('form');
     dogForm.reset();
     document.querySelector('.dogForm').style.display = 'block';
@@ -7,7 +7,7 @@ function showForm() {
   }
 
 // Hide the dog form after the form has been submitted
-function hideForm() {
+function hideNewDogForm() {
   document.querySelector('.dogForm').style.display = 'none';
   document.querySelector('#submitDog-btn').style.display = 'none';
 }
@@ -30,13 +30,15 @@ const addDogFormHandler = async (event) => {
     });
       // IF response is successful, then go to the profile
       if (response.ok) {
-        location.reload();
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
     }
   };
   document.querySelector('#submitDog-btn').addEventListener('click', addDogFormHandler);
+
+
 
 // DELETE a dog
   const delButtonHandler = async (event) => {
@@ -54,7 +56,8 @@ const addDogFormHandler = async (event) => {
       }
     }
   };
-    
   document
-    .querySelector('.dog-list').addEventListener('click', delButtonHandler);
+    .querySelector('.delete-dog-btn').addEventListener('click', delButtonHandler);
   
+
+

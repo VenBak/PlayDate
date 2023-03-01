@@ -14,7 +14,12 @@
             {{dog.gender}}
         </div>
         <div class="col-md-4">
-            <button class="btn btn-sm btn-danger" data-id="{{dog.id}}">DELETE</button>
+            <button class="delete-dog-btn btn btn-sm btn-danger" data-id="{{dog.id}}">DELETE</button>
+            <br></br>
+            {{!-- <button onclick="showNewDogForm()" type="submit" data-id="{{dog.id}}">Edit {{dog.name}}'s information</button> --}}
+
+            {{!-- TO DO: ADD AN EDIT BUTTON HERE THAT WILL OPEN THE EDIT-DOG FORM! --}}
+
         </div>
         <br></br>
         {{/each}}
