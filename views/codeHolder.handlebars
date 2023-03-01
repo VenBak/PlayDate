@@ -1,0 +1,38 @@
+<div>
+    DogCards
+    <br></br>
+    {{name}}
+    {{age}}
+    {{breed}}
+    {{gender}}
+    <br></br>
+
+    <button>Delete Dog</button>
+
+    <button onclick="showEditDogForm()" type="submit" data-id="{{id}}">Edit Dog Info</button>
+    <br><br>
+
+</div>
+
+{{!-- add edit dog form --}}
+
+<div class="card">
+    <form class="edit-dog-form card-body" style="display: none;">
+        <h3 class="card-header"> Edit {{name}}'s Information</h3>
+        <label for="dog.name" class="form-label">Dog Name</label>
+        <input id="editdog-name" name="dog.name" type="text" value="{{name}}" class="form-input" />
+
+        <label for="dog.age" class="form-label">Dog Age</label>
+        <input id="editdog-age" name="dog.age" type="text" value="{{age}}" class="form-input" />
+        
+        <label for="dog.breed" class="form-label">Dog Breed</label>
+        <input id="editdog-breed" name="dog.breed" type="text" value="{{breed}}" class="form-input" />
+
+        <label for="dog.gender" class="form-label">Dog Gender</label>
+        <input id="editdog-gender" name="dog.gender" type="text" value="{{gender}}" class="form-input" />  
+          
+    <button id="submitEdit-btn" onclick="hideEditDogForm()" type="submit">Submit</button>
+
+    </form>
+</div>
+<script src="/js/edit-dog.js"></script>
