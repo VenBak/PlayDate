@@ -1,25 +1,26 @@
 {{#if dogs.length}}
-<h2 class="my-dogs-title">My Dogs</h2>
-<div class="dog-card-container dog-list flex-wrap">
-    {{#each dogs as |dog|}}
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="images/default-dog.png" alt="Dog Profile icon">
-        <div class="card-body">
-            <h5 class="dog-name card-title">{{dog.name}}</h5>
+<div>
+    <h2 class="my-dogs-title">My Dogs</h2>
+    <div class="dog-card-container dog-list flex-wrap">
+        {{#each dogs as |dog|}}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="images/default-dog.png" alt="Dog Profile icon">
+            <div class="card-body">
+                <h5 class="dog-name card-title">{{dog.name}}</h5>
 
-            <p class="card-text">I am a {{age}} year old {{gender}} {{breed}}. Check out my family's profile for
-                more!</p>
+                <p class="card-text">I am a {{age}} year old {{gender}} {{breed}}. Check out my family's profile for
+                    more!</p>
 
-            <div class="buttons dog-buttons">
-                <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
-                    <button class="btn btn-sm btn-primary">Edit</button>
-                </a>
-                <button id="delete-dog-btn" class="btn btn-sm btn-danger" data-id="{{dog.id}}">Delete</button>
+                <div class="buttons dog-buttons">
+                    <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
+                        <button class="btn btn-sm btn-primary">Edit</button>
+                    </a>
+                    <button id="delete-dog-btn" class="btn btn-sm btn-danger" data-id="{{dog.id}}">Delete</button>
+                </div>
+
             </div>
-
         </div>
+        {{/each}}
     </div>
-
-    {{/each}}
 </div>
 {{/if}}

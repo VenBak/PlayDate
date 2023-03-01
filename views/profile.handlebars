@@ -1,62 +1,16 @@
-<div>
-  <div>
-    Welcome {{owner.username}}.
+<div id="profile-page d-flex flex-column align-items-center">
+  <div id="owner-section">
+    <h1>Welcome {{username}}.</h1>
 
     {{> ownercard}}
+  </div>
 
-    <button>Update Profile</button>
-
-    <button>Delete Profile</button>
-    
+  <div id="dog-section">
     {{> dogcard}}
 
 
-
- {{!-- ME: Added form for adding additional dogs --}}
-<h3>Do you have more furry friends? </h3>
-<button onclick="showNewDogForm()" type="submit">Add additional dogs</button>
-
-<form id="dogForm" class="dogForm" style="display: none;">
-
-    <div>
-      <label for="dogPic">Select a file:</label>
-      <input type="file" id="dogPic" name="dogPic">
-    </div>
-
-    <div>
-      <input id="dog-name" type="text" required>
-      <label>Name</label>
-    </div>
-
-    <div>
-      <input id="dog-age" type="number" required>
-      <label>Age</label>
-    </div>
-
-    <div>
-      <input id="dog-breed" type="text" required>
-      <label>Breed</label>
-    </div>
-
-    {{!-- <div id="dog-breed-signup" class="gender-input"> --}}
-      <div>
-        <input id="dog-gender" type="text" required>
-        <label>Gender</label>
-        {{!--
-        <div>
-          <label>Gender</label>
-        </div>
-
-        <input type="radio" name="gender" id="male" required>
-        <label for="male">Male</label>
-
-        <input type="radio" name="gender" id="female">
-        <label for="female">Female</label> --}}
-      </div>
-    <button id="submitDog-btn" onclick="hideNewDogForm()" type="submit">Submit</button>
-</form>
-
-</div>
+    {{> adddog}}
+  </div>
 
 
 
@@ -67,23 +21,17 @@
 
 
 
-{{!-- Allows users to add another dog or delete a dog --}}
-<script src="/js/profile-dog.js"></script>
 
 
+  {{!-- Functionality to view all events created by user --}}
 
+  {{> eventcard}}
 
+  {{!-- ME: Added form for adding events --}}
+  <h3>Do you want to create an event? </h3>
+  <button onclick="showEventForm()" type="submit">Add an EVENT!</button>
 
-
-{{!-- Functionality to view all events created by user --}}
-
-{{> eventcard}}
-
-{{!-- ME: Added form for adding events --}}
-<h3>Do you want to create an event? </h3>
-<button onclick="showEventForm()" type="submit">Add an EVENT!</button>
-
-<form id="eventForm" class="eventForm" style="display: none;">
+  <form id="eventForm" class="eventForm" style="display: none;">
 
     <div>
       <label for="eventPic">Select a file:</label>
@@ -108,19 +56,23 @@
     </div>
 
     <div>
-        <input id="event-start_date" type="date" required>
-        <label>Start Date</label>
+      <input id="event-start_date" type="date" required>
+      <label>Start Date</label>
     </div>
 
     <div>
-        <input id="event-end_date" type="date" required>
-        <label>Start Date</label>
+      <input id="event-end_date" type="date" required>
+      <label>Start Date</label>
     </div>
 
     <button id="submitEvent-btn" onclick="hideForm()" type="submit">Submit</button>
-</form>
+  </form>
 
 </div>
+
+
+{{!-- Allows users to add another dog or delete a dog --}}
+<script src="/js/profile-dog.js"></script>
 
 {{!-- Allows users to add an event or delete an event --}}
 <script src="/js/profile-event.js"></script>
