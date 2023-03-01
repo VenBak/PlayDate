@@ -1,12 +1,33 @@
 <div>
-    Meet the owner!
-    Hi, I'm {{username}}, also known as {{first_name}} {{last_name}}. I am a 25 year old {{gender}} who lives in
-    {{location_zip}}.
-    <br>
-</div>
-I am so random lol {{description}}.
-</div>
+    <h1>Welcome {{username}}!</h1>
 
-<button>Update Profile</button>
+    <div class="d-flex flex-row justify-content-center p-3">
 
-<button>Delete Profile</button>
+        <div class="card owner-card p-3">
+            {{!-- no-gutters gets rid of grid gutters --}}
+            <div class="row no-gutters">
+                <div class="col-md-5">
+                    <img src="/images/default-owner.png" class="card-img" alt="Pic of {{username}}">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body owner-information">
+                        <p class="card-title">{{username}}</p>
+                        <p class="card-text">{{first_name}}</p>
+                        <p class="card-text">{{last_name}}</p>
+                        <p class="card-text">{{gender}}</p>
+                        <p class="card-text">{{location_zip}}</p>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="owner-btns d-flex flex-row">
+        <button class="btn-half">Update Profile</button>
+        <button class="btn-half">Delete Profile</button>
+    </div>
+
+
+</div>
