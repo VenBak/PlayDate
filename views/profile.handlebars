@@ -10,61 +10,12 @@
     {{> adddog}}
   </div>
 
+  <div id="events-section">
+    {{!-- Functionality to view all events created by user --}}
+    {{> eventcard}}
 
-
-
-
-
-
-
-
-
-
-
-  {{!-- Functionality to view all events created by user --}}
-
-  {{> eventcard}}
-
-  {{!-- ME: Added form for adding events --}}
-  <h3>Do you want to create an event? </h3>
-  <button onclick="showEventForm()" type="submit">Add an EVENT!</button>
-
-  <form id="eventForm" class="eventForm" style="display: none;">
-
-    <div>
-      <label for="eventPic">Select a file:</label>
-      <input type="file" id="eventPic" name="eventPic">
-    </div>
-
-    <div>
-      <input id="event-name" type="text" required>
-      <label>Name</label>
-    </div>
-
-    <div>
-      <input id="event-location_zip" type="number" required>
-      <label>Zip Code</label>
-    </div>
-
-    <div>
-      <div>
-        <label>Description</label>
-      </div>
-      <textarea id="event-description" type="text" rows="6" required></textarea>
-    </div>
-
-    <div>
-      <input id="event-start_date" type="date" required>
-      <label>Start Date</label>
-    </div>
-
-    <div>
-      <input id="event-end_date" type="date" required>
-      <label>Start Date</label>
-    </div>
-
-    <button id="submitEvent-btn" onclick="hideForm()" type="submit">Submit</button>
-  </form>
+    {{> addevent}}
+  </div>
 
 </div>
 

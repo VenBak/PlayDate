@@ -23,20 +23,20 @@ async function signupFormHandler(event) {
 
   console.log(username, password, first_name, last_name, gender, location_zip, description)
   // POST to Owner table
-  // if (username && password && first_name && last_name && gender && location_zip && description) {
-  //   const response = await fetch('/api/owners', {
-  //     method: 'POST',
-  //     body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description }),
-  //     headers: { 'Content-Type': 'application/json' },
-  //   });
+  if (username && password && first_name && last_name && gender && location_zip && description) {
+    const response = await fetch('/api/owners', {
+      method: 'POST',
+      body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  //   // IF response is successful, then call posting to DOG table
-  //   if (response.ok) {
-  //     document.location.replace('/');
-  //   } else {
-  //     alert(response.statusText);
-  //   }
-  // }
+    // IF response is successful, then call posting to DOG table
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  }
 }
 
 const postDog = async (event) => {
@@ -52,18 +52,18 @@ const postDog = async (event) => {
   console.log(name, age, breed, gender)
   // POST to Dog table
   // CURRENTLY AN ISSUE WHERE OWNER & DOG NOT LINKED ON SIGN UP. maybe return owner first and then post dog?
-  // if (name && age && breed && gender) {
-  //   const response = await fetch('/api/dogs', {
-  //     method: 'POST',
-  //     body: JSON.stringify({ name, age, breed, gender }),
-  //     headers: { 'Content-Type': 'application/json' },
-  //   });
+  if (name && age && breed && gender) {
+    const response = await fetch('/api/dogs', {
+      method: 'POST',
+      body: JSON.stringify({ name, age, breed, gender }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-  //   // IF response is successful, then go to the profile
-  //   if (response.ok) {
-  //     document.location.replace('/profile');
-  //   } else {
-  //     alert(response.statusText);
-  //   }
-  // }
+    // IF response is successful, then go to the profile
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+  }
 }
