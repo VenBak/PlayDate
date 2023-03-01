@@ -1,3 +1,5 @@
+{{!-- EDIT DOGS --}}
+
 <div class="d-flex flex-row justify-content-center p-3">
 
     <div class="card dog-{{id}}-card p-3">
@@ -50,7 +52,9 @@
         </form>
         {{!-- See note 1.2 above --}}
         {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditDogForm()" type="submit">Submit</button> --}}
-        <button id="submitEdit-btn" class="btn mt-3" type="submit">Submit</button>
+        <button id="submitEdit-btn" class="btn mt-3" type="submit">Submit Change to {{name}}'s Profile</button>
+        <br> <br>
+        <button id="back-btn" class="btn" onclick="backEditDogForm()" type="submit" > Go Back To Profile </button>
 
     </div>
 </div>

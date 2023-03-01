@@ -12,6 +12,13 @@
     //   document.querySelector('#submitEdit-btn').style.display = 'none';
     // }
 
+
+
+// Back button for the dog form if the user doesn't want to add another dog 
+function backEditDogForm() {
+  document.location.replace('/profile');
+}
+
 const editDogFormHandler = async (event) => {
   event.preventDefault();
 

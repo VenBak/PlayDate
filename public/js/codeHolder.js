@@ -46,15 +46,14 @@
       document.querySelector('#submitEdit-btn').addEventListener('click', editDogFormHandler);
 
 // ME TO DO: 
-// - event PUT set up & test when Myles fixes host_id
-// - remove the show & hide form for the edit dog profile
-// - drop down gender fix
 // - profile user delete button & redirect to homepage
 // - profile edit button 
-// --- form for password verification
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
-// - obtain gender value via radio button chosen
 
 // 3/1
-// Added a .env.EXAMPLE file
-// Back buttons for the profile view: add new dog and add new event forms (change the display to none)
+// dogprofile.handlebars & edit-dog: 
+// - Dog edit form auto populates. Commented out the show and hide functions
+// - Added back button so user can go back to user profile
+// EDIT event in event profile
+// - Created eventprofile.handlebars where user can edit each individual event
+// - Created a edit-event.js for the eventprofile.handlebars 
