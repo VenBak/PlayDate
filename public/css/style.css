@@ -462,3 +462,10 @@ textarea {
 #end-date-label {
     top: -15px;
 }
+
+#delete-owner-btn{
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+}

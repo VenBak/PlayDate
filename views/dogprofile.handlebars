@@ -28,34 +28,35 @@
         <h3 class="card-header"> Edit {{name}}'s Information</h3>
         <form>
             <div class="input-box">
-                <input id="editdog-name" name="dog.name" type="text" value="{{name}}" class="form-input" />
+                <input id="editdog-name" name="dog.name" type="text" value="{{name}}" class="form-input" required>
                 <label for="dog.name" class="form-label">{{name}}'s Name</label>
             </div>
 
             <div class="input-box">
-                <input id="editdog-age" name="dog.age" type="text" value="{{age}}" class="form-input" />
+                <input id="editdog-age" name="dog.age" type="text" value="{{age}}" class="form-input" required>
                 <label for="dog.age" class="form-label">{{name}}'s Age</label>
             </div>
 
             <div class="input-box">
-                <input id="editdog-breed" name="dog.breed" type="text" value="{{breed}}" class="form-input" />
+                <input id="editdog-breed" name="dog.breed" type="text" value="{{breed}}" class="form-input" required>
                 <label for="dog.breed" class="form-label">{{name}}'s Breed</label>
             </div>
 
             <div class="input-box-gender-quarter">
-                <select id="editdog-gender" name="dog.gender" class="form-input"/>
-                <option value="none" selected disabled hidden>Select an option</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
+                <select id="editdog-gender" name="dog.gender" class="form-input" required>
+                    <option value="none" selected disabled hidden>Select an option</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
                 </select>
                 <label for="dog.gender" class="form-label">{{name}}'s Gender</label>
             </div>
         </form>
         {{!-- See note 1.2 above --}}
-        {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditDogForm()" type="submit">Submit</button> --}}
+        {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditDogForm()" type="submit">Submit</button>
+        --}}
         <button id="submitEdit-btn" class="btn mt-3" type="submit">Submit Change to {{name}}'s Profile</button>
         <br> <br>
-        <button id="back-btn" class="btn" onclick="backEditDogForm()" type="submit" > Go Back To Profile </button>
+        <button id="back-btn" class="btn" onclick="backEditDogForm()" type="submit"> Go Back To Profile </button>
 
     </div>
 </div>
