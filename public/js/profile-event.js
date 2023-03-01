@@ -1,4 +1,4 @@
-// Show the dog form and reset the fields
+// Show the event form and reset the fields
 function showEventForm() {
   const eventForm = document.querySelector('form');
     eventForm.reset();
@@ -6,10 +6,15 @@ function showEventForm() {
     document.querySelector('#submitEvent-btn').style.display = 'block';
   }
 
-// Hide the dog form after the form has been submitted
+// Hide the event form after the form has been submitted
 function hideEventForm() {
   document.querySelector('.eventForm').style.display = 'none';
   document.querySelector('#submitEvent-btn').style.display = 'none';
+}
+
+// Back button for the event form if the user doesn't want to add another event 
+function backEventForm() {
+  document.querySelector('.eventForm').style.display = 'none';
 }
 
 // POST a new EVENT to table
@@ -43,7 +48,7 @@ const addEventFormHandler = async (event) => {
 
 
   // // DELETE an event
-  // const delButtonHandler = async (event) => {
+  // const delEventHandler = async (event) => {
   //   if (event.target.hasAttribute('data-id')) {
   //     const id = event.target.getAttribute('data-id');
   
@@ -60,5 +65,5 @@ const addEventFormHandler = async (event) => {
   // };
   
   // document
-  //   .querySelector('.event-list').addEventListener('click', delButtonHandler);
+  //   .querySelector('.event-list').addEventListener('click', delEventHandler);
   
