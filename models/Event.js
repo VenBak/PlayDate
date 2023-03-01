@@ -17,7 +17,7 @@ Event.init(
     },
     pic_hyperlink: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     location_zip: {
       type: DataTypes.INTEGER,

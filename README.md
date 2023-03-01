@@ -114,3 +114,5 @@ eSale application is covered by MIT license.
 Credit for tutorials and guides I utilized in my code
 
 [YouTube: How to Make a Website with Login and Register](https://www.youtube.com/watch?v=p1GmFCGuVjw&t=534s): Utilized for tutorial for styling.
+
+[Reset Tutorial](https://flaviocopes.com/how-to-reset-form/): Reset form function

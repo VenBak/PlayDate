@@ -1,14 +1,13 @@
-let dogForm = document.querySelector('form');
-
 // Show the dog form and reset the fields
-function showForm() {
+function showNewDogForm() {
+  const dogForm = document.querySelector('form');
     dogForm.reset();
     document.querySelector('.dogForm').style.display = 'block';
     document.querySelector('#submitDog-btn').style.display = 'block';
   }
 
 // Hide the dog form after the form has been submitted
-function hideForm() {
+function hideNewDogForm() {
   document.querySelector('.dogForm').style.display = 'none';
   document.querySelector('#submitDog-btn').style.display = 'none';
 }
@@ -31,7 +30,7 @@ const addDogFormHandler = async (event) => {
     });
       // IF response is successful, then go to the profile
       if (response.ok) {
-        location.reload();
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
@@ -41,27 +40,24 @@ const addDogFormHandler = async (event) => {
 
 
 
+// DELETE a dog
+  const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/dogs/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete dog profile');
+      }
+    }
+  };
+  document
+    .querySelector('.dog-list').addEventListener('click', delButtonHandler);
+  
 
-  // // DELETE a dog
-  // const delButtonHandler = async (event) => {
-  //   if (event.target.hasAttribute('data-id')) {
-  //     const id = event.target.getAttribute('data-id');
-  
-  //     const response = await fetch(`/api/dogs/${id}`, {
-  //       method: 'DELETE',
-  //     });
-  
-  //     if (response.ok) {
-  //       document.location.replace('/profile');
-  //     } else {
-  //       alert('Failed to delete dog profile');
-  //     }
-  //   }
-  // };
-  
- 
-  
-  // document
-  //   .querySelector('.dog-list')
-  //   .addEventListener('click', delButtonHandler);
-  
+

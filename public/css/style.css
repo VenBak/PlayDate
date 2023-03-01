@@ -1,9 +1,9 @@
 :root {
     --nav-text-color: #4D4751;
-    --primary: #EFEEF1;
+    --main-color: #EFEEF1;
     --nav-bar: #FFFFFF;
-    --secondary: #F79A1F;
-    --accent: #EB4F47;
+    --orange: #F79A1F;
+    --dark-orange: #EB4F47;
 }
 
 * {
@@ -11,18 +11,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
-    background-color: var(--primary);
 }
 
 button:hover {
     cursor: pointer;
 }
 
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    padding: 100px;
+    margin: 70px;
+}
+
+#main-area {
+    padding: 100px 100px 100px 0;
+
 }
 
 header {
@@ -56,7 +59,7 @@ header a,
 }
 
 #home-anchor,
-#dashboard-anchor,
+#events-anchor,
 #profile-anchor {
     position: relative;
     font-size: 1.1em;
@@ -68,14 +71,14 @@ header a,
 
 /* Underlines show under nav anchors */
 #home-anchor::after,
-#dashboard-anchor::after,
+#events-anchor::after,
 #profile-anchor::after {
     content: '';
     position: absolute;
     /*Width sets line to width of respective anchor text length*/
     width: 100%;
     height: 3px;
-    background: var(--accent);
+    background: var(--dark-orange);
     border-radius: 5px;
     /*Left sets line vertically align to the nav anchors*/
     left: 0;
@@ -91,7 +94,7 @@ header a,
 
 /* Underlines show under hovered nav anchors */
 #home-anchor:hover::after,
-#dashboard-anchor:hover::after,
+#events-anchor:hover::after,
 #profile-anchor:hover::after {
     /*Transform sets lines under nav bar anchors*/
     transform: scaleX(1);
@@ -104,7 +107,7 @@ header a,
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--dark-orange);
     outline: none;
     border-radius: 6px;
     font-size: 1.1em;
@@ -116,9 +119,15 @@ header a,
 
 .navigation .login-btn:hover,
 .navigation .logout-btn:hover {
-    background-color: var(--accent);
+    background-color: var(--dark-orange);
     color: var(--nav-bar);
     cursor: pointer;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Color of login form */
@@ -220,7 +229,7 @@ header a,
 .btn {
     width: 100%;
     height: 45px;
-    background-color: var(--accent);
+    background-color: var(--dark-orange);
     color: white;
     border: none;
     outline: none;
@@ -254,4 +263,27 @@ textarea {
     border-radius: 5px;
     padding: 4px;
     resize: none;
+}
+
+.my-dogs-title {
+    font-size: 1.75em;
+}
+
+.dog-card-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.dog-name {
+    font-weight: 800;
+    font-size: 1.75em;
+    color: var(--nav-text-color);
+}
+
+.dog-buttons>* {
+    z-index: 2;
+}
+
+#owner-form>* {
+    margin: 10px 0;
 }
