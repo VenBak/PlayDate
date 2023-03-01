@@ -21,14 +21,14 @@ Comment.init(
         type: DataTypes.INTEGER,
         references: {
           model: Owner,
-          key: id
+          key: 'id'
         }
     },
     event_id: {
         type: DataTypes.INTEGER,
         references: {
           model: Event,
-          key: id
+          key: 'id'
         }
     }
   },
