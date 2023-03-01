@@ -11,9 +11,10 @@
     {{> dogcard}}
 
 
+
  {{!-- ME: Added form for adding additional dogs --}}
 <h3>Do you have more furry friends? </h3>
-<button onclick="showForm()" type="submit">Add additional dogs</button>
+<button onclick="showNewDogForm()" type="submit">Add additional dogs</button>
 
 <form id="dogForm" class="dogForm" style="display: none;">
 
@@ -52,13 +53,23 @@
         <input type="radio" name="gender" id="female">
         <label for="female">Female</label> --}}
       </div>
-    <button id="submitDog-btn" onclick="hideForm()" type="submit">Submit</button>
+    <button id="submitDog-btn" onclick="hideNewDogForm()" type="submit">Submit</button>
 </form>
 
 </div>
 
+
+
+
+
+
+
+
+
+
 {{!-- Allows users to add another dog or delete a dog --}}
 <script src="/js/profile-dog.js"></script>
+
 
 
 

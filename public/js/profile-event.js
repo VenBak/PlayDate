@@ -1,7 +1,7 @@
 // Show the dog form and reset the fields
 function showEventForm() {
   const eventForm = document.querySelector('form');
-  eventForm.reset();
+    eventForm.reset();
     document.querySelector('.eventForm').style.display = 'block';
     document.querySelector('#submitEvent-btn').style.display = 'block';
   }
@@ -59,6 +59,6 @@ const addEventFormHandler = async (event) => {
   //   }
   // };
   
-  document
-    .querySelector('.event-list').addEventListener('click', delButtonHandler);
+  // document
+  //   .querySelector('.event-list').addEventListener('click', delButtonHandler);
   
