@@ -116,3 +116,5 @@ Credit for tutorials and guides I utilized in my code
 [YouTube: How to Make a Website with Login and Register](https://www.youtube.com/watch?v=p1GmFCGuVjw&t=534s): Utilized for tutorial for styling.
 
 [Reset Tutorial](https://flaviocopes.com/how-to-reset-form/): Reset form function
+
+[Default Select an Option for Dropdown Menu](https://www.geeksforgeeks.org/how-to-set-the-default-value-for-an-html-select-element/): Used for gender dog 
