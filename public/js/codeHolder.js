@@ -46,14 +46,8 @@
       document.querySelector('#submitEdit-btn').addEventListener('click', editDogFormHandler);
 
 // ME TO DO: 
-// - profile user delete button & redirect to homepage
 // - profile edit button 
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
 
 // 3/1
-// dogprofile.handlebars & edit-dog: 
-// - Dog edit form auto populates. Commented out the show and hide functions
-// - Added back button so user can go back to user profile
-// EDIT event in event profile
-// - Created eventprofile.handlebars where user can edit each individual event
-// - Created a edit-event.js for the eventprofile.handlebars 
+// Delete profile for owner js created and edited ownercard.handlebars with button; redirects to "/"
