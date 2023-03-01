@@ -2,6 +2,7 @@
 const Owner = require('./Owner');
 const Dog = require('./Dog');
 const Event = require('./Event');
+const Comment = require('./Comment');
 
 Owner.hasMany(Dog, {
     foreignKey: 'owner_id',
@@ -39,4 +40,10 @@ Owner.belongsToMany(Event, {
   otherKey: 'attendee_id'
 });
 
-module.exports = { Owner, Dog, Event }
+Event.hasMany(Comment);
+Comment.belongsTo(Event);
+
+Owner.hasMany(Comment);
+Comment.belongsTo(Owner);
+
+module.exports = { Owner, Dog, Event, Comment };
