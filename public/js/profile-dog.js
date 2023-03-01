@@ -12,6 +12,11 @@ function hideNewDogForm() {
   document.querySelector('#submitDog-btn').style.display = 'none';
 }
 
+// Back button for the dog form if the user doesn't want to add another dog 
+function backDogForm() {
+    document.querySelector('.dogForm').style.display = 'none';
+}
+
 // POST a new DOG to table
 const addDogFormHandler = async (event) => {
     event.preventDefault();

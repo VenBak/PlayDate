@@ -18,13 +18,11 @@
     </div>
 </div>
 
-<button onclick="showEditDogForm()" class="btn" type="submit" data-id="{{id}}">Edit Dog Info</button>
-
-
-{{!-- add edit dog form --}}
+{{!-- NOTE 1.2: See edit-dog.js file for detailed note. Keeping below in case we change our minds --}}
+{{!-- <button onclick="showEditDogForm()" class="btn" type="submit" data-id="{{id}}">Edit Dog Info</button> --}}
 
 <div class="card">
-    <div class="edit-dog-form card-body" style="display: none;">
+    <div class="edit-dog-form card-body" style="display: block;">
         <h3 class="card-header"> Edit {{name}}'s Information</h3>
         <form>
             <div class="input-box">
@@ -50,7 +48,10 @@
                 <label for="dog.gender" class="form-label">{{name}}'s Gender</label>
             </div>
         </form>
-        <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditDogForm()" type="submit">Submit</button>
+        {{!-- See note 1.2 above --}}
+        {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditDogForm()" type="submit">Submit</button> --}}
+        <button id="submitEdit-btn" class="btn mt-3" type="submit">Submit</button>
+
     </div>
 </div>
 

@@ -3,7 +3,7 @@
     <h3>Do you want to create an event? </h3>
     <button onclick="showEventForm()" type="submit" class="btn-half">Add an EVENT!</button>
 
-    <form id="eventForm" class="mt-5 eventForm" style="display: ;">
+    <form id="eventForm" class="mt-5 eventForm" style="display: none;">
 
         <div class="mb-1">
             <label for="eventPic">Select a file:</label>
@@ -38,6 +38,8 @@
         </div>
 
         <button id="submitEvent-btn" class="btn" onclick="hideForm()" type="submit">Submit</button>
+        <br> <br>
+        <button id="back-btn" class="btn" onclick="backEventForm()" type="submit" >Back </button>
     </form>
 
 </div>
