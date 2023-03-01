@@ -448,6 +448,7 @@ textarea {
     max-width: 80%;
 }
 
+.dog-information>*,
 .owner-information>* {
     font-size: 1.75rem;
 }
