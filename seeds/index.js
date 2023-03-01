@@ -6,8 +6,6 @@ const seedComment = require('./comment-seeds');
 
 // Make sure to import sequelize in order to connect to the sql database
 const sequelize = require('../config/connection');
-const seedComment = require('./comment-seeds');
-
 
 // Run a function which goes over all of the functions and the console logs whether it was successfully seeded
 const seedAll = async () => {
@@ -15,16 +13,16 @@ const seedAll = async () => {
   console.log('\n----- DATABASE SYNCED -----\n');
 
   await seedOwner();
-  console.log('\n----- OWNER SEEDED -----\n');
+  console.log('\n----- OWNERS SEEDED -----\n');
 
   await seedDog();
-  console.log('\n----- DOG SEEDED -----\n');
+  console.log('\n----- DOGS SEEDED -----\n');
 
   await seedEvent();
-  console.log('\n----- EVENT SEEDED -----\n');
+  console.log('\n----- EVENTS SEEDED -----\n');
 
   await seedComment();
-  console.log('\n----- Comment SEEDED -----\n');
+  console.log('\n----- COMMENTS SEEDED -----\n');
 
   process.exit(0);
 };

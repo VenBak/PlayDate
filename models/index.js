@@ -46,4 +46,4 @@ Comment.belongsTo(Event);
 Owner.hasMany(Comment);
 Comment.belongsTo(Owner);
 
-module.exports = { Owner, Dog, Event };
+module.exports = { Owner, Dog, Event, Comment };

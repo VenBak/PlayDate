@@ -1,6 +1,55 @@
 const { Comment } = require('../models');
 
-const data = [];
+const data = [
+  {
+    text: "If you need any help with setup or details, shoot me a text, I'm free all day!",
+    owner_id: 2,
+    event_id: 1
+  },
+  {
+    text: "Can't wait, thanks for doing this!",
+    owner_id: 3,
+    event_id: 1
+  },
+  {
+    text: "Can't wait, thanks for doing this!",
+    owner_id: 2,
+    event_id: 1
+  },
+  { text: 'Sounds totally rad!', owner_id: 3, event_id: 1 },
+  {
+    text: "Can't wait, thanks for doing this!",
+    owner_id: 2,
+    event_id: 2
+  },
+  { text: 'Sounds totally rad!', owner_id: 3, event_id: 2 },
+  {
+    text: "If you need any help with setup or details, shoot me a text, I'm free all day!",
+    owner_id: 2,
+    event_id: 2
+  },
+  {
+    text: 'Seriously, thanks for organizing this.',
+    owner_id: 1,
+    event_id: 2
+  },
+  {
+    text: "If you need any help with setup or details, shoot me a text, I'm free all day!",
+    owner_id: 2,
+    event_id: 3
+  },
+  { text: 'Sounds totally rad!', owner_id: 1, event_id: 3 },
+  {
+    text: 'Me and the pups will be there with snacks!',
+    owner_id: 3,
+    event_id: 3
+  },
+  {
+    text: 'Me and the pups will be there with snacks!',
+    owner_id: 3,
+    event_id: 3
+  }
+];
 
 const comments = ["Can't wait, thanks for doing this!",
 "Me and the pups will be there with snacks!",
@@ -26,9 +75,12 @@ function generateSeeds() {
 };
 
 // Export the function
-const seedComment = () => {
-  seedComment();
-  Comment.bulkCreate(data);
-};
+// const seedComment = () => {
+//   generateSeeds();
+//   console.log("DATA FOR SEEDING", data);
+//   Comment.bulkCreate(data);
+// };
 
-module.exports = seedComment;
+const seedComment = () => Comment.bulkCreate(data);
+
+module.exports = seedComment
