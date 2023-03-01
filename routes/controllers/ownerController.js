@@ -1,7 +1,6 @@
-const router = require('express').Router();
 const { Owner, Dog } = require('../../models');
 
-router.get('/', (req, res) => {
+exports.getAll = function (req, res) {
   // find all owners, include their dogs
   Owner.findAll({
     include: Dog
@@ -13,9 +12,9 @@ router.get('/', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-});
+};
 
-router.get('/:id', (req, res) => {
+exports.getOne = function (req, res) {
   // find one owner by their `id` value (primary key)
   // include their dogs
   Owner.findOne({
@@ -29,9 +28,9 @@ router.get('/:id', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-});
+};
 
-router.post('/', (req, res) => {
+exports.create = function (req, res) {
   // create a new owner and log them in
   Owner.create(
     {
@@ -53,9 +52,9 @@ router.post('/', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-});
+};
 
-router.post('/login', (req, res) => {
+exports.login = function (req, res)  {
   Owner.findOne({
     where: {username: req.body.username}
   })
@@ -77,9 +76,9 @@ router.post('/login', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-});
+};
 
-router.post('/logout', (req, res) => {
+exports.logout = function (req, res) {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -87,9 +86,9 @@ router.post('/logout', (req, res) => {
   } else {
     res.status(404).end();
   }
-})
+};
 
-router.put('/:id', (req, res) => {
+exports.update = function (req, res) {
   // update a owner by its `id` value
   Owner.update(req.body, {
     where: {
@@ -103,9 +102,9 @@ router.put('/:id', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-});
+};
 
-router.delete('/:id', (req, res) => {
+exports.delete = function (req, res) {
   // delete a owner by its `id` value
   Owner.destroy({
     where: {
@@ -119,6 +118,4 @@ router.delete('/:id', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-});
-
-module.exports = router;
+};
