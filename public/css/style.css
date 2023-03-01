@@ -274,12 +274,16 @@ textarea {
     flex-direction: row;
 }
 
-.dog-anchor > * {
+.dog-name {
     font-weight: 800;
     font-size: 1.75em;
     color: var(--nav-text-color);
 }
 
-.dog-buttons > {
+.dog-buttons>* {
     z-index: 2;
+}
+
+#owner-form>* {
+    margin: 10px 0;
 }

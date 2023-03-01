@@ -3,20 +3,18 @@
 <div class="dog-card-container dog-list flex-wrap">
     {{#each dogs as |dog|}}
     <div class="card" style="width: 18rem;">
-        <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
-            <img class="card-img-top" src="images/default-dog.png" alt="Dog Profile icon">
-        </a>
+        <img class="card-img-top" src="images/default-dog.png" alt="Dog Profile icon">
         <div class="card-body">
-            <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
-                <h5 class="card-title">{{dog.name}}</h5>
-            </a>
+            <h5 class="dog-name card-title">{{dog.name}}</h5>
 
             <p class="card-text">I am a {{age}} year old {{gender}} {{breed}}. Check out my family's profile for
                 more!</p>
 
             <div class="buttons dog-buttons">
-                <button class="btn btn-sm btn-primary">Edit</button>
-                <button id = "delete-dog-btn" class="btn btn-sm btn-danger" data-id="{{dog.id}}">Delete</button>
+                <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
+                    <button class="btn btn-sm btn-primary">Edit</button>
+                </a>
+                <button id="delete-dog-btn" class="btn btn-sm btn-danger" data-id="{{dog.id}}">Delete</button>
             </div>
 
         </div>
