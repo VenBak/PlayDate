@@ -1,27 +1,32 @@
+{{#if events.length}}
 <div>
-    <br></br>
-    <h3>My Events</h3>
-    And This is Where I’d Put My Events, IF I HAD ONE WHICH IM SUPPOSE TO
-    {{#if events.length}}
-    <div class="event-list">
-        <div>
-            Events Cards
-            <br></br>
-            {{#each events as |event|}}
-            <a style="text-decoration: none" href="profile/event/{{event.id}}">
-                <img height="32px" src="/images/event-iconixar.png" alt="Event Profile icon">
-            </a>
-            {{event.name}}
-            {{event.location_zip}}
-            {{event.description}}
-            {{event.start_date}}
-            {{event.end_date}}
+    <h2 class="my-events-title">My Events</h2>
+    {{!-- To be deleted --}} And This is Where Id Put My Events, IF I HAD ONE WHICH IM SUPPOSE TO {{!-- To be deleted
+    --}}
+    <div class="event-card-container event-list flex-wrap">
+        {{#each events as |event|}}
+        <div class="card event-cards">
+            <img class="card-img-top" src="images/play-1-freekpik.png" alt="Event icon">
+            <div class="card-body">
+                <h5 class="event-name card-title">{{event.name}}</h5>
+                <h6 class="event-location card-subtitle">{{event.location_zip}}</h6>
+                <h6 class="event-date card-subtitle">{{event.start_date}} - {{event.end_date}}</h6>
+                <p class="event-description card-text">{{event.description}}</p>
+
+                <div class="buttons event-buttons flex-row justify-content-between">
+                    <a class="event-anchor" style="text-decoration: none" href="profile/event/{{event.id}}">
+                        <button class="edit-event-btn btn-sm btn-danger"> Edit </button>
+                    </a>
+                    <button>
+                        <img id="delete-event-btn" class="delete-event" data-id="{{event.id}}"
+                            src="/images/delete-Freepik-32px.png" alt="Trash Can">
+                    </button>
+                </div>
+
+            </div>
         </div>
-        <div class="col-md-4">
-            <button class="btn btn-sm btn-danger" data-id="{{event.id}}">DELETE</button>
-        </div>
-        <br></br>
         {{/each}}
     </div>
-    {{/if}}
+
 </div>
+{{/if}}

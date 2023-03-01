@@ -384,11 +384,13 @@ textarea {
     resize: none;
 }
 
-.dog-card-container {
+.dog-card-container,
+.event-card-container {
     display: flex;
     flex-direction: row;
 }
 
+.event-name,
 .dog-name {
     font-weight: 800;
     font-size: 1.75em;
@@ -411,11 +413,13 @@ textarea {
     margin-top: 20px;
 }
 
+.event-cards,
 .dog-cards {
     width: 18rem;
     margin: 5px;
 }
 
+.event-buttons>*,
 .dog-buttons>* {
     z-index: 2;
     margin: 5px;
@@ -440,15 +444,20 @@ textarea {
     margin: 10px;
 }
 
-.owner-card{
-    max-width:80%;
+.owner-card {
+    max-width: 80%;
 }
 
-.owner-information > * {
+.owner-information>* {
     font-size: 1.75rem;
 }
 
-.card-title{
+.card-title {
     font-size: 2.5rem;
     font-weight: 600;
+}
+
+#start-date-label,
+#end-date-label {
+    top: -15px;
 }
