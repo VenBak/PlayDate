@@ -57,7 +57,7 @@ const addDogFormHandler = async (event) => {
     }
   };
   document
-    .querySelector('.delete-dog-btn').addEventListener('click', delButtonHandler);
+    .querySelector('.dog-list').addEventListener('click', delButtonHandler);
   
 
 

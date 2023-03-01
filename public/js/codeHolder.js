@@ -51,3 +51,4 @@
 // - profile edit button & 
 // --- form for password verification
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
+// - obtain gender value via radio button chosen

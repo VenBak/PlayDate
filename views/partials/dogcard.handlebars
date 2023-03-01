@@ -1,28 +1,25 @@
 {{#if dogs.length}}
-<div class="dog-list">
-    <div>
-        Dog Cards
-        <br></br>
-        {{#each dogs as |dog|}}
-        <div>
-            <a style="text-decoration: none" href="profile/dog/{{dog.id}}">
-                <img height="32px" src="/images/default-dog.png" alt="Dog Profile icon">
-            </a>
-            {{dog.name}}
-            {{dog.age}}
-            {{dog.breed}}
-            {{dog.gender}}
-        </div>
-        <div class="col-md-4">
-            <button class="delete-dog-btn btn btn-sm btn-danger" data-id="{{dog.id}}">DELETE</button>
-            <br></br>
-            {{!-- <button onclick="showNewDogForm()" type="submit" data-id="{{dog.id}}">Edit {{dog.name}}'s information</button> --}}
+<h2 class="my-dogs-title">My Dogs</h2>
+<div class="dog-card-container dog-list flex-wrap">
+    {{#each dogs as |dog|}}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/default-dog.png" alt="Dog Profile icon">
+        <div class="card-body">
+            <h5 class="dog-name card-title">{{dog.name}}</h5>
 
-            {{!-- TO DO: ADD AN EDIT BUTTON HERE THAT WILL OPEN THE EDIT-DOG FORM! --}}
+            <p class="card-text">I am a {{age}} year old {{gender}} {{breed}}. Check out my family's profile for
+                more!</p>
+
+            <div class="buttons dog-buttons">
+                <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
+                    <button class="btn btn-sm btn-primary">Edit</button>
+                </a>
+                <button id="delete-dog-btn" class="btn btn-sm btn-danger" data-id="{{dog.id}}">Delete</button>
+            </div>
 
         </div>
-        <br></br>
-        {{/each}}
     </div>
-    {{/if}}
+
+    {{/each}}
 </div>
+{{/if}}
