@@ -40,7 +40,13 @@ exports.getOne = function (req, res) {
 
 exports.create = function (req, res) {
   // create a new event
-  Event.create(req.body)
+  let data = req.body;
+  data.host_id = req.body.owner_id || req.session.user_id;
+  if (!data.host_id) {
+    res.status(400).json({message: 'No user_id included in req.body or req.session to associate with host'});
+    return;
+  }
+  Event.create(data)
   .then((event) => {
     res.status(200).json(event);
   })
