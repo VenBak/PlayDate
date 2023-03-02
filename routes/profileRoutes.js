@@ -1,21 +1,25 @@
 const router = require('express').Router();
 const { Owner, Dog, Event } = require('../models');
 const withAuth = require('../utils/auth');
+const ownerController = require('./controllers/ownerController');
+const eventController = require('./controllers/eventController');
 
 //Gets ALL posts and displays it on homepage
 router.get('/', withAuth, async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     try {
         // Find the logged in user based on the session ID
-        const userData = await Owner.findByPk(req.session.user_id, {
+        const user = await Owner.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Dog }],
+            include: {model: Dog},
+            raw: true
         });
-        // res.status(200).json(userData); //For testing only
-        const user = userData.get({ plain: true });
-
+        const events = await Event.findAll({
+            where: {host_id: req.session.user_id}
+        });
         res.render('profile', {
             ...user,
+            events,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
