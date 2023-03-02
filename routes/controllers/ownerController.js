@@ -32,14 +32,10 @@ exports.create = function (req, res) {
       req.session.save(() => {
         req.session.user_id = owner.id;
         req.session.logged_in = true;
-        console.log('!!! ----- inside owner create then')
         resolve(owner);
       });
     })
-    .catch(err => {
-      console.log('!!! ----- inside owner create CATCH')
-      reject(err);
-    })
+    .catch(err => reject(err))
   })
 };
 
