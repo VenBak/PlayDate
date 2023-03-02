@@ -1,4 +1,3 @@
-
 var myWidget = cloudinary.createUploadWidget({
     cloudName: 'dlkk2oyhp',
     uploadPreset: 'playedate_preset'
@@ -9,23 +8,6 @@ var myWidget = cloudinary.createUploadWidget({
 
         // Changes preview image to the uploaded image
         document.getElementById("preview-img").src = pic_hyperlink;
-
-        async (pic_hyperlink) => {
-            const response = await fetch('/api/owner', {
-                method: 'PUT',
-                body: JSON.stringify({ pic_hyperlink }),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-
-            if (response.ok) {
-                document.location.replace('/profile');
-            } else {
-                alert(response.statusText);
-            }
-        }
-
     }
 }
 )
@@ -33,3 +15,29 @@ var myWidget = cloudinary.createUploadWidget({
 document.getElementById("upload_widget").addEventListener("click", function () {
     myWidget.open();
 }, false);
+
+const updateOwnerPhoto = async (event) => {
+    event.preventDefault();
+
+    var pic_hyperlink = document.getElementById("preview-img").src
+
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ];
+
+    const response = await fetch(`/api/owners/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({ pic_hyperlink }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+
+    if (response.ok) {
+        document.location.reload();
+    } else {
+        alert(response.statusText);
+    }
+}
+
+document.querySelector('#upload-img-btn').addEventListener('click', updateOwnerPhoto);
