@@ -11,17 +11,21 @@ router.get('/', withAuth, async (req, res) => {
         // Find the logged in user based on the session ID
         const user = await Owner.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: {model: Dog},
-            raw: true
+            include: {model: Dog}
         });
         const events = await Event.findAll({
-            where: {host_id: req.session.user_id}
+            where: {host_id: req.session.user_id},
+            raw: true
         });
-        res.render('profile', {
-            ...user,
+        let userObj = user.get({ plain: true });
+        let objForRender = {
+            ...userObj,
             events,
             logged_in: req.session.logged_in
-        });
+        };
+        console.log("-------- LOOK HERE ------");
+        console.log(objForRender);
+        res.render('profile', objForRender);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -31,9 +35,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/event/:id', withAuth, async (req, res) => {
     try {
         // Find the user's dog based on the request parameter called dog_id
-        const event = await Event.findByPk(req.params.id, {
-            raw: true
-        });
+        const event = await Event.findByPk(req.params.id);
         if (req.session.user_id !== event.host_id) {
             res.redirect('/profile');
         };
