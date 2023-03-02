@@ -111,11 +111,13 @@ exports.delete = function (req, res) {
       id: req.params.id
     }
   })
-    .then((owner) => {
-      res.status(200).json(owner);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
+  .then(() => {
+    req.session.destroy(() => {
+      res.status(200).json({ message: 'Succesfully logged out' });
     });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
 };
