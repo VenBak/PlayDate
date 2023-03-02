@@ -63,7 +63,7 @@ const addEventFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/events');
       } else {
         alert('Failed to delete event profile');
       }
