@@ -9,6 +9,8 @@ const routerSetupHelper = (routeConfig, controller) => {
   return router;
 }
 
+// Note: method passed from controller MUST return a promise
+// Use promise.resolve or .reject to send static data
 function routeHelper(req, res, method, controller) {
   return controller[method](req, res)
   .then(item => res.status(200).json(item))
