@@ -44,7 +44,7 @@ Event.init(
         type: DataTypes.INTEGER,
         references: {
             model: 'owner',
-            key: 'id',
+            key: 'id'
         },
     }
   },
