@@ -1,3 +1,7 @@
+// For the date picker
+start_datePickerId.min = new Date().toLocaleDateString('fr-ca');
+end_datePickerId.min = new Date().toLocaleDateString('fr-ca');
+
 // Show the event form and reset the fields
 function showEventForm() {
   const eventForm = document.querySelector('form');
@@ -24,8 +28,8 @@ const addEventFormHandler = async (event) => {
     const name = document.querySelector('#event-name').value.trim();
     const location_zip = document.querySelector('#event-location_zip').value.trim();
     const description = document.querySelector('#event-description').value.trim();
-    const start_date = document.querySelector('#event-start_date').value.trim();
-    const end_date = document.querySelector('#event-end_date').value.trim();
+    const start_date = document.querySelector('.event-start_date').value.trim();
+    const end_date = document.querySelector('.event-end_date').value.trim();
 
     // CREATE a event
     if (name && location_zip && description && start_date && end_date) {
@@ -66,4 +70,3 @@ const addEventFormHandler = async (event) => {
   
   // document
   //   .querySelector('.event-list').addEventListener('click', delEventHandler);
-  
