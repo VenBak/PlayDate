@@ -2,8 +2,8 @@ const router = require('express').Router();
 
 const routerSetupHelper = (routeConfig, controller) => {
   console.log("-------What about here? ------")
-  routeConfig.forEach(route => {
-    router[route.http](route.path, (req, res) => {
+  routeConfig.routes.forEach(route => {
+    router[route.http](routeConfig.localPath + route.path, (req, res) => {
       routeHelper(req, res, route.method, controller)
     })
   })
