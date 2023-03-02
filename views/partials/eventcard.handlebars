@@ -4,11 +4,12 @@
     <div class="event-card-container event-list flex-wrap">
         {{#each events as |event|}}
         <div class="card event-cards">
-            <img class="card-img-top" src="{{event.pic_hyperlink}}" alt="Event icon">
+            <img class="card-img-top" src="{{pic_hyperlink}}" alt="Event icon">
             <div class="card-body">
                 <h5 class="event-name card-title">{{event.name}}</h5>
                 <p class="event-location card-subtitle mb-2">{{event.location_zip}}</p>
-                <p class="event-date card-subtitle">{{format_date event.start_date}} - {{format_date event.end_date}}</p>
+                <p class="event-date card-subtitle">{{format_date event.start_date}} - {{format_date event.end_date}}
+                </p>
                 <p class="event-description card-text">{{event.description}}</p>
 
                 <div class="buttons event-buttons flex-row justify-content-between">
