@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const { Owner, Dog, Event } = require('../models');
+const { Owner, Dog, Event, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-const ownerController = require('./controllers/ownerController');
-const eventController = require('./controllers/eventController');
 
 //Gets ALL posts and displays it on homepage
 router.get('/', withAuth, async (req, res) => {
@@ -33,12 +31,30 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/event/:id', withAuth, async (req, res) => {
     try {
         // Find the user's dog based on the request parameter called dog_id
-        const event = await Event.findByPk(req.params.id);
+        const event = await Event.findOne({
+            where: {id: req.params.id},
+            include: [{
+                model: Owner,
+                as: 'host',
+                attributes: ['first_name', 'last_name', 'pic_hyperlink'],
+                include: { model: Dog }
+              }, 
+              {
+                model: Owner,
+                as: 'attendees',
+                attributes: ['first_name','last_name', 'pic_hyperlink']
+              }, {
+                model: Comment,
+                attributes: ['text'],
+                include: { model: Owner, attributes: ['first_name'] }
+              }]
+          });
+        let eventObj = event.get({ plain: true });
         if (req.session.user_id !== event.host_id) {
             res.redirect('/profile');
         };
         res.render('eventprofile', {
-            ...event,
+            ...eventObj,
             logged_in: req.session.logged_in
         });
     } catch (err) {
