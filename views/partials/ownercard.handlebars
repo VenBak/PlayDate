@@ -1,0 +1,29 @@
+<div>
+    <h1>Welcome {{username}}!</h1>
+
+    <div class="d-flex flex-row justify-content-center p-3">
+
+        <div class="card owner-card p-3">
+            {{!-- no-gutters gets rid of grid gutters --}}
+            <div class="row no-gutters">
+                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                    <img src="{{pic_hyperlink}}" class="card-img" alt="Pic of {{username}}">
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body owner-information">
+                        <p class="card-title">{{username}}</p>
+                        <p class="card-text">{{first_name}}</p>
+                        <p class="card-text">{{last_name}}</p>
+                        <p class="card-text">{{gender}}</p>
+                        <p class="card-text">{{location_zip}}</p>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

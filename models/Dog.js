@@ -15,7 +15,8 @@ Dog.init(
         },
         pic_hyperlink: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: true,
+            defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737085/playdate-images/uhdfp3aq73sjmxxk7ezq.png"
         },
         name: {
             type: DataTypes.STRING,

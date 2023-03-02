@@ -1,0 +1,72 @@
+{{!-- {{> ownercard}} --}}
+
+{{!-- Keeping below in case we change our minds --}}
+{{!-- <button onclick="showEditOwnerForm()" class="btn" type="submit" data-id="{{id}}">Edit Owner Info</button> --}}
+{{>uploadOwner}}
+
+<div class="card">
+    <div class="edit-owner-form card-body" style="display: block;">
+        <h3 class="card-header"> Edit {{username}}'s Information</h3>
+        <form>
+            <div class="d-flex flex-row align-items-center">
+                <div class="input-box-half">
+                    <input id="editowner-username" name="owner.username" type="text" value="{{username}}"
+                        class="form-input" required>
+                    <label for="owner.username" class="form-label">{{username}}'s username</label>
+                </div>
+
+                <div class="input-box-half">
+                    <input id="editowner-location_zip" name="owner.location_zip" type="text" value="{{location_zip}}"
+                        class="form-input" required>
+                    <label for="owner.location_zip" class="form-label">{{username}}'s Zip Code</label>
+                </div>
+
+            </div>
+
+            <div class="d-flex flex-row align-items-center">
+                <div class="input-box-half">
+                    <input id="editowner-first_name" name="owner.first_name" type="text" value="{{first_name}}"
+                        class="form-input" required>
+                    <label for="owner.first_name" class="form-label">{{username}}'s First Name</label>
+                </div>
+
+                <div class="input-box-half">
+                    <input id="editowner-last_name" name="owner.last_name" type="text" value="{{last_name}}"
+                        class="form-input" required>
+                    <label for="owner.last_name" class="form-label">{{username}}'s Last Name</label>
+                </div>
+            </div>
+
+
+            <div class="input-box-gender-quarter">
+                <select id="editowner-gender" name="owner.gender" class="form-input" required>
+                    <option value="none" selected disabled hidden>Select an option</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+                <label for="owner.gender" class="form-label">{{username}}'s Gender</label>
+            </div>
+        </form>
+        {{!-- See note 1.2 above --}}
+        {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditOwnerForm()" type="submit">Submit</button>
+        --}}
+
+
+        <button id="delete-owner-btn" class="d-flex justify-content-start" onclick="delOwnerButtonHandler()">
+            <img class="delete-owner" data-id="{{id}}" src="/images/delete-Freepik-32px.png" alt="Trash Can"> Delete
+            Profile - Sandy
+        </button>
+        <br> <br>
+
+        <button id="submitOwnerEditBtn-btn" class="btn mt-3" type="submit">Submit Change to {{username}}'s
+            Profile</button>
+
+        <br> <br>
+        <button id="back-btn" class="btn" onclick="backEditOwnerForm()" type="submit"> Go Back To Profile </button>
+
+    </div>
+</div>
+
+
+<script src="/js/edit-owner.js"></script>
+<script src="/js/profile-owner.js"></script>

@@ -1,11 +1,11 @@
 console.log("Check 1");
 
 let signupBtn = document.querySelector("#submit-btn");
-signupBtn.addEventListener('click', async (event) => {
+signupBtn.addEventListener('click', (event) => {
   console.log("Check 2");
 
-  let newOwner = await signupFormHandler(event);
-  postDog(event, newOwner.id);
+  signupFormHandler(event);
+  postDog(event);
 });
 
 async function signupFormHandler(event) {
@@ -22,7 +22,7 @@ async function signupFormHandler(event) {
   const description = document.querySelector('#description-signup').value.trim();
 
   console.log(username, password, first_name, last_name, gender, location_zip, description)
-  // // POST to Owner table
+  // POST to Owner table
   if (username && password && first_name && last_name && gender && location_zip && description) {
     const response = await fetch('/api/owners', {
       method: 'POST',
@@ -40,7 +40,7 @@ async function signupFormHandler(event) {
   }
 }
 
-const postDog = async (event, owner_id) => {
+const postDog = async (event) => {
   event.preventDefault();
 
   // DOG Model columns for the intake form - 
@@ -52,10 +52,11 @@ const postDog = async (event, owner_id) => {
 
   console.log(name, age, breed, gender)
   // POST to Dog table
+  // CURRENTLY AN ISSUE WHERE OWNER & DOG NOT LINKED ON SIGN UP. maybe return owner first and then post dog?
   if (name && age && breed && gender) {
     const response = await fetch('/api/dogs', {
       method: 'POST',
-      body: JSON.stringify({ name, age, breed, gender, owner_id }),
+      body: JSON.stringify({ name, age, breed, gender }),
       headers: { 'Content-Type': 'application/json' },
     });
 

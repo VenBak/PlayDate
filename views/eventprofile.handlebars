@@ -1,0 +1,78 @@
+{{!-- EDIT EVENTS --}}
+
+<div class="d-flex flex-row justify-content-center p-3">
+
+    <div class="card event-{{id}}-card p-3">
+        {{!-- no-gutters gets rid of grid gutters --}}
+        <div class="row no-gutters">
+            <div class="col-md-5">
+                <img src="" class="card-img" alt="Pic of {{name}}">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body event-information">
+                    <p class="card-title">{{name}}</p>
+                    <p class="card-text">{{location_zip}}</p>
+                    <p class="card-text">{{description}}</p>
+                    <p class="card-text">{{start_date}}</p>
+                    <p class="card-text">{{end_date}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- NOTE 1.2: See edit-event.js file for detailed note. Keeping below in case we change our minds --}}
+{{!-- <button onclick="showEditeventForm()" class="btn" type="submit" data-id="{{id}}">Edit event Info</button> --}}
+
+<div class="card">
+    <div class="edit-event-form card-body" style="display: block;">
+        <h3 class="card-header"> Edit Event: {{name}}</h3>
+
+        <form>
+            <div class="input-box">
+                <input id="editevent-name" name="event.name" type="text" value="{{name}}" class="form-input" />
+                <label for="event.name" class="form-label">{{name}}</label>
+            </div>
+
+            <div class="input-box">
+                <input id="editevent-location_zip" name="event.location_zip" type="number" value="{{location_zip}}"
+                    class="form-input" />
+                <input id="editevent-location_zip" name="event.location_zip" type="number" value="{{location_zip}}"
+                    class="form-input" />
+                <label for="event.location_zip" class="form-label">{{location_zip}}</label>
+            </div>
+
+            <div class="input-box">
+                <input id="editevent-description" name="event.description" type="text" rows="6" value="{{description}}"
+                    class="form-input" />
+                <input id="editevent-description" name="event.description" type="text" rows="6" value="{{description}}"
+                    class="form-input" />
+                <label for="event.description" class="form-label">{{description}}</label>
+            </div>
+
+            <div class="input-box">
+                <input id="editEventStart_datePickerId" class="editevent-start_date" name="event.start_date" type="date" value="{{start_date}}"
+                    class="form-input" />
+                <label for="event.start_date" class="form-label">{{start_date}}</label>
+            </div>
+
+            <div class="input-box">
+                <input id="editEventEnd_datePickerId" class="editevent-end_date" name="event.end_date" type="date" value="{{end_date}}"
+                    class="form-input" />
+                <label for="event.end_date" class="form-label">{{end_date}}</label>
+            </div>
+
+        </form>
+        {{!-- See note 1.2 above --}}
+        {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditeventForm()" type="submit">Submit</button>
+        --}}
+        {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditeventForm()" type="submit">Submit</button>
+        --}}
+        <button id="submitEventEdit-btn" class="btn mt-3" type="submit">Submit Change to {{name}}</button>
+        <br> <br>
+        <button id="back-btn" class="btn" onclick="backEditEventForm()" type="submit"> Go Back To Profile </button>
+
+    </div>
+</div>
+
+<script src="/js/edit-event.js"></script>

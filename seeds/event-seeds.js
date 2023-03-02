@@ -17,7 +17,7 @@ const eventData = [
     description: 'Gonna be a sweet time, come hangout with us to start your day!',
     start_date: '2023-05-07 06:30:00',
     end_date: '2023-05-07 08:00:00',
-    host_id: '2'
+    host_id: '4'
   },
   {
     name: 'Puppertravaganza!',
@@ -26,7 +26,7 @@ const eventData = [
     description: 'Biggest dog party this side of the lake! Bring your friends, bring your toys, bring your booze, lets celebrate the weather!',
     start_date: '2023-05-14 16:00:00',
     end_date: '2023-05-14 18:30:00',
-    host_id: '3'
+    host_id: '4'
   }
 ];
 

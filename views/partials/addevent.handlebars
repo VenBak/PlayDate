@@ -1,0 +1,45 @@
+{{!-- Form for adding events --}}
+<div>
+    <h3>Do you want to create an event? </h3>
+    <button onclick="showEventForm()" type="submit" class="btn-half">Add an EVENT!</button>
+
+    <form id="eventForm" class="mt-5 eventForm" style="display: none;">
+
+        <div class="mb-1">
+            <label for="eventPic">Select a file:</label>
+            <input type="file" id="eventPic" name="eventPic">
+        </div>
+
+        <div class="input-box">
+            <input id="event-name" type="text" required>
+            <label>Name</label>
+        </div>
+
+        <div class="input-box">
+            <input id="event-location_zip" type="number" required>
+            <label>Zip Code</label>
+        </div>
+
+        <div>
+            <div>
+                <label id="description-label">Description</label>
+            </div>
+            <textarea id="event-description" type="text" rows="6" required></textarea>
+        </div>
+
+        <div class="input-box">
+            <input id="start_datePickerId" class="event-start_date" type="date" required>
+            <label id="start-date-label">Start Date</label>
+        </div>
+
+        <div class="input-box">
+            <input id="end_datePickerId" class="event-end_date"  type="date" required>
+            <label id="end-date-label">End Date</label>
+        </div>
+
+        <button id="submitEvent-btn" class="btn" onclick="hideForm()" type="submit">Submit</button>
+        <br> <br>
+        <button id="back-btn" class="btn" onclick="backEventForm()" type="submit" >Back </button>
+    </form>
+
+</div>

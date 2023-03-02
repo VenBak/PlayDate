@@ -1,0 +1,29 @@
+{{#if dogs.length}}
+<div>
+    <h2 class="my-dogs-title">My Dogs</h2>
+    <div class="dog-card-container dog-list flex-wrap">
+        {{#each dogs as |dog|}}
+        <div class="card dog-cards">
+            <img class="card-img-top" src="{{pic_hyperlink}}" alt="Dog Profile icon">
+            <div class="card-body">
+                <h5 class="dog-name card-title">{{dog.name}}</h5>
+
+                <p class="card-text">I am a {{age}} year old {{gender}} {{breed}}. Check out my family's profile for
+                    more!</p>
+
+                <div class="buttons dog-buttons flex-row justify-content-between">
+                    <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
+                        <button class="edit-dog-btn btn-sm btn-danger"> Edit </button>
+                    </a>
+                    <button>
+                        <img id="delete-dog-btn" class="delete-dog" data-id="{{dog.id}}"
+                            src="/images/delete-Freepik-32px.png" alt="Trash Can">
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/if}}

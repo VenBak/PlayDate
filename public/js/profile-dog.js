@@ -1,6 +1,28 @@
-const newDogFormHandler = async (event) => {
+// DOG - ADD & DELETE
+
+// Show the dog form and reset the fields
+function showNewDogForm() {
+  const dogForm = document.querySelector('form');
+    dogForm.reset();
+    document.querySelector('.dogForm').style.display = 'block';
+    document.querySelector('#submitDog-btn').style.display = 'block';
+  }
+
+// Hide the dog form after the form has been submitted
+function hideNewDogForm() {
+  document.querySelector('.dogForm').style.display = 'none';
+  document.querySelector('#submitDog-btn').style.display = 'none';
+}
+
+// Back button for the dog form if the user doesn't want to add another dog 
+function backDogForm() {
+    document.querySelector('.dogForm').style.display = 'none';
+}
+
+// POST a new DOG to table
+const addDogFormHandler = async (event) => {
     event.preventDefault();
-  
+    
     const name = document.querySelector('#dog-name').value.trim();
     const age = document.querySelector('#dog-age').value.trim();
     const breed = document.querySelector('#dog-breed').value.trim();
@@ -15,14 +37,15 @@ const newDogFormHandler = async (event) => {
     });
       // IF response is successful, then go to the profile
       if (response.ok) {
-        location.reload;
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
     }
   };
+  document.querySelector('#submitDog-btn').addEventListener('click', addDogFormHandler);
 
-  // DELETE a dog
+// DELETE a dog
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
@@ -38,12 +61,8 @@ const newDogFormHandler = async (event) => {
       }
     }
   };
-  
   document
-    .querySelector('.new-dog-form')
-    .addEventListener('submit', newDogFormHandler);
+    .querySelector('.dog-list').addEventListener('click', delButtonHandler);
   
-  document
-    .querySelector('.dog-list')
-    .addEventListener('click', delButtonHandler);
-  
+
+

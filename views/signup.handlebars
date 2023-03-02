@@ -1,121 +1,96 @@
-<div class="signup-form">
-  <h2>Register</h2>
+<div>
+  <h2 class="text-center">Register</h2>
+  
+  <form id="signup-form">
+    <h3 class="mb-3">Let's Get to Know You</h3>
 
+    <div class="d-flex flex-row align-items-center">
+      <div class="input-box-half">
+        <input id="username-signup" type="text" required>
+        <label>Username</label>
+      </div>
 
-  <form id="owner-form">
-    <h3>Let's Get to Know You</h3>
-
-    <div>
-      <label for="ownerPic">Select a file:</label>
-      <input type="file" id="ownerPic" name="ownerPic">
+      <div class="input-box-half">
+        <span class="icon" onclick="showPassword()">
+          <img src=" /images/secured-lock-freepik.png" alt="Lock pad icon">
+        </span>
+        <input id="password-signup" class="password" type="password" required>
+        <label>Password</label>
+      </div>
     </div>
 
-    <div>
-      <input id="username-signup" type="text" required>
-      <label>Username</label>
+    <div class="d-flex flex-row align-items-center">
+      <div class="input-box-half">
+        <input id="first_name-signup" type="text" required>
+        <label>First Name</label>
+      </div>
+
+      <div class="input-box-half">
+        <input id="last_name-signup" type="text" required>
+        <label>Last Name</label>
+      </div>
     </div>
 
-    <div>
-      {{!-- <span class="icon" onclick="showPassword()">
-        <img src=" /images/secured-lock-freepik.png" alt="Lock pad icon">
-      </span> --}}
-      <input id="password-signup" class="password" type="password" required>
-      <label>Password</label>
-    </div>
-
-    <div>
-      <input id="first_name-signup" type="text" required>
-      <label>First Name</label>
-    </div>
-
-    <div>
-      <input id="last_name-signup" type="text" required>
-      <label>Last Name</label>
-    </div>
-
-    <div class="gender-input">
-      {{!-- <div>
-        <label>Gender</label>
-      </div> --}}
-
-      <input id="gender-signup" type="text" required>
-      <label>Gender</label>
-
-      {{!-- <input type="radio" name="gender" id="male" value="male">
-      <label for="male">Male</label>
-
-      <input type="radio" name="gender" id="female" value="female">
-      <label for="female">Female</label>
-
-      <input type="radio" name="gender" id="other" value="other">
-      <label for="other">Other</label> --}}
-
-    </div>
+    <div class="d-flex flex-row align-items-center">
+      <div class="input-box-gender">
+        <select name="gender" id="gender-signup" required>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="other">Other</option>
+        </select>
+        <label class="gender-label">Gender</label>
+      </div>
 
 
-    <div>
-      <input id="location_zip-signup" type="text" required>
-      <label>Zip Code</label>
+      <div class="input-box-half">
+        <input id="location_zip-signup" type="text" required>
+        <label>Zip Code</label>
+      </div>
     </div>
 
     <div>
       <div>
-        <label>Description</label>
+        <label id="description-label">Description</label>
       </div>
       <textarea id="description-signup" type="text" rows="6" required></textarea>
     </div>
 
 
-    <h3>Now Tell Us About Your Furry Friend</h3>
+    <h3 class="mb-3">Now Tell Us About Your Furry Friend</h3>
+    
+    <div class="d-flex flex-row align-items-center">
+      <div class="input-box-half">
 
-    <div>
-      <label for="dogPic">Select a file:</label>
-      <input type="file" id="dogPic" name="dogPic">
-    </div>
-
-    <div>
-      <input id="dog-name-signup" type="text" required>
-      <label>Name</label>
-    </div>
-
-    <div>
-      <input id="dog-age-signup" type="number" required>
-      <label>Age</label>
-    </div>
-
-    <div>
-      <input id="dog-breed-signup" type="text" required>
-      <label>Breed</label>
-    </div>
-
-    {{!-- <div id="dog-breed-signup" class="gender-input"> --}}
-      <div>
-        <input id="dog-gender-signup" type="text" required>
-        <label>Gender</label>
-        {{!--
-        <div>
-          <label>Gender</label>
-        </div>
-
-        <input type="radio" name="gender" id="male" required>
-        <label for="male">Male</label>
-
-        <input type="radio" name="gender" id="female">
-        <label for="female">Female</label> --}}
-
+        <input id="dog-name-signup" type="text" required>
+        <label>Name</label>
       </div>
+
+      <div class="input-box-half">
+        <input id="dog-age-signup" type="number" required>
+        <label id="age-id">Age (in Years)</label>
+      </div>
+    </div>
+
+
+    <div class="d-flex flex-row align-items-center">
+      <div class="input-box-gender">
+        <select id="dog-gender-signup">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+        <label class="gender-label">Gender</label>
+      </div>
+
+      <div class="input-box-half">
+        <input id="dog-breed-signup" type="text" required>
+        <label>Breed</label>
+      </div>
+    </div>
 
   </form>
 
-
-
-  <div>
-    <p>Already have an account? <a href="../login">Log In</a></p>
-  </div>
-
 </div>
 
-<button id="submit-btn" type="submit">Sign Up</button>
+<button id="submit-btn" class="btn" type="submit">Sign Up</button>
 
-
-
+<script src="/js/signup.js"></script>
