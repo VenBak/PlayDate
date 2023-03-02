@@ -41,11 +41,11 @@ Event.init(
       allowNull: false
     },
     host_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'owner',
-        key: 'id' 
-      },
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'owner',
+            key: 'id'
+        },
     }
   },
   {
