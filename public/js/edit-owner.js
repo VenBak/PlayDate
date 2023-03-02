@@ -1,42 +1,38 @@
-// EDIT OWNER
-
-// For the date picker
-start_datePickerId.min = new Date().toLocaleDateString('fr-ca');
-end_datePickerId.min = new Date().toLocaleDateString('fr-ca');
-
-// Back button for the event form if the user doesn't want to add another event 
-function backEditEditForm() {
+// NOTE - THIS BACK BUTTON IS GIVING A REALLY WEIRD ERROR!
+function backEditOwnerForm() {
   document.location.replace('/profile');
 }
 
-const editEventFormHandler = async (event) => {
-  event.preventDefault();
 
-  const name = document.querySelector('#editevent-name').value.trim();
-  const location_zip = document.querySelector('#editevent-location_zip').value.trim();
-  const description = document.querySelector('#editevent-description').value.trim();
-  const start_date = document.querySelector('.editevent-start_date').value.trim();
-  const end_date = document.querySelector('.editevent-end_date').value.trim();
+// NOTE - need to edit below for owner form
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
+// const editDogFormHandler = async (event) => {
+//   event.preventDefault();
 
-  console.log(id);
+//   const name = document.querySelector('#editdog-name').value.trim();
+//   const age = document.querySelector('#editdog-age').value.trim();
+//   const breed = document.querySelector('#editdog-breed').value.trim();
+//   const gender = document.querySelector('#editdog-gender').value.trim();
 
-  const response = await fetch(`/api/events/${id}`, {
-    method: 'PUT',
-    body: JSON.stringify({ name, location_zip, description, start_date, end_date }),
-    headers: { 'Content-Type': 'application/json' },
-  });
+//   const id = window.location.toString().split('/')[
+//     window.location.toString().split('/').length - 1
+//   ];
 
-  // IF response is successful, then reload
-  if (response.ok) {
-    document.location.reload();
-  } else {
-    alert(response.statusText);
-  }
+//   console.log(id);
 
-};
+//   const response = await fetch(`/api/dogs/${id}`, {
+//     method: 'PUT',
+//     body: JSON.stringify({ name, age, breed, gender }),
+//     headers: { 'Content-Type': 'application/json' },
+//   });
 
-document.querySelector('#submitEventEdit-btn').addEventListener('click', editEventFormHandler);
+//   // IF response is successful, then reload
+//   if (response.ok) {
+//     document.location.reload();
+//   } else {
+//     alert(response.statusText);
+//   }
+
+// };
+
+// document.querySelector('#submitEdit-btn').addEventListener('click', editDogFormHandler);
