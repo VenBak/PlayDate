@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const { Owner, Dog, Event } = require('../models');
-const eventController = require('./controllers/eventController');
+const eventController = require('../controllers/eventController');
 
 router.get('/', async (req, res) => {
     res.render('homepage', {
@@ -23,18 +22,6 @@ router.get('/signup', (req, res) => {
     res.render('signup', {
         logged_in: req.session.logged_in
     });
-});
-
-router.get('/events', (req, res) => {
-    eventController.getAll(req, res)
-    .then(events => {
-        plainEvents = events.get({plain: true});
-        res.status(200).render('events', {plainEvents, logged_in: req.session.logged_in});
-    })
-    .catch(err => {
-        res.redirect('/');
-        console.log(err);
-    })
 });
 
 module.exports = router;
