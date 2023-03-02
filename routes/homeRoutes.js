@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const { Owner, Dog, Event } = require('../models');
+const eventController = require('./controllers/eventController');
 
 router.get('/', async (req, res) => {
     res.render('homepage', {
@@ -23,11 +25,6 @@ router.get('/signup', (req, res) => {
     });
 });
 
-router.get('/events', (req, res) => {
-    //Renders signup handlebars template on the signup page
-    res.render('homepage', {
-        logged_in: req.session.logged_in
-    });
-});
+router.get('/events', eventController.renderAll);
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const { Event, Owner, Dog } = require('../../models');
+const { Event, Owner, Dog, Comment } = require('../../models');
 
 exports.getAll = function (req, res) {
   // find all events, include their dogs
@@ -18,16 +18,40 @@ exports.getAll = function (req, res) {
   });
 };
 
+exports.renderAll = function (req, res) {
+  Event.findAll({
+    include: {
+      model: Owner,
+      as: 'host',
+      include: Dog
+    },
+    raw: true
+  })
+  .then((events) => {
+    res.status(200).render('events', {events, logged_in: req.session.logged_in});
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
+};
+
 exports.getOne = function (req, res) {
   // find one event by their `id` value (primary key)
   // include their dogs
   Event.findOne({
     where: {id: req.params.id},
-    include:
-      {
-        model: Owner,
-        as: 'attendees'
-      }
+    include: [{
+      model: Owner,
+      as: 'host',
+      include: Dog
+    }, 
+    {
+      model: Owner,
+      as: 'attendees'
+    }, {
+      model: Comment
+    }]
   })
   .then((event) => {
     res.status(200).json(event);
