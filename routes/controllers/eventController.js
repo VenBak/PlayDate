@@ -28,9 +28,6 @@ exports.renderAll = function (req, res) {
     raw: true
   })
   .then((events) => {
-    console.log("-------- HELLO EVENTS ------");
-    console.log(events);
-
     res.status(200).render('events', {events});
   })
   .catch((err) => {
