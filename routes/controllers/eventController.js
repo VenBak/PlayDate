@@ -35,8 +35,7 @@ exports.create = function (req, res) {
   let data = req.body;
   data.host_id = req.body.owner_id || req.session.user_id; 
   if (!data.host_id) {
-    res.status(400).json({message: 'No user_id included in req.body or req.session'});
-    return;
+    return Promise.reject('No user_id included in req.body or req.session');
   }
   return Event.create(data)
 };
