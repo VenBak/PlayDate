@@ -40,10 +40,18 @@ Owner.belongsToMany(Event, {
   otherKey: 'attendee_id'
 });
 
-Event.hasMany(Comment);
-Comment.belongsTo(Event);
+Event.hasMany(Comment, {
+  foreignKey: 'event_id'
+});
+Comment.belongsTo(Event, {
+  foreignKey: 'event_id'
+});
 
-Owner.hasMany(Comment);
-Comment.belongsTo(Owner);
+Owner.hasMany(Comment, {
+  foreignKey: 'owner_id'
+});
+Comment.belongsTo(Owner, {
+  foreignKey: 'owner_id'
+});
 
 module.exports = { Owner, Dog, Event, Comment };

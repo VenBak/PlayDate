@@ -1,4 +1,4 @@
-const { Event, Owner, Dog } = require('../../models');
+const { Event, Owner, Dog, Comment } = require('../../models');
 
 exports.getAll = function (req, res) {
   // find all events, include their dogs
@@ -23,11 +23,17 @@ exports.getOne = function (req, res) {
   // include their dogs
   Event.findOne({
     where: {id: req.params.id},
-    include:
-      {
-        model: Owner,
-        as: 'attendees'
-      }
+    include: [{
+      model: Owner,
+      as: 'host',
+      include: Dog
+    }, 
+    {
+      model: Owner,
+      as: 'attendees'
+    }, {
+      model: Comment
+    }]
   })
   .then((event) => {
     res.status(200).json(event);
