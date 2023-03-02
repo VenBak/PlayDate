@@ -30,33 +30,34 @@
         <h3 class="card-header"> Edit Event: {{name}}</h3>
 
         <form>
-            <div class="input-box">
+            <div class="input-box"> 
                 <input id="editevent-name" name="event.name" type="text" value="{{name}}" class="form-input">
-                <label for="event.name" class="form-label">{{name}}</label>
+                <label for="event.name" class="form-label">Name: {{name}}</label>
             </div>
 
             <div class="input-box">
                 <input id="editevent-location_zip" name="event.location_zip" type="number" value="{{location_zip}}"
                     class="form-input">
-                <label for="event.location_zip" class="form-label">{{location_zip}}</label>
+                <label for="event.location_zip" class="form-label">Location zip code: {{location_zip}}</label>
             </div>
 
             <div class="input-box">
                 <input id="editevent-description" name="event.description" type="text" rows="6" value="{{description}}"
                     class="form-input">
-                <label for="event.description" class="form-label">{{description}}</label>
+                <label for="event.description" class="form-label">Description: {{description}}</label>
             </div>
 
             <div class="input-box">
-                <input id="editEventStart_datePickerId" class="editevent-start_date" name="event.start_date" type="date"
-                    value="{{start_date}}" class="form-input" />
-                <label for="event.start_date" class="form-label">{{format_date start_date}}</label>
+                <input id="editEventStart_datePickerId" class="editevent-start_date" name="event.start_date" type="text"
+                    value="{{format_date start_date}}" placeholder="{{format_date start_date}}" onfocus="(this.type='date')" class="form-input">
+                <label for="event.start_date" class="form-label">Start Date: {{format_date start_date}}</label>
             </div>
+            
 
             <div class="input-box">
-                <input id="editEventEnd_datePickerId" class="editevent-end_date" name="event.end_date" type="date"
-                    value="{{end_date}}" class="form-input" />
-                <label for="event.end_date" class="form-label">{{format_date end_date}}</label>
+                <input id="editEventEnd_datePickerId" class="editevent-end_date" name="event.end_date" type="text"
+                    value="{{format_date end_date}}" placeholder="{{end_date}}" onfocus="(this.type='date')" class="form-input">
+                <label for="event.end_date" class="form-label">End Date: {{format_date end_date}}</label>
             </div>
 
         </form>

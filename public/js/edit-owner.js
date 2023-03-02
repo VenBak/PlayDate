@@ -20,7 +20,7 @@ const editOwnerFormHandler = async (event) => {
   ];
 
   console.log(id);
-
+  
   const response = await fetch(`/api/owners/${id}`, {
     method: 'PUT',
     body: JSON.stringify({ username, location_zip, first_name, last_name, gender }),
@@ -29,7 +29,7 @@ const editOwnerFormHandler = async (event) => {
 
   // IF response is successful, then reload
   if (response.ok) {
-    document.location.reload();
+    document.location.replace(`/profile`);
   } else {
     alert(response.statusText);
   }

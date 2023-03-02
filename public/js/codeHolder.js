@@ -7,3 +7,5 @@
 // DONE
 // - 
 
+// placeholder="{{start_date}}" onfocus="(this.type='date')"
+// placeholder="{{end_date}}" onfocus="(this.type='date')"
