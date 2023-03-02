@@ -32,14 +32,9 @@ Owner.init(
       }
     },
     pic_hyperlink: {
-      public_id: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      url: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737057/playdate-images/xotpwmc99ujpabb072v6.png"
     },
     first_name: {
       type: DataTypes.STRING,

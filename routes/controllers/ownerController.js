@@ -1,5 +1,4 @@
 const { Owner, Dog } = require('../../models');
-const cloudinary = require('../../utils/cloudinary');
 
 exports.getAll = function (req, res) {
   // find all owners, include their dogs
@@ -31,34 +30,17 @@ exports.getOne = function (req, res) {
     });
 };
 
-exports.create = async function (req, res) {
-  const { username, password, pic_hyperlink, first_name, last_name, gender, location_zip, description } = req.body;
-
-  try {
-    const result = await cloudinary.uploader.upload(pic_hyperlink, {
-      resource_type: "image",
-      folder: 'playdate-images',
-    })
-
-    // create a new owner and log them in
-    const owner = await Owner.create(
-      {
-        username: username,
-        password: password,
-        pic_hyperlink: {
-          public_id: result.public_id,
-          url: result.secure_url
-        },
-        first_name: first_name,
-        last_name: last_name,
-        gender: gender,
-        location_zip: location_zip,
-        description: description
-      },
-      {
-        include: [Dog]
-      }
-    ).then((owner) => {
+exports.create = function (req, res) {
+  // create a new owner and log them in
+  Owner.create(
+    {
+      ...req.body
+    },
+    {
+      include: [Dog]
+    }
+  )
+    .then((owner) => {
       req.session.save(() => {
         req.session.user_id = owner.id;
         req.session.logged_in = true;
@@ -66,12 +48,10 @@ exports.create = async function (req, res) {
         res.status(200).json(owner);
       });
     })
-      .catch((err) => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  }
-  catch (error) { console.log(error); }
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 };
 
 exports.login = function (req, res) {

@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3009;
 const sess = {
   secret: 'andre claire masandra myles',
   cookie: {
-    maxAge: 300000, //300000 = 5 min, 3000000 = 50 min
+    maxAge: 3600000, //300000 = 5 min, 3600000 = 60 min
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
@@ -40,4 +40,3 @@ app.use(express.static(path.join(__dirname, 'public')));
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });
-
