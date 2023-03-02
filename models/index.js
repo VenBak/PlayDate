@@ -11,18 +11,19 @@ Owner.hasMany(Dog, {
 
 Dog.belongsTo(Owner, {
   foreignKey: 'owner_id',
-    onDelete: 'CASCADE'
 });
 
 // Each event was created by and belongs to only one user (owner)
 Event.belongsTo(Owner, {
   as: 'host',
-  foreignKey: 'host_id'
+  foreignKey: 'host_id',
+  onDelete: 'CASCADE'
 });
 
 // Owners can create many events
 Owner.hasMany(Event, {
-  foreignKey: 'host_id'
+  foreignKey: 'host_id',
+  onDelete: 'CASCADE'
 });
 
 // Events belong to many owners as people attending the event
@@ -41,17 +42,20 @@ Owner.belongsToMany(Event, {
 });
 
 Event.hasMany(Comment, {
-  foreignKey: 'event_id'
+  foreignKey: 'event_id',
+  onDelete: 'CASCADE'
 });
 Comment.belongsTo(Event, {
-  foreignKey: 'event_id'
+  foreignKey: 'event_id',
 });
 
 Owner.hasMany(Comment, {
-  foreignKey: 'owner_id'
+  foreignKey: 'owner_id',
+  onDelete: 'CASCADE'
 });
 Comment.belongsTo(Owner, {
-  foreignKey: 'owner_id'
+  foreignKey: 'owner_id',
+  onDelete: 'CASCADE'
 });
 
 module.exports = { Owner, Dog, Event, Comment };
