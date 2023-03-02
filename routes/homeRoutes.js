@@ -28,13 +28,9 @@ router.get('/signup', (req, res) => {
 router.get('/events', async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     try {
-        const eventData = await Event.findAll({
-            where: {host_id: req.session.id}
-        });
-        //  res.status(200).json(dogData); //For testing only
-        const events = dogData.get({ plain: true });
+        let events = await findEventsByHost(req.session.user_id);
 
-        res.render('homepage', {
+        res.render('events', {
             events,
             logged_in: req.session.logged_in,
         });
@@ -43,5 +39,14 @@ router.get('/events', async (req, res) => {
     }
 });
 
+const findEventsByHost = async (hostId) => {
+    let events = await Event.findAll({
+        where: {host_id: hostId},
+        raw: true
+    });
+    console.log("----- HELLLLOOOOOOOO ------")
+    console.log(events);
+    return events;
+}
 
 module.exports = router;
