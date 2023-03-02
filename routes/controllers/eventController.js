@@ -34,6 +34,7 @@ exports.create = function (req, res) {
   // create a new event
   let data = req.body;
   data.host_id = req.body.owner_id || req.session.user_id; 
+  console.log("------ Are we here? ----")
   if (!data.host_id) {
     return Promise.reject('No user_id included in req.body or req.session');
   }

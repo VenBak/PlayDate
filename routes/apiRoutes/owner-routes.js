@@ -1,12 +1,16 @@
-const router = require('express').Router();
-const ownerController = require('../controllers/ownerController');
+const controller = require('../controllers/ownerController');
+const routerSetupHelper = require('../../utils/routerHelper');
 
-router.get('/', ownerController.getAll);
-router.post('/', ownerController.create);
-router.get('/:id', ownerController.getOne);
-router.put('/:id', ownerController.update);
-router.delete('/:id', ownerController.delete);
-router.post('/login', ownerController.login);
-router.post('/logout', ownerController.logout);
+const config = [
+  {http: 'get', path: '/', method: 'getAll'},
+  {http: 'post', path: '/', method: 'create'},
+  {http: 'get', path: '/:id', method: 'getOne'},
+  {http: 'put', path: '/:id', method: 'update'},
+  {http: 'delete', path: '/:id', method: 'delete'},
+  {http: 'post', path: '/login', method: 'login'},
+  {http: 'post', path: '/logout', method: 'logout'}
+]
+
+const router = routerSetupHelper(config, controller);
 
 module.exports = router;
