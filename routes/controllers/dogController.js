@@ -1,7 +1,6 @@
-const router = require('express').Router();
 const { Owner, Dog } = require('../../models');
 
-router.get('/', (req, res) => {
+exports.getAll = function (req, res) {
   // find all dogs, include their owners
   Dog.findAll({
     include: Owner
@@ -13,9 +12,9 @@ router.get('/', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-});
+};
 
-router.get('/:id', (req, res) => {
+exports.getOne = function (req, res) {
   // find one dog by its `id` value, include their owners
   Dog.findOne({
     where: { id: req.params.id },
@@ -28,9 +27,9 @@ router.get('/:id', (req, res) => {
       console.log(err);
       res.status(400).json(err);
     });
-});
+};
 
-router.post('/', (req, res) => {
+exports.create = function (req, res) {
   // create a new dog
   let data = req.body;
   data.owner_id = req.body.owner_id || req.session.user_id; 
@@ -46,9 +45,9 @@ router.post('/', (req, res) => {
     console.log(err);
     res.status(400).json(err);
   });
-});
+};
 
-router.put('/:id', (req, res) => {
+exports.update = function (req, res) {
   // update a dog by its `id` value
   Dog.update(req.body, {
     where: {
@@ -62,9 +61,9 @@ router.put('/:id', (req, res) => {
       console.log(err);
       res.status(400).json(err);
     });
-});
+};
 
-router.delete('/:id', (req, res) => {
+exports.delete = function (req, res) {
   // delete a dog by its `id` value
   Dog.destroy({
     where: {
@@ -78,6 +77,4 @@ router.delete('/:id', (req, res) => {
       console.log(err);
       res.status(400).json(err);
     });
-});
-
-module.exports = router;
+};
