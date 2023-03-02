@@ -1,38 +1,39 @@
-// NOTE - THIS BACK BUTTON IS GIVING A REALLY WEIRD ERROR!
+// EDIT THE OWNER 
+
 function backEditOwnerForm() {
   document.location.replace('/profile');
 }
 
-
 // NOTE - need to edit below for owner form
 
-// const editDogFormHandler = async (event) => {
-//   event.preventDefault();
+const editOwnerFormHandler = async (event) => {
+  event.preventDefault();
 
-//   const name = document.querySelector('#editdog-name').value.trim();
-//   const age = document.querySelector('#editdog-age').value.trim();
-//   const breed = document.querySelector('#editdog-breed').value.trim();
-//   const gender = document.querySelector('#editdog-gender').value.trim();
+  const username = document.querySelector('#editowner-username').value.trim();
+  const location_zip = document.querySelector('#editowner-location_zip').value.trim();
+  const first_name = document.querySelector('#editowner-first_name').value.trim();
+  const last_name = document.querySelector('#editowner-last_name').value.trim();
+  const gender = document.querySelector('#editowner-gender').value.trim();
 
-//   const id = window.location.toString().split('/')[
-//     window.location.toString().split('/').length - 1
-//   ];
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
 
-//   console.log(id);
+  console.log(id);
 
-//   const response = await fetch(`/api/dogs/${id}`, {
-//     method: 'PUT',
-//     body: JSON.stringify({ name, age, breed, gender }),
-//     headers: { 'Content-Type': 'application/json' },
-//   });
+  const response = await fetch(`/api/owners/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({ username, location_zip, first_name, last_name, gender }),
+    headers: { 'Content-Type': 'application/json' },
+  });
 
-//   // IF response is successful, then reload
-//   if (response.ok) {
-//     document.location.reload();
-//   } else {
-//     alert(response.statusText);
-//   }
+  // IF response is successful, then reload
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert(response.statusText);
+  }
 
-// };
+};
 
-// document.querySelector('#submitEdit-btn').addEventListener('click', editDogFormHandler);
+document.querySelector('#submitOwnerEdit-btn').addEventListener('click', editOwnerFormHandler);
