@@ -5,29 +5,29 @@ exports.getAll = function (req, res) {
   Owner.findAll({
     include: Dog
   })
-  .then((owners) => {
-    res.status(200).json(owners);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((owners) => {
+      res.status(200).json(owners);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 };
 
 exports.getOne = function (req, res) {
   // find one owner by their `id` value (primary key)
   // include their dogs
   Owner.findOne({
-    where: {id: req.params.id},
+    where: { id: req.params.id },
     include: Dog
   })
-  .then((owner) => {
-    res.status(200).json(owner);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((owner) => {
+      res.status(200).json(owner);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 };
 
 exports.create = function (req, res) {
@@ -37,45 +37,45 @@ exports.create = function (req, res) {
       ...req.body
     },
     {
-      include: [ Dog ]
+      include: [Dog]
     }
   )
-  .then((owner) => {
-    req.session.save(() => {
-      req.session.user_id = owner.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(owner);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
-};
-
-exports.login = function (req, res)  {
-  Owner.findOne({
-    where: {username: req.body.username}
-  })
-  .then((owner) => {
-    let passMatch = owner.checkPassword(req.body.password);
-
-    if (passMatch) {
+    .then((owner) => {
       req.session.save(() => {
         req.session.user_id = owner.id;
         req.session.logged_in = true;
-  
-        res.status(200).json({user: owner, message: 'Succesfully logged in'});
+
+        res.status(200).json(owner);
       });
-    } else {
-      res.status(400).json({message: 'Invalid password or email'});
-    }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+};
+
+exports.login = function (req, res) {
+  Owner.findOne({
+    where: { username: req.body.username }
   })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((owner) => {
+      let passMatch = owner.checkPassword(req.body.password);
+
+      if (passMatch) {
+        req.session.save(() => {
+          req.session.user_id = owner.id;
+          req.session.logged_in = true;
+
+          res.status(200).json({ user: owner, message: 'Succesfully logged in' });
+        });
+      } else {
+        res.status(400).json({ message: 'Invalid password or email' });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 };
 
 exports.logout = function (req, res) {
@@ -95,13 +95,13 @@ exports.update = function (req, res) {
       id: req.params.id
     }
   })
-  .then((owner) => {
-    res.status(200).json(owner);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((owner) => {
+      res.status(200).json(owner);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 };
 
 exports.delete = function (req, res) {
@@ -111,11 +111,11 @@ exports.delete = function (req, res) {
       id: req.params.id
     }
   })
-  .then((owner) => {
-    res.status(200).json(owner);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+    .then((owner) => {
+      res.status(200).json(owner);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 };

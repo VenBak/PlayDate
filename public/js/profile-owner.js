@@ -1,8 +1,13 @@
 // DELETE owner
   const delOwnerButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
+    event.preventDefault();
+
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];
+
+  console.log(id)
+
       const response = await fetch(`/api/owners/${id}`, {
         method: 'DELETE',
       });
@@ -12,10 +17,7 @@
       } else {
         alert('Failed to delete owner profile');
       }
-    }
+
   };
   document
     .querySelector('#delete-owner-btn').addEventListener('click', delOwnerButtonHandler);
-  
-
-

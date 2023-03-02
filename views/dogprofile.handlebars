@@ -5,8 +5,8 @@
     <div class="card dog-{{id}}-card p-3">
         {{!-- no-gutters gets rid of grid gutters --}}
         <div class="row no-gutters">
-            <div class="col-md-5">
-                <img src="/images/default-dog.png" class="card-img" alt="Pic of {{name}}">
+            <div class="col-md-5 d-flex justify-content-center align-items-center">
+                <img src="{{pic_hyperlink}}" class="card-img" alt="Pic of {{name}}">
             </div>
             <div class="col-md-7">
                 <div class="card-body dog-information">
@@ -19,6 +19,8 @@
         </div>
     </div>
 </div>
+
+{{>uploadDog}}
 
 {{!-- NOTE 1.2: See edit-dog.js file for detailed note. Keeping below in case we change our minds --}}
 {{!-- <button onclick="showEditDogForm()" class="btn" type="submit" data-id="{{id}}">Edit Dog Info</button> --}}
