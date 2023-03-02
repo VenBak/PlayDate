@@ -41,7 +41,7 @@ const editDogFormHandler = async (event) => {
 
   // IF response is successful, then reload
   if (response.ok) {
-    document.location.reload();
+    document.location.replace(`/profile`);
   } else {
     alert(response.statusText);
   }
