@@ -25,7 +25,7 @@ const updateEventPhoto = async (event) => {
         window.location.toString().split('/').length - 1
     ];
 
-    const response = await fetch(`/api/event/${id}`, {
+    const response = await fetch(`/api/events/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ pic_hyperlink }),
         headers: { 'Content-Type': 'application/json' },
