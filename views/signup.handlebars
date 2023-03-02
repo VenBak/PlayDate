@@ -1,6 +1,6 @@
 <div>
   <h2 class="text-center">Register</h2>
-  
+
   <form id="signup-form">
     <h3 class="mb-3">Let's Get to Know You</h3>
 
@@ -14,7 +14,7 @@
         <span class="icon" onclick="showPassword()">
           <img src=" /images/secured-lock-freepik.png" alt="Lock pad icon">
         </span>
-        <input id="password-signup" class="password" type="password" required>
+        <input id="password-signup" class="password" type="password" min="8" max="16" required>
         <label>Password</label>
       </div>
     </div>
@@ -43,7 +43,7 @@
 
 
       <div class="input-box-half">
-        <input id="location_zip-signup" type="text" required>
+        <input id="location_zip-signup" type="text" min="5" max="5" required>
         <label>Zip Code</label>
       </div>
     </div>
@@ -57,7 +57,7 @@
 
 
     <h3 class="mb-3">Now Tell Us About Your Furry Friend</h3>
-    
+
     <div class="d-flex flex-row align-items-center">
       <div class="input-box-half">
 
@@ -86,7 +86,6 @@
         <label>Breed</label>
       </div>
     </div>
-
   </form>
 
 </div>

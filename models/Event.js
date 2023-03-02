@@ -41,6 +41,14 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false
     },
+    start_time: {
+      type: DataTypes.TIME,
+      allowNull: false
+    },
+    end_time: {
+      type: DataTypes.TIME,
+      allowNull: false
+    },
     host_id: {
       type: DataTypes.INTEGER,
       references: {

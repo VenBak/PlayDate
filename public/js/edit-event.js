@@ -15,6 +15,8 @@ const editEventFormHandler = async (event) => {
   const description = document.querySelector('#editevent-description').value.trim();
   const start_date = document.querySelector('.editevent-start_date').value.trim();
   const end_date = document.querySelector('.editevent-end_date').value.trim();
+  const start_time = document.querySelector('.editevent-start_time').value.trim();
+  const end_time = document.querySelector('.editevent-end_time').value.trim();
 
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
@@ -24,7 +26,7 @@ const editEventFormHandler = async (event) => {
 
   const response = await fetch(`/api/events/${id}`, {
     method: 'PUT',
-    body: JSON.stringify({ name, location_zip, description, start_date, end_date }),
+    body: JSON.stringify({ name, location_zip, description, start_date, end_date, start_time, end_time }),
     headers: { 'Content-Type': 'application/json' },
   });
 

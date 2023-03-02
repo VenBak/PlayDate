@@ -30,7 +30,7 @@
         <h3 class="card-header"> Edit Event: {{name}}</h3>
 
         <form>
-            <div class="input-box"> 
+            <div class="input-box">
                 <input id="editevent-name" name="event.name" type="text" value="{{name}}" class="form-input">
                 <label for="event.name" class="form-label">Name: {{name}}</label>
             </div>
@@ -49,15 +49,28 @@
 
             <div class="input-box">
                 <input id="editEventStart_datePickerId" class="editevent-start_date" name="event.start_date" type="text"
-                    value="{{format_date start_date}}" placeholder="{{format_date start_date}}" onfocus="(this.type='date')" class="form-input">
+                    value="{{format_date start_date}}" placeholder="{{format_date start_date}}"
+                    onfocus="(this.type='date')" class="form-input">
                 <label for="event.start_date" class="form-label">Start Date: {{format_date start_date}}</label>
             </div>
-            
 
             <div class="input-box">
                 <input id="editEventEnd_datePickerId" class="editevent-end_date" name="event.end_date" type="text"
-                    value="{{format_date end_date}}" placeholder="{{end_date}}" onfocus="(this.type='date')" class="form-input">
+                    value="{{format_date end_date}}" placeholder="{{end_date}}" onfocus="(this.type='date')"
+                    class="form-input">
                 <label for="event.end_date" class="form-label">End Date: {{format_date end_date}}</label>
+            </div>
+
+            <div class="input-box">
+                <input class="editevent-start_time" name="event.start_time" type="text" value="{{start_time}}"
+                    placeholder="{{start_time}}" onfocus="(this.type='time')" class="form-input">
+                <label for="event.start_time" class="form-label">Start Time: {{start_time}}</label>
+            </div>
+
+            <div class="input-box">
+                <input class="editevent-end_time" name="event.end_time" type="text" value="{{end_time}}"
+                    placeholder="{{end_time}}" onfocus="(this.type='time')" class="form-input">
+                <label for="event.end_time" class="form-label">End Time: {{end_time}}</label>
             </div>
 
         </form>

@@ -17,6 +17,7 @@ const eventData = [
     description: 'Gonna be a sweet time, come hangout with us to start your day!',
     start_date: '2023-05-07 06:30:00',
     end_date: '2023-05-07 08:00:00',
+    
     host_id: '4'
   },
   {

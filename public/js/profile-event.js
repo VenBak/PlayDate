@@ -32,12 +32,14 @@ const addEventFormHandler = async (event) => {
   const description = document.querySelector('#event-description').value.trim();
   const start_date = document.querySelector('.event-start_date').value.trim();
   const end_date = document.querySelector('.event-end_date').value.trim();
+  const start_time = document.querySelector('.event-start_time').value.trim();
+  const end_time = document.querySelector('.event-end_time').value.trim();
 
   // CREATE a event
-  if (name && location_zip && description && start_date && end_date) {
+  if (name && location_zip && description && start_date && end_date && start_time && end_time) {
     const response = await fetch('/api/events', {
       method: 'POST',
-      body: JSON.stringify({ name, location_zip, description, start_date, end_date }),
+      body: JSON.stringify({ name, location_zip, description, start_date, end_date, start_time, end_time }),
       headers: {
         'Content-Type': 'application/json',
       },
