@@ -1,9 +1,9 @@
 // For the date picker
-start_datePickerId.min = new Date().toLocaleDateString('fr-ca');
-end_datePickerId.min = new Date().toLocaleDateString('fr-ca');
+editEventStart_datePickerId.min = new Date().toLocaleDateString('fr-ca');
+editEventEnd_datePickerId.min = new Date().toLocaleDateString('fr-ca');
 
 // Back button for the event form if the user doesn't want to add another event 
-function backEditEditForm() {
+function backEditEventForm() {
   document.location.replace('/profile');
 }
 

@@ -1,3 +1,5 @@
+// DOG - ADD & DELETE
+
 // Show the dog form and reset the fields
 function showNewDogForm() {
   const dogForm = document.querySelector('form');
@@ -43,8 +45,6 @@ const addDogFormHandler = async (event) => {
   };
   document.querySelector('#submitDog-btn').addEventListener('click', addDogFormHandler);
 
-
-
 // DELETE a dog
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
@@ -63,3 +63,6 @@ const addDogFormHandler = async (event) => {
   };
   document
     .querySelector('.dog-list').addEventListener('click', delButtonHandler);
+  
+
+
