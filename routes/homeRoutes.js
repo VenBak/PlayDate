@@ -25,6 +25,16 @@ router.get('/signup', (req, res) => {
     });
 });
 
-router.get('/events', eventController.renderAll);
+router.get('/events', (req, res) => {
+    eventController.getAll(req, res)
+    .then(events => {
+        plainEvents = events.get({plain: true});
+        res.status(200).render('events', {plainEvents, logged_in: req.session.logged_in});
+    })
+    .catch(err => {
+        res.redirect('/');
+        console.log(err);
+    })
+});
 
 module.exports = router;

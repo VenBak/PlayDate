@@ -11,24 +11,6 @@ exports.getAll = function (req, res) {
   })
 };
 
-exports.renderAll = function (req, res) {
-  Event.findAll({
-    include: {
-      model: Owner,
-      as: 'host',
-      include: Dog
-    },
-    raw: true
-  })
-  .then((events) => {
-    res.status(200).render('events', {events, logged_in: req.session.logged_in});
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(400).json(err);
-  });
-};
-
 exports.getOne = function (req, res) {
   // find one event by their `id` value (primary key)
   // include their dogs
