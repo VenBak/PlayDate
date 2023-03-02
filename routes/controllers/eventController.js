@@ -111,3 +111,30 @@ exports.delete = function (req, res) {
     res.status(400).json(err);
   });
 };
+
+exports.testFind = function (req, res) {
+  Event.findByPk(req.params.id, {
+  include: [{
+    model: Owner,
+    as: 'host',
+    attributes: ['first_name', 'last_name', 'pic_hyperlink'],
+    include: { model: Dog }
+  }, 
+  {
+    model: Owner,
+    as: 'attendees',
+    attributes: ['first_name','last_name', 'pic_hyperlink']
+  }, {
+    model: Comment,
+    attributes: ['text'],
+    include: { model: Owner, attributes: ['first_name'] }
+  }]
+})
+.then((event) => {
+  res.status(200).json(event);
+})
+.catch((err) => {
+  console.log(err);
+  res.status(400).json(err);
+});
+}
