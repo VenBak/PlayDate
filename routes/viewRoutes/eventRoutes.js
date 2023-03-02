@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
   eventController.getOne(req, res)
   .then(event => {
     plainEvent = event.get({ plain: true });
-    res.status(200).render('eventsprofile', {...event, logged_in: req.session.logged_in});
+    res.status(200).render('eventprofile', {...event, logged_in: req.session.logged_in});
   })
   .catch(err => {
       res.redirect('../');
