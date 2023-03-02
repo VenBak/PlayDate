@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Owner, Dog, Event } = require('../models');
-const eventController = require('../routes/controllers/eventController');
+const eventController = require('./controllers/eventController');
 
 router.get('/', async (req, res) => {
     res.render('homepage', {
