@@ -1,4 +1,5 @@
 {{!-- EDIT EVENTS --}}
+{{!-- EDIT EVENTS --}}
 
 <div class="d-flex flex-row justify-content-center p-3">
 
@@ -37,23 +38,27 @@
             <div class="input-box">
                 <input id="editevent-location_zip" name="event.location_zip" type="number" value="{{location_zip}}"
                     class="form-input" />
+                <input id="editevent-location_zip" name="event.location_zip" type="number" value="{{location_zip}}"
+                    class="form-input" />
                 <label for="event.location_zip" class="form-label">{{location_zip}}</label>
             </div>
 
             <div class="input-box">
                 <input id="editevent-description" name="event.description" type="text" rows="6" value="{{description}}"
                     class="form-input" />
+                <input id="editevent-description" name="event.description" type="text" rows="6" value="{{description}}"
+                    class="form-input" />
                 <label for="event.description" class="form-label">{{description}}</label>
             </div>
 
             <div class="input-box">
-                <input id="editevent-start_date" name="event.start_date" type="date" value="{{start_date}}"
+                <input id="editEvent-start_datePickerId" class="editevent-start_date" name="event.start_date" type="date" value="{{start_date}}"
                     class="form-input" />
                 <label for="event.start_date" class="form-label">{{start_date}}</label>
             </div>
 
             <div class="input-box">
-                <input id="editevent-end_date" name="event.end_date" type="date" value="{{end_date}}"
+                <input id="editEvent-end_datePickerId" class="editevent-end_date" name="event.end_date" type="date" value="{{end_date}}"
                     class="form-input" />
                 <label for="event.end_date" class="form-label">{{end_date}}</label>
             </div>
@@ -62,8 +67,11 @@
         {{!-- See note 1.2 above --}}
         {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditeventForm()" type="submit">Submit</button>
         --}}
+        {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditeventForm()" type="submit">Submit</button>
+        --}}
         <button id="submitEventEdit-btn" class="btn mt-3" type="submit">Submit Change to {{name}}</button>
         <br> <br>
+        <button id="back-btn" class="btn" onclick="backEditEditForm()" type="submit"> Go Back To Profile </button>
         <button id="back-btn" class="btn" onclick="backEditEditForm()" type="submit"> Go Back To Profile </button>
 
     </div>
