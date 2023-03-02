@@ -427,6 +427,7 @@ textarea {
     background: transparent;
 }
 
+.edit-event-btn,
 .edit-dog-btn {
     width: 70%;
     height: 45px;
