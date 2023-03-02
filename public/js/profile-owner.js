@@ -15,7 +15,7 @@
     }
   };
   document
-    .querySelector('.deleteOwnerbtn').addEventListener('click', delOwnerButtonHandler);
+    .querySelector('#delete-owner-btn').addEventListener('click', delOwnerButtonHandler);
   
 
 

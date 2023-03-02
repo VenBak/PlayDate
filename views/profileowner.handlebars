@@ -49,7 +49,14 @@
         {{!-- See note 1.2 above --}}
         {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditOwnerForm()" type="submit">Submit</button>
         --}}
-        <button id="submitEdit-btn" class="btn mt-3" type="submit">Submit Change to {{username}}'s Profile</button>
+
+
+          <button id="delete-owner-btn" class="d-flex justify-content-start">
+        <img class="delete-owner" data-id="{{id}}" src="/images/delete-Freepik-32px.png"
+          alt="Trash Can"> Delete Profile - Sandy
+      </button>
+
+        <button id="submitOwnerEditBtn-btn" class="btn mt-3" type="submit">Submit Change to {{username}}'s Profile</button>
         <br> <br>
         <a href="../">
             <button id="back-btn" class="btn" onclick="backEditOwnerForm()" type="submit"> Go Back To Profile </button>
