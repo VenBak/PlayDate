@@ -28,6 +28,23 @@ router.get('/', withAuth, async (req, res) => {
 }
 );
 
+router.get('/events/:id', withAuth, async (req, res) => {
+    try {
+        // Find the user's dog based on the request parameter called dog_id
+        const event = await Event.findByPk(req.params.id, {
+            raw: true
+        });
+        if (req.session.user_id !== event.host_id) {
+            res.redirect('/profile');
+        };
+        res.render('eventprofile', {
+            ...event
+        });
+    } catch (err) {
+        res.redirect('/profile');
+    }
+})
+
 //Gets ALL posts and displays it on homepage
 router.get("/dog/:id", async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
