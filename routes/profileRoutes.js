@@ -23,8 +23,6 @@ router.get('/', withAuth, async (req, res) => {
             events,
             logged_in: req.session.logged_in
         };
-        console.log("-------- LOOK HERE ------");
-        console.log(objForRender);
         res.render('profile', objForRender);
     } catch (err) {
         res.status(500).json(err);
