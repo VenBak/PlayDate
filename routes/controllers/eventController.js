@@ -28,7 +28,7 @@ exports.renderAll = function (req, res) {
     raw: true
   })
   .then((events) => {
-    res.status(200).render('events', {events});
+    res.status(200).render('events', {events, logged_in: req.session.logged_in});
   })
   .catch((err) => {
     console.log(err);

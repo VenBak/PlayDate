@@ -20,7 +20,7 @@ router.get('/', withAuth, async (req, res) => {
         res.render('profile', {
             ...user,
             events,
-            logged_in: req.session.logged_in,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
@@ -28,7 +28,7 @@ router.get('/', withAuth, async (req, res) => {
 }
 );
 
-router.get('/events/:id', withAuth, async (req, res) => {
+router.get('/event/:id', withAuth, async (req, res) => {
     try {
         // Find the user's dog based on the request parameter called dog_id
         const event = await Event.findByPk(req.params.id, {
@@ -38,7 +38,8 @@ router.get('/events/:id', withAuth, async (req, res) => {
             res.redirect('/profile');
         };
         res.render('eventprofile', {
-            ...event
+            ...event,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.redirect('/profile');
@@ -57,7 +58,7 @@ router.get("/dog/:id", async (req, res) => {
 
         res.render('dogprofile', {
             ...dog,
-            logged_in: req.session.logged_in,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
@@ -79,7 +80,7 @@ router.get("/owner/:id", withAuth, async (req, res) => {
 
         res.render('profileowner', {
             ...user,
-            logged_in: req.session.logged_in,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
