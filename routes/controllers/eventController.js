@@ -11,6 +11,23 @@ exports.getAll = function (req, res) {
   })
 };
 
+exports.getAllforZip = function (req, res) {
+  return Event.findAll({
+    where: {location_zip: req.session.location_zip},
+    include: {
+      model: Owner,
+      as: 'host',
+      include: Dog
+    }
+  })
+};
+
+exports.getAllforUser = function (req, res) {
+  return Event.findAll({
+    where: {host_id: req.session.user_id}
+  })
+};
+
 exports.getOne = function (req, res) {
   // find one event by their `id` value (primary key)
   // include their dogs
@@ -33,7 +50,7 @@ exports.getOne = function (req, res) {
 exports.create = function (req, res) {
   // create a new event
   let data = req.body;
-  data.host_id = req.body.owner_id || req.session.user_id; 
+  data.host_id = req.body.owner_id || req.session.user_id;
   if (!data.host_id) {
     return Promise.reject('No user_id included in req.body or req.session');
   }
@@ -75,12 +92,9 @@ exports.testFind = function (req, res) {
     attributes: ['text'],
     include: { model: Owner, attributes: ['first_name'] }
   }]
-})
-.then((event) => {
-  res.status(200).json(event);
-})
-.catch((err) => {
-  console.log(err);
-  res.status(400).json(err);
-});
+  })
+  .then((event) => {
+    res.status(200).json(event);
+  })
+  .catch((err) => res.status(400).json(err));
 }
