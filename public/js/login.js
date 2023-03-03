@@ -16,7 +16,8 @@ const loginFormHandler = async (event) => {
             // If successful, redirect the browser to the profile page
             document.location.replace('/profile');
         } else {
-            alert(response.statusText);
+            // alert(response.statusText);
+            incorrectInputValidation();
         }
     }
 };
@@ -52,8 +53,16 @@ async function noInputValidation(event) {
     }
 }
 
+//Needs further testing once homepage routes are fixed
+// async function incorrectInputValidation() {
+//     const usernameError = document.querySelector('.username-error-msg')
+//     const passwordError = document.querySelector('.password-error-msg')
 
+//     usernameError.classList.remove("d-none")
+//     passwordError.classList.remove("d-none")
 
+//     return
+// }
 
 document
     .querySelector('.login-form')
