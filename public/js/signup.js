@@ -5,7 +5,6 @@ signupBtn.addEventListener('click', (event) => {
   console.log("Check 2");
 
   signupFormHandler(event);
-  postDog(event);
 });
 
 async function signupFormHandler(event) {
@@ -22,48 +21,29 @@ async function signupFormHandler(event) {
   const description = document.querySelector('#description-signup').value.trim();
 
   console.log(username, password, first_name, last_name, gender, location_zip, description)
+
+  let dog = getDogInfo();
   // POST to Owner table
   if (username && password && first_name && last_name && gender && location_zip && description) {
     const response = await fetch('/api/owners', {
       method: 'POST',
-      body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description }),
+      body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description, dogs: [dog] }),
       headers: { 'Content-Type': 'application/json' },
     });
 
-    // IF response is successful, then call posting to DOG table
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/profile');;
     } else {
       alert(response.statusText);
     }
   }
 }
 
-const postDog = async (event) => {
-  event.preventDefault();
-
-  // DOG Model columns for the intake form - 
-  // we are not initially asking for picture 
+const getDogInfo = () => {
   const name = document.querySelector('#dog-name-signup').value.trim();
   const age = document.querySelector('#dog-age-signup').value.trim();
   const breed = document.querySelector('#dog-breed-signup').value.trim();
   const gender = document.querySelector('#dog-gender-signup').value.trim();
 
-  console.log(name, age, breed, gender)
-  // POST to Dog table
-  // CURRENTLY AN ISSUE WHERE OWNER & DOG NOT LINKED ON SIGN UP. maybe return owner first and then post dog?
-  if (name && age && breed && gender) {
-    const response = await fetch('/api/dogs', {
-      method: 'POST',
-      body: JSON.stringify({ name, age, breed, gender }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    // IF response is successful, then go to the profile
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert(response.statusText);
-    }
-  }
+  return {name, age, breed, gender};
 }
