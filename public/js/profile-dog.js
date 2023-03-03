@@ -70,7 +70,7 @@ document
 
 
 //Validations
-async function dogValidation(event) {
+function dogValidation(event) {
   event.preventDefault();
   const name = document.querySelector('#dog-name').value.trim();
   const age = document.querySelector('#dog-age').value.trim();
@@ -109,7 +109,7 @@ async function dogValidation(event) {
     breedError.classList.add("d-none")
   }
 
-  if (!name || !age || ageLength !== 2 || age > 35 || !breed) {
+  if (!name || !age || ageLength > 2 || age > 35 || !breed) {
     return
   }
 }
