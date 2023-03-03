@@ -1,12 +1,20 @@
-<div id="preview" class="d-flex flex-column justify-content-center align-items-center">
-    <img id="preview-img"
-        src="https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737085/playdate-images/uhdfp3aq73sjmxxk7ezq.png"
-        alt="Dog Profile Pic">
+{{!-- <div id="preview" class="d-flex flex-column justify-content-center align-items-center">
+
     <button id="upload_widget" class="cloudinary-button mt-4">Upload Your Dog's Profile Pic</button>
     <button id="upload-img-btn" class="btn-half mt-4">Finished Updating Photo</button>
 </div>
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 
+
+<script src="/js/upload-image-dog.js"></script> --}}
+
+<form action="/api/upload" enctype="multipart/form-data" method="post">
+    <img id="preview-img"
+        src="https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737085/playdate-images/uhdfp3aq73sjmxxk7ezq.png"
+        alt="Dog Profile Pic">
+    <div>File: <input type="file" name="dogPic" /></div>
+    <input id="#upload-img-btn" type="submit" value="Upload" />
+</form>
 
 <script src="/js/upload-image-dog.js"></script>

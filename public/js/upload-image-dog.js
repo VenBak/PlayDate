@@ -1,3 +1,5 @@
+// TO BE DELETED
+
 var myWidget = cloudinary.createUploadWidget({
     cloudName: 'dlkk2oyhp',
     uploadPreset: 'playedate_preset'
@@ -19,23 +21,10 @@ document.getElementById("upload_widget").addEventListener("click", function () {
 const updateDogPhoto = async (event) => {
     event.preventDefault();
 
-    var pic_hyperlink = document.getElementById("preview-img").src
+    
 
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
-
-    const response = await fetch(`/api/dogs/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({ pic_hyperlink }),
-        headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-        document.location.reload();
-    } else {
-        alert(response.statusText);
-    }
+    
 }
 
-document.querySelector('#upload-img-btn').addEventListener('click', updateDogPhoto);
+// document.querySelector('#upload-img-btn').addEventListener('click', updateDogPhoto);
+

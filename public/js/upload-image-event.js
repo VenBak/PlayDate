@@ -1,41 +1,43 @@
-var myWidget = cloudinary.createUploadWidget({
-    cloudName: 'dlkk2oyhp',
-    uploadPreset: 'playedate_preset'
-}, (error, result) => {
-    if (!error && result && result.event === "success") {
-        // console.log('Done! Here is the image info: ', result.info);
-        var pic_hyperlink = result.info.secure_url
+// // TO BE DELETED
 
-        // Changes preview image to the uploaded image
-        document.getElementById("preview-img").src = pic_hyperlink;
-    }
-}
-)
+// var myWidget = cloudinary.createUploadWidget({
+//     cloudName: 'dlkk2oyhp',
+//     uploadPreset: 'playedate_preset'
+// }, (error, result) => {
+//     if (!error && result && result.event === "success") {
+//         // console.log('Done! Here is the image info: ', result.info);
+//         var pic_hyperlink = result.info.secure_url
 
-document.getElementById("upload_widget").addEventListener("click", function () {
-    myWidget.open();
-}, false);
+//         // Changes preview image to the uploaded image
+//         document.getElementById("preview-img").src = pic_hyperlink;
+//     }
+// }
+// )
 
-const updateEventPhoto = async (event) => {
-    event.preventDefault();
+// document.getElementById("upload_widget").addEventListener("click", function () {
+//     myWidget.open();
+// }, false);
 
-    var pic_hyperlink = document.getElementById("preview-img").src
+// const updateEventPhoto = async (event) => {
+//     event.preventDefault();
 
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+//     var pic_hyperlink = document.getElementById("preview-img").src
 
-    const response = await fetch(`/api/events/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({ pic_hyperlink }),
-        headers: { 'Content-Type': 'application/json' },
-    });
+//     const id = window.location.toString().split('/')[
+//         window.location.toString().split('/').length - 1
+//     ];
 
-    if (response.ok) {
-        document.location.reload();
-    } else {
-        alert(response.statusText);
-    }
-}
+//     const response = await fetch(`/api/events/${id}`, {
+//         method: 'PUT',
+//         body: JSON.stringify({ pic_hyperlink }),
+//         headers: { 'Content-Type': 'application/json' },
+//     });
 
-document.querySelector('#upload-img-btn').addEventListener('click', updateEventPhoto);
+//     if (response.ok) {
+//         document.location.reload();
+//     } else {
+//         alert(response.statusText);
+//     }
+// }
+
+// document.querySelector('#upload-img-btn').addEventListener('click', updateEventPhoto);

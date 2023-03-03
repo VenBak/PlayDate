@@ -35,6 +35,7 @@ Owner.init(
       type: DataTypes.STRING,
       allowNull: true,
       defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737057/playdate-images/xotpwmc99ujpabb072v6.png"
+      // ^^^ TO BE CHANGED
     },
     first_name: {
       type: DataTypes.STRING,

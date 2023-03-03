@@ -17,6 +17,7 @@ Dog.init(
             type: DataTypes.STRING,
             allowNull: true,
             defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737085/playdate-images/uhdfp3aq73sjmxxk7ezq.png"
+            // ^^^ TO BE CHANGED
         },
         name: {
             type: DataTypes.STRING,
