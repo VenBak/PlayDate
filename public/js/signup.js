@@ -1,17 +1,18 @@
-// console.log("Check 1 page");
+console.log("Check 1");
 
 let signupBtn = document.querySelector("#submit-btn");
 signupBtn.addEventListener('click', (event) => {
-  // console.log("Check 2 click listener");
-  ownerValidation(event);
-  dogValidation(event);
+  console.log("Check 2");
+  ownerValidation(event)
+  dogValidation(event)
   signupFormHandler(event);
 });
 
 async function signupFormHandler(event) {
-  // console.log("Check 3 formHandler");
+  console.log("Check 3");
   event.preventDefault();
   // OWNER Model columns for the intake form - 
+  // we are not initially asking for picture 
   const username = document.querySelector('#username-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
   const first_name = document.querySelector('#first_name-signup').value.trim();
@@ -34,7 +35,7 @@ async function signupFormHandler(event) {
     if (response.ok) {
       document.location.replace('/profile');;
     } else {
-      console.log(response.statusText);
+      alert(response.statusText);
     }
   }
 }
@@ -45,23 +46,7 @@ const getDogInfo = () => {
   const breed = document.querySelector('#dog-breed-signup').value.trim();
   const gender = document.querySelector('#dog-gender-signup').value.trim();
 
-  console.log(name, age, breed, gender)
-  // POST to Dog table
-  // CURRENTLY AN ISSUE WHERE OWNER & DOG NOT LINKED ON SIGN UP.maybe return owner first and then post dog ?
-  if (name && age && breed && gender) {
-    const response = await fetch('/api/dogs', {
-      method: 'POST',
-      body: JSON.stringify({ name, age, breed, gender }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    // IF response is successful, then go to the profile
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      console.log("Adding Dog Error", response.statusText);
-    }
-  }
+  return { name, age, breed, gender };
 }
 
 //Validations
