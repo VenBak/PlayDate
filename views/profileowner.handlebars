@@ -40,7 +40,7 @@
 
             <div class="input-box-gender-quarter">
                 <select id="editowner-gender" name="owner.gender" class="form-input" required>
-                    <option value="none" selected disabled hidden>Select an option</option>
+                    {{!-- <option value="none" selected disabled hidden>Select an option</option> --}}
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                 </select>
@@ -54,11 +54,11 @@
 
         <button id="delete-owner-btn" class="d-flex justify-content-start" onclick="delOwnerButtonHandler()">
             <img class="delete-owner" data-id="{{id}}" src="/images/delete-Freepik-32px.png" alt="Trash Can"> Delete
-            Profile - Sandy
+            Profile
         </button>
         <br> <br>
 
-        <button id="submitOwnerEditBtn-btn" class="btn mt-3" type="submit">Submit Change to {{username}}'s
+        <button id="submitOwnerEdit-btn" class="btn mt-3" type="submit">Submit Change to {{username}}'s
             Profile</button>
 
         <br> <br>

@@ -1,6 +1,6 @@
 
-// NOTE 1.2: FUTURE DELETE - Form already ready so user doesn't need to click another button.
-  // Leaving below in case we change our minds
+// NOTE 1.2: 
+  // Leaving below in case we change our minds and want the form to hide/show with button
     // function showEditDogForm() {
     //   document.querySelector('.edit-dog-form').style.display = 'block';
     //   document.querySelector('#submitEdit-btn').style.display = 'block';
@@ -41,7 +41,7 @@ const editDogFormHandler = async (event) => {
 
   // IF response is successful, then reload
   if (response.ok) {
-    document.location.reload();
+    document.location.replace(`/profile`);
   } else {
     alert(response.statusText);
   }

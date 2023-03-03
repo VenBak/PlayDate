@@ -1,14 +1,9 @@
-// Create the /api route
 const router = require('express').Router();
 
 const apiRoutes = require('./apiRoutes');
-const homeRoutes = require('./homeRoutes');
-const profileRoutes = require('./profileRoutes');
-// const eventRoutes = require('./eventRoutes');
+const viewRoutes = require('./viewRoutes');
 
 router.use('/api', apiRoutes);
-router.use('/', homeRoutes);
-router.use('/profile', profileRoutes);
-// router.use('/events', eventRoutes);
+router.use('/', viewRoutes);
 
 module.exports = router;

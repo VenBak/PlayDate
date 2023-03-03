@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Event extends Model {}
+class Event extends Model { }
 
 Event.init(
   {
@@ -17,6 +17,11 @@ Event.init(
     },
     pic_hyperlink: {
       type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677779592/playdate-images/default-event_ocl8t7.png"
+    },
+    location_name: {
+      type: DataTypes.STRING,
       allowNull: true
     },
     location_zip: {
@@ -25,10 +30,14 @@ Event.init(
       validate: {
         isNumeric: true,
         isInt: true,
-        len: [5,5]
+        len: [5, 5]
       }
     },
     description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    time: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -41,11 +50,11 @@ Event.init(
       allowNull: false
     },
     host_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'owner',
-            key: 'id'
-        },
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'owner',
+        key: 'id'
+      },
     }
   },
   {
