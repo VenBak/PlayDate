@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const eventController = require('../controllers/eventController');
 
+// There are view routes prepended by [rootURL].com/
+
 router.get('/', async (req, res) => {
     eventController.getAllforZip(req, res)
     .then(events => {

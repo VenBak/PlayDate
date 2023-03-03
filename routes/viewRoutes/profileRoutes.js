@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Owner, Dog, Event, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// There are view routes prepended by [rootURL].com/profile
+
 //Gets ALL posts and displays it on homepage
 router.get('/', withAuth, async (req, res) => {
     // Send the rendered Handlebars.js template back as the response

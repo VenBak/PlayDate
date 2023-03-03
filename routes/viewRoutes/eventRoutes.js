@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const eventController = require('../controllers/eventController');
 
+// There are view routes prepended by [rootURL].com/events
+
 router.get('/', (req, res) => {
   eventController.getAllforUser(req, res)
   .then(events => {
