@@ -32,16 +32,28 @@
             <div class="input-box">
                 <input id="editdog-name" name="dog.name" type="text" value="{{name}}" class="form-input" required>
                 <label for="dog.name" class="form-label">{{name}}'s Name</label>
+                <div class="no-dog-name-msg invalid-msg d-none">
+                    Add your dog's name
+                </div>
             </div>
 
             <div class="input-box">
                 <input id="editdog-age" name="dog.age" type="text" value="{{age}}" class="form-input" required>
                 <label for="dog.age" class="form-label">{{name}}'s Age</label>
+                <div class="no-dog-age-msg invalid-msg d-none">
+                    Add your dog's age
+                </div>
+                <div class="max-dog-age-msg invalid-msg d-none">
+                    Check dog's age
+                </div>
             </div>
 
             <div class="input-box">
                 <input id="editdog-breed" name="dog.breed" type="text" value="{{breed}}" class="form-input" required>
                 <label for="dog.breed" class="form-label">{{name}}'s Breed</label>
+                <div class="no-dog-breed-msg invalid-msg d-none">
+                    Add your dog's breed
+                </div>
             </div>
 
             <div class="input-box-gender-quarter">

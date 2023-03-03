@@ -32,9 +32,9 @@ const editOwnerFormHandler = async (event) => {
   if (response.ok) {
     document.location.replace(`/profile`);
   }
-  // else {
-  //   // alert(response.statusText);
-  // }
+  else {
+    console.log(response.statusText);
+  }
 
 };
 
