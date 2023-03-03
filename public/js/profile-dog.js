@@ -71,8 +71,10 @@ document
 
 //Validations
 async function dogValidation(event) {
+  event.preventDefault();
   const name = document.querySelector('#dog-name').value.trim();
   const age = document.querySelector('#dog-age').value.trim();
+  const ageLength = age.length;
   const breed = document.querySelector('#dog-breed').value.trim();
 
   const nameError = document.querySelector('.no-dog-name-msg')
@@ -89,7 +91,11 @@ async function dogValidation(event) {
   if (!age) {
     ageError.classList.remove("d-none")
     maxAgeError.classList.add("d-none")
-  } else if (age > 35) {
+  } else if (ageLength > 2) {
+    ageError.classList.add("d-none")
+    maxAgeError.classList.remove("d-none")
+  }
+  else if (age > 35) {
     ageError.classList.add("d-none")
     maxAgeError.classList.remove("d-none")
   } else {
@@ -103,7 +109,7 @@ async function dogValidation(event) {
     breedError.classList.add("d-none")
   }
 
-  if (!name || !age || age > 35 || !breed) {
+  if (!name || !age || ageLength !== 2 || age > 35 || !breed) {
     return
   }
 }

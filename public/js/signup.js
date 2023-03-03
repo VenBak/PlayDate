@@ -53,7 +53,7 @@ const getDogInfo = () => {
 
 
 
-async function ownerValidation(event) {
+function ownerValidation(event) {
   event.preventDefault();
 
   const username = document.querySelector('#username-signup').value.trim();
@@ -124,9 +124,12 @@ async function ownerValidation(event) {
   }
 }
 
-async function dogValidation(event) {
+function dogValidation(event) {
+  event.preventDefault();
   const name = document.querySelector('#dog-name-signup').value.trim();
   const age = document.querySelector('#dog-age-signup').value.trim();
+  const ageLength = age.length;
+
   const breed = document.querySelector('#dog-breed-signup').value.trim();
 
   const nameError = document.querySelector('.no-dog-name-msg')
@@ -143,6 +146,9 @@ async function dogValidation(event) {
   if (!age) {
     ageError.classList.remove("d-none")
     maxAgeError.classList.add("d-none")
+  } else if (ageLength > 2) {
+    ageError.classList.add("d-none")
+    maxAgeError.classList.remove("d-none")
   } else if (age > 35) {
     ageError.classList.add("d-none")
     maxAgeError.classList.remove("d-none")
@@ -157,7 +163,7 @@ async function dogValidation(event) {
     breedError.classList.add("d-none")
   }
 
-  if (!name || !age || age > 35 || !breed) {
+  if (!name || !age || ageLength !== 2 || age > 35 || !breed) {
     return
   }
 }
