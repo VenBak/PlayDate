@@ -6,7 +6,6 @@ signupBtn.addEventListener('click', (event) => {
   ownerValidation(event);
   dogValidation(event);
   signupFormHandler(event);
-  postDog(event);
 });
 
 async function signupFormHandler(event) {
@@ -22,28 +21,25 @@ async function signupFormHandler(event) {
   const description = document.querySelector('#description-signup').value.trim();
 
   console.log(username, password, first_name, last_name, gender, location_zip, description)
+
+  let dog = getDogInfo();
   // POST to Owner table
   if (username && password && first_name && last_name && gender && location_zip && description) {
     const response = await fetch('/api/owners', {
       method: 'POST',
-      body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description }),
+      body: JSON.stringify({ username, password, first_name, last_name, gender, location_zip, description, dogs: [dog] }),
       headers: { 'Content-Type': 'application/json' },
     });
 
-    // IF response is successful, then call posting to DOG table
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/profile');;
     } else {
       console.log(response.statusText);
     }
   }
 }
 
-const postDog = async (event) => {
-  event.preventDefault();
-
-  // DOG Model columns for the intake form - 
-  // we are not initially asking for picture 
+const getDogInfo = () => {
   const name = document.querySelector('#dog-name-signup').value.trim();
   const age = document.querySelector('#dog-age-signup').value.trim();
   const breed = document.querySelector('#dog-breed-signup').value.trim();
