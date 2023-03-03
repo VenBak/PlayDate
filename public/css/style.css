@@ -470,3 +470,7 @@ textarea {
     height: fit-content;
     border: none;
 }
+
+.invalid-msg{
+    color: red;
+}
