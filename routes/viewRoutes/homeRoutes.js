@@ -4,7 +4,9 @@ const eventController = require('../controllers/eventController');
 router.get('/', async (req, res) => {
     eventController.getAllforZip(req, res)
     .then(events => {
+        console.log("----- INSIDE EVENT CONTROLLER -----")
         plainEvents = events.map(event => event.get({ plain: true }));
+        console.log(plainEvents);
         res.status(200).render('homepage', {
             events: plainEvents,
             logged_in: req.session.logged_in
