@@ -55,26 +55,23 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
 //Post route that captures file
 app.post("/api/upload", (req, res, next) => {
   const form = new formidable.IncomingForm();
   //Grabbing file path
   form.parse(req, function (err, fields, files) {
     console.log(files.dogPic.filepath);
-    var oldPath = files.dogPic.filepath;
+    var localPath = files.dogPic.filepath;
     //Creating new filename and directory to store file locally
     var newPath =
       path.join(__dirname, "uploads") + "/" + files.dogPic.originalFilename;
-    var rawData = fs.readFileSync(oldPath);
+    var rawData = fs.readFileSync(localPath);
 
     fs.writeFile(newPath, rawData, function (err) {
       if (err) console.log(err);
       //Upload to Cloudinary
       uploadImage(newPath);
+      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Suggestion from Gabe: make new function and call it here to send to mysql before image gets deleted from uploads folder
       //Delete file locally
       deletefile(newPath);
       return console.log("Successfully uploaded");
