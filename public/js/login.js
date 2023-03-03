@@ -16,8 +16,9 @@ const loginFormHandler = async (event) => {
             // If successful, redirect the browser to the profile page
             document.location.replace('/profile');
         } else {
-            alert(response.statusText);
-            // incorrectInputValidation();
+            // alert(response.statusText);
+            incorrectInputValidation(); //half works
+            // document.location.reload();
         }
     }
 };

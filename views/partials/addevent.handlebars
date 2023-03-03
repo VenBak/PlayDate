@@ -28,13 +28,16 @@
         </div>
 
         <div class="input-box">
-            <input id="end_datePickerId" class="event-end_date"  type="date" required>
+            <input id="end_datePickerId" class="event-end_date" type="date" required>
             <label id="end-date-label">End Date</label>
         </div>
 
-        <button id="submitEvent-btn" class="btn" onclick="hideForm()" type="submit">Submit</button>
-        <br> <br>
-        <button id="back-btn" class="btn" onclick="backEventForm()" type="submit" >Back </button>
+        <div class="d-flex flex-row align-items-center">
+            <button id="back-btn" class="btn-half-alt" onclick="backEventForm()" type="submit">Back </button>
+            <br> <br>
+            <button id="submitEvent-btn" class="btn-half" onclick="hideForm()" type="submit">Submit</button>
+        </div>
+
     </form>
 
 </div>

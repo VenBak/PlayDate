@@ -331,6 +331,19 @@ select~label {
     font-weight: 500;
 }
 
+.btn-half-alt {
+    width: 50%;
+    height: 45px;
+    background-color: white;
+    color: var(--dark-orange);
+    border: 2px solid var(--dark-orange);
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+}
+
 .add-dog-btn {
     margin-left: 20px;
     width: 50%;
@@ -473,4 +486,13 @@ textarea {
 
 .invalid-msg {
     color: red;
+}
+
+#delete-owner-btn {
+    border: 2px solid rgb(255, 29, 29);
+    border-radius: 5px;
+    padding: 4px;
+    background-color: rgb(255, 107, 107);
+    color: #7B0000;
+    font-weight: 550;
 }

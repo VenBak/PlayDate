@@ -61,7 +61,6 @@ async function ownerValidation(event) {
   const passwordlength = password.length
   const first_name = document.querySelector('#first_name-signup').value.trim();
   const last_name = document.querySelector('#last_name-signup').value.trim();
-  const gender = document.querySelector('#gender-signup').value.trim();
   const location_zip = document.querySelector('#location_zip-signup').value.trim();
   const ziplength = location_zip.length
   const description = document.querySelector('#description-signup').value.trim();
@@ -120,7 +119,7 @@ async function ownerValidation(event) {
     descriptionError.classList.add("d-none")
   }
 
-  if (!username || !password || !first_name || !last_name || !gender || !location_zip || ziplength !== 5 || !description || passwordlength < 8 || passwordlength > 16) {
+  if (!username || !password || !first_name || !last_name || !location_zip || ziplength !== 5 || !description || passwordlength < 8 || passwordlength > 16) {
     return
   }
 }

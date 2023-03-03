@@ -5,12 +5,12 @@
     <form id="dogForm" class="mt-5 dogForm" style="display: none;">
 
         <div class="d-flex flex-row align-items-center">
-            <div class="input-box-quarter">
+            <div class="input-box-half">
                 <input id="dog-name" type="text" required>
                 <label>Name</label>
             </div>
 
-            <div class="input-box-quarter">
+            <div class="input-box-half">
                 <input id="dog-age" type="number" required>
                 <label>Age</label>
             </div>
@@ -18,7 +18,7 @@
 
 
         <div class="d-flex flex-row align-items-center">
-            <div class="mt-6 input-box-gender-quarter">
+            <div class="mt-6 input-box-gender">
                 <select id="dog-gender" required>
                     <option value="none" selected disabled hidden>Select an option</option>
                     <option value="female">Female</option>
@@ -28,15 +28,17 @@
             </div>
 
 
-            <div class="mb-6 input-box-quarter">
+            <div class="mb-6 input-box-half">
                 <input id="dog-breed" type="text" required>
                 <label>Breed</label>
             </div>
         </div>
 
-        <button id="submitDog-btn" class="mt-4 btn-half" onclick="hideNewDogForm()" type="submit">Submit</button>
-                <br> <br>
-        <button id="back-btn" class="btn" onclick="backDogForm()" type="submit" >Back </button>
+        <div class="d-flex flex-row align-items-center">
+            <button id="back-btn" class="mt-4 btn-half-alt" onclick="backDogForm()" type="submit">Back </button>
+            <br> <br>
+            <button id="submitDog-btn" class="mt-4 btn-half" onclick="hideNewDogForm()" type="submit">Submit</button>
+        </div>
 
     </form>
 </div>
