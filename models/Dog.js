@@ -24,7 +24,10 @@ Dog.init(
         },
         age: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1, 2],
+            }
         },
         breed: {
             type: DataTypes.STRING,
