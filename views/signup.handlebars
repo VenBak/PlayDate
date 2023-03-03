@@ -1,6 +1,6 @@
 <div>
   <h2 class="text-center">Register</h2>
-  
+
   <form id="signup-form">
     <h3 class="mb-3">Let's Get to Know You</h3>
 
@@ -8,6 +8,9 @@
       <div class="input-box-half">
         <input id="username-signup" type="text" required>
         <label>Username</label>
+        <div class="no-username-msg invalid-msg d-none">
+          Add a username
+        </div>
       </div>
 
       <div class="input-box-half">
@@ -16,6 +19,12 @@
         </span>
         <input id="password-signup" class="password" type="password" required>
         <label>Password</label>
+        <div class="no-password-msg invalid-msg d-none">
+          Add a password
+        </div>
+        <div class="password-length-msg invalid-msg d-none">
+          Passwords must be between 8 to 16 characters
+        </div>
       </div>
     </div>
 
@@ -23,11 +32,17 @@
       <div class="input-box-half">
         <input id="first_name-signup" type="text" required>
         <label>First Name</label>
+        <div class="no-firstname-msg invalid-msg d-none">
+          Add your first name
+        </div>
       </div>
 
       <div class="input-box-half">
         <input id="last_name-signup" type="text" required>
         <label>Last Name</label>
+        <div class="no-lastname-msg invalid-msg d-none">
+          Add your last name
+        </div>
       </div>
     </div>
 
@@ -43,8 +58,14 @@
 
 
       <div class="input-box-half">
-        <input id="location_zip-signup" type="text" required>
+        <input id="location_zip-signup" type="number" required>
         <label>Zip Code</label>
+        <div class="no-zipcode-msg invalid-msg d-none">
+          Add your zip code
+        </div>
+        <div class="zipcode-length-msg invalid-msg d-none">
+          Zip codes must be 5 digits long
+        </div>
       </div>
     </div>
 
@@ -53,21 +74,33 @@
         <label id="description-label">Description</label>
       </div>
       <textarea id="description-signup" type="text" rows="6" required></textarea>
+      <div class="no-description-msg invalid-msg d-none">
+        Tell us about yourself!
+      </div>
     </div>
 
 
     <h3 class="mb-3">Now Tell Us About Your Furry Friend</h3>
-    
+
     <div class="d-flex flex-row align-items-center">
       <div class="input-box-half">
 
         <input id="dog-name-signup" type="text" required>
         <label>Name</label>
+        <div class="no-dog-name-msg invalid-msg d-none">
+          Add your dog's name
+        </div>
       </div>
 
       <div class="input-box-half">
         <input id="dog-age-signup" type="number" required>
         <label id="age-id">Age (in Years)</label>
+        <div class="no-dog-age-msg invalid-msg d-none">
+          Add your dog's age
+        </div>
+        <div class="max-dog-age-msg invalid-msg d-none">
+          Check dog's age
+        </div>
       </div>
     </div>
 
@@ -84,6 +117,9 @@
       <div class="input-box-half">
         <input id="dog-breed-signup" type="text" required>
         <label>Breed</label>
+        <div class="no-dog-breed-msg invalid-msg d-none">
+          Add your dog's breed
+        </div>
       </div>
     </div>
 

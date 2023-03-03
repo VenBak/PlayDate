@@ -464,9 +464,13 @@ textarea {
     top: -15px;
 }
 
-#delete-owner-btn{
+#delete-owner-btn {
     background-color: transparent;
     width: fit-content;
     height: fit-content;
     border: none;
+}
+
+.invalid-msg {
+    color: red;
 }
