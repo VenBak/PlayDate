@@ -5,7 +5,9 @@ const eventData = [
     name: 'Fun time at the park!',
     pic_hyperlink: './images/1',
     location_zip: 90001,
+    location_name: 'Sligo Creek!',
     description: 'Me and the dogs are gonna be at the park playing with balls and discs from 2 to 4. Come join us! Imma bring snack for people and doggos!',
+    time: '2pm to 4pm',
     start_date: '2023-05-04 14:00:00',
     end_date: '2023-05-04 16:00:00',
     host_id: '1'
@@ -14,7 +16,9 @@ const eventData = [
     name: 'Dog party fun outside',
     pic_hyperlink: './images/1',
     location_zip: 90001,
+    location_name: 'Turkey Thicket Park',
     description: 'Gonna be a sweet time, come hangout with us to start your day!',
+    time: '6:30 - 8 am',
     start_date: '2023-05-07 06:30:00',
     end_date: '2023-05-07 08:00:00',
     host_id: '4'
@@ -23,7 +27,9 @@ const eventData = [
     name: 'Puppertravaganza!',
     pic_hyperlink: './images/1',
     location_zip: 90001,
+    location_name: 'Glover Park',
     description: 'Biggest dog party this side of the lake! Bring your friends, bring your toys, bring your booze, lets celebrate the weather!',
+    time: '4:00pm to 6:30pm',
     start_date: '2023-05-14 16:00:00',
     end_date: '2023-05-14 18:30:00',
     host_id: '4'
