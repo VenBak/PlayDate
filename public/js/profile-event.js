@@ -45,10 +45,9 @@ const addEventFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/profile');
+    } else {
+      console.log(response.statusText);
     }
-    // else {
-    //   alert(response.statusText);
-    // }
   }
 };
 document.querySelector('#submitEvent-btn').addEventListener('click', (event) => {
@@ -133,7 +132,7 @@ function eventValidation(event) {
     end_dateError.classList.add("d-none")
   }
 
-  if (!name || !location_zip || ziplength !== 5 || !description) {
+  if (!name || !location_zip || ziplength !== 5 || !description || !start_date || !end_date) {
     return
   }
 }

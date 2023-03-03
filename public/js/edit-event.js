@@ -32,18 +32,21 @@ const editEventFormHandler = async (event) => {
   if (response.ok) {
     document.location.reload();
   } else {
-    alert(response.statusText);
+    console.log(response.statusText);
   }
 
 };
 
-document.querySelector('#submitEventEdit-btn').addEventListener('click', editEventFormHandler);
+document.querySelector('#submitEventEdit-btn').addEventListener('click', (event) => {
+  eventValidation(event);
+  editEventFormHandler(event);
+});
 
 //Validations
 function eventValidation(event) {
   event.preventDefault();
   const name = document.querySelector("#editevent-name").value.trim();
-  const location_zip = document.querySelector('#editowner-location_zip').value.trim();
+  const location_zip = document.querySelector('#editevent-location_zip').value.trim();
   const ziplength = location_zip.length;
   const description = document.querySelector("#editevent-description").value.trim();
   const start_date = document.querySelector("#editEventStart_datePickerId").value.trim();
@@ -95,7 +98,7 @@ function eventValidation(event) {
     end_dateError.classList.add("d-none")
   }
 
-  if (!name || !location_zip || ziplength !== 5 || !description) {
+  if (!name || !location_zip || ziplength !== 5 || !description || !start_date || !end_date) {
     return
   }
 }
