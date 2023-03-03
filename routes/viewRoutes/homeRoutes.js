@@ -2,9 +2,21 @@ const router = require('express').Router();
 const eventController = require('../controllers/eventController');
 
 router.get('/', async (req, res) => {
-    res.render('homepage', {
-        logged_in: req.session.logged_in
-    })
+    eventController.getAllforZip(req, res)
+    .then(events => {
+        plainEvents = events.map(event => event.get({ plain: true }));
+        res.status(200).render('homepage', {
+            events: plainEvents,
+            logged_in: req.session.logged_in
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        res.render('homepage', {
+            events: plainEvents,
+            logged_in: req.session.logged_in
+        });
+      })
 });
 
 router.get('/login', (req, res) => {

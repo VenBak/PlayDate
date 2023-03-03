@@ -32,6 +32,7 @@ exports.create = function (req, res) {
       req.session.save(() => {
         req.session.user_id = owner.id;
         req.session.logged_in = true;
+        req.session.location_zip = owner.location_zip;
         resolve(owner);
       });
     })
@@ -51,6 +52,7 @@ exports.login = function (req, res) {
         req.session.save(() => {
           req.session.user_id = owner.id;
           req.session.logged_in = true;
+          req.session.location_zip = owner.location_zip;
 
           resolve(owner);
         });

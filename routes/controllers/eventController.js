@@ -13,7 +13,7 @@ exports.getAll = function (req, res) {
 
 exports.getAllforZip = function (req, res) {
   return Event.findAll({
-    where: {location_zip: req.body.location_zip},
+    where: {location_zip: req.session.location_zip},
     include: {
       model: Owner,
       as: 'host',
@@ -24,7 +24,7 @@ exports.getAllforZip = function (req, res) {
 
 exports.getAllforUser = function (req, res) {
   return Event.findAll({
-    where: {host_id: req.body.host_id}
+    where: {host_id: req.session.user_id}
   })
 };
 
