@@ -15,5 +15,5 @@ function navFormHandler(val) {
     } else {
         document.querySelector('#owner-section').style.display = 'none';
         document.querySelector('#dog-section').style.display = 'none';
-        document.querySelector('#events-section').style.display = 'block';    }
+        document.querySelector('#events-section').style.display = 'block'; }
 };
