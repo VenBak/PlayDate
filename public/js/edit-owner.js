@@ -48,7 +48,7 @@ async function ownerValidation(event) {
   const ziplength = location_zip.length;
   const first_name = document.querySelector('#editowner-first_name').value.trim();
   const last_name = document.querySelector('#editowner-last_name').value.trim();
-  const gender = document.querySelector('#editowner-gender').value.trim();
+  // const gender = document.querySelector('#editowner-gender').value.trim();
   const description = document.querySelector('#editowner-description').value.trim();
 
   // const usernameError = document.querySelector('.no-username-msg')

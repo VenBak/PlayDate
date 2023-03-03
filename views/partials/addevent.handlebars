@@ -8,11 +8,20 @@
         <div class="input-box">
             <input id="event-name" type="text" required>
             <label>Name</label>
+            <div class="no-name-msg invalid-msg d-none">
+                Add your event's name
+            </div>
         </div>
 
         <div class="input-box">
             <input id="event-location_zip" type="number" required>
             <label>Zip Code</label>
+            <div class="no-zipcode-msg invalid-msg d-none">
+                Add your event's zip code
+            </div>
+            <div class="zipcode-length-msg invalid-msg d-none">
+                Zip codes must be 5 digits long
+            </div>
         </div>
 
         <div>
@@ -20,22 +29,31 @@
                 <label id="description-label">Description</label>
             </div>
             <textarea id="event-description" type="text" rows="6" required></textarea>
+            <div class="no-description-msg invalid-msg d-none">
+                Tell us about the event!
+            </div>
         </div>
 
         <div class="input-box">
             <input id="start_datePickerId" class="event-start_date" type="date" required>
             <label id="start-date-label">Start Date</label>
+            <div class="no-startdate-msg invalid-msg d-none">
+                Select a start date
+            </div>
         </div>
 
         <div class="input-box">
             <input id="end_datePickerId" class="event-end_date" type="date" required>
             <label id="end-date-label">End Date</label>
+            <div class="no-enddate-msg invalid-msg d-none">
+                Select a end date
+            </div>
         </div>
 
         <div class="d-flex flex-row align-items-center">
             <button id="back-btn" class="btn-half-alt" onclick="backEventForm()" type="submit">Back </button>
             <br> <br>
-            <button id="submitEvent-btn" class="btn-half" onclick="hideForm()" type="submit">Submit</button>
+            <button id="submitEvent-btn" class="btn-half" type="submit">Submit</button>
         </div>
 
     </form>
