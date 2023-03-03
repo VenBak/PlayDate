@@ -20,6 +20,10 @@ Event.init(
       allowNull: true,
       defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677779592/playdate-images/default-event_ocl8t7.png"
     },
+    location_name: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     location_zip: {
       type: DataTypes.INTEGER,
       allowNull: false,
