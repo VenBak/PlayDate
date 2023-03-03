@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
       .catch(err => {
         console.log(err);
         res.render('homepage', {
-            events: plainEvents,
+            events: [],
             logged_in: req.session.logged_in
         });
       })

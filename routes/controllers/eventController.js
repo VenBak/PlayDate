@@ -12,8 +12,9 @@ exports.getAll = function (req, res) {
 };
 
 exports.getAllforZip = function (req, res) {
+  let location_zip = req.session.location_zip || 20016;
   return Event.findAll({
-    where: {location_zip: req.session.location_zip},
+    where: {location_zip},
     include: {
       model: Owner,
       as: 'host',
