@@ -11,6 +11,23 @@ exports.getAll = function (req, res) {
   })
 };
 
+exports.getAllforZip = function (req, res) {
+  return Event.findAll({
+    where: {location_zip: req.body.location_zip},
+    include: {
+      model: Owner,
+      as: 'host',
+      include: Dog
+    }
+  })
+};
+
+exports.getAllforUser = function (req, res) {
+  return Event.findAll({
+    where: {host_id: req.body.host_id}
+  })
+};
+
 exports.getOne = function (req, res) {
   // find one event by their `id` value (primary key)
   // include their dogs
