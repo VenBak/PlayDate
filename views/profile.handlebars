@@ -4,16 +4,13 @@
     <h1>Welcome {{username}}!</h1>
     <h2>What would you like to do?</h2>
       <div class="input-box-navigation-quarter">
-        <select id="profile-navigation" name="profile-navigation" class="form-input">
+        <select id="profile-navigation" onchange="navFormHandler(this.value)" name="profile-navigation" class="form-input">
             <option value="none" selected disabled hidden>Select an option</option>
             <option id="userNav" value="userNav">View My User Info</option>
             <option id="dogsNav" value="dogsNav">View My Dogs</option>
             <option id="eventsNav" value="eventsNav">View My Events</option>
         </select>
       </div>
-
-      <button id="submitNav-btn" class="btn mt-3" type="submit">Submit</button>
-
   </div>
 
 

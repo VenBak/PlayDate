@@ -1,13 +1,14 @@
-const navFormHandler = async (event) => {
-    event.preventDefault();
-    const choice = document.querySelector('#profile-navigation').value.trim();
+// Navigation function tied to profile.handlebars
+// tied to the select tag via onchange
+
+function navFormHandler(val) {
   
-    if (choice == 'userNav') {
+    if (val == 'userNav') {
         document.querySelector('#owner-section').style.display = 'block';
         document.querySelector('#dog-section').style.display = 'none';
         document.querySelector('#events-section').style.display = 'none';
     }
-    else if (choice == 'dogsNav') {
+    else if (val == 'dogsNav') {
         document.querySelector('#owner-section').style.display = 'none';
         document.querySelector('#dog-section').style.display = 'block';
         document.querySelector('#events-section').style.display = 'none';
@@ -16,16 +17,3 @@ const navFormHandler = async (event) => {
         document.querySelector('#dog-section').style.display = 'none';
         document.querySelector('#events-section').style.display = 'block';    }
 };
-document.querySelector('#submitNav-btn').addEventListener('click', navFormHandler);
-    
-// function showUserSection() {
-//     document.querySelector('#owner-section').style.display = 'block';
-// }
-
-// function showDogsSection() {
-//     document.querySelector('#dog-section').style.display = 'block';
-// }
-
-// function showEventsSection() {
-//     document.querySelector('#events-section').style.display = 'block';
-// }
