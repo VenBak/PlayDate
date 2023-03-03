@@ -121,4 +121,4 @@ Credit for tutorials and guides I utilized in my code
 
 [Restrict value for date input](https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today): Stackoverflow troubleshooting tip
 
-[date input bug fix reference] (https://stackoverflow.com/questions/20321202/not-showing-placeholder-for-input-type-date-field#:~:text=Just%20add%20onfocus%3D%22(this,once%20the%20date%20is%20selected)
+[date input bug fix reference] (https://stackoverflow.com/questions/20321202/not-showing-placeholder-for-input-type-date-field#:~:text=Just%20add%20onfocus%3D%22)
