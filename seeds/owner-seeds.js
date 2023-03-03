@@ -33,7 +33,7 @@ const ownerData = [
     location_zip: 77001,
     dogs: "3",
     description: 'I love wine and tapas, but preferrably enjoy it with company and distracted doggos'
-  }, 
+  },
   {
     username: 'Mewing0328',
     password: 'password',
@@ -44,7 +44,18 @@ const ownerData = [
     location_zip: 20854,
     dogs: "1",
     description: 'Testing profile'
-  }
+  },
+  {
+    username: 'username',
+    password: 'password',
+    pic_hyperlink: './images/1',
+    first_name: 'claire',
+    last_name: 'lee',
+    gender: 'F',
+    location_zip: 43210,
+    dogs: "5",
+    description: 'I am a cat person but this dog is too cute to not love him'
+  },
 ];
 
 // Export the function

@@ -33,6 +33,14 @@ const dogData = [
         gender: "Male",
         owner_id: 4,
     },
+    {
+        pic_hyperlink: "./#blank",
+        name: "Cam",
+        age: "2",
+        breed: "Heeler",
+        gender: "Male",
+        owner_id: 5,
+    }
 ];
 
 // Export the function
