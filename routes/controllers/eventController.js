@@ -31,21 +31,24 @@ exports.getAllforUser = function (req, res) {
 
 exports.getOne = function (req, res) {
   // find one event by their `id` value (primary key)
-  // include their dogs
   return Event.findOne({
     where: {id: req.params.id},
     include: [{
       model: Owner,
       as: 'host',
-      include: Dog
+      attributes: ['first_name', 'last_name', 'pic_hyperlink'],
+      include: { model: Dog }
     }, 
     {
       model: Owner,
-      as: 'attendees'
+      as: 'attendees',
+      attributes: ['first_name','last_name', 'pic_hyperlink']
     }, {
-      model: Comment
+      model: Comment,
+      attributes: ['text'],
+      include: { model: Owner, attributes: ['first_name'] }
     }]
-  })
+  });
 };
 
 exports.create = function (req, res) {
