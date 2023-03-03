@@ -39,7 +39,8 @@ Event.init(
     },
     time: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: "All day, come when you can"
     },
     start_date: {
       type: DataTypes.DATE,

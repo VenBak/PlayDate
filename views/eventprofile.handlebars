@@ -1,4 +1,5 @@
-{{!-- EDIT EVENTS --}}
+{{!-- PAGE FOR VIEWING A SINGLE EVENT
+If owned by user, allow edit; otherwise, view public info --}}
 
 <div class="d-flex flex-row justify-content-center p-3">
     <div class="card event-{{id}}-card p-3">
@@ -18,7 +19,7 @@
     </div>
 </div>
 
-
+{{#if ownsEvent}}
 {{>uploadEvent}}
 
 {{!-- Edit Event Card --}}
@@ -70,5 +71,6 @@
 
     </div>
 </div>
+{{/if}}
 
 <script src="/js/edit-event.js"></script>

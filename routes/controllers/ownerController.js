@@ -57,9 +57,10 @@ exports.login = function (req, res) {
           resolve(owner);
         });
       } else {
-        reject('Invalid password or email');
+        reject('Invalid password or username');
       }
     })
+    .catch(err => reject('Invalid password or username'))
   })
 };
 
