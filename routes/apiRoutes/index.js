@@ -5,9 +5,9 @@ const dogRoutes = require('./dog-routes');
 const eventRoutes = require('./event-routes');
 const commentRotues = require('./comment-routes');
 
-router.use('/owners', ownerRoutes);
+router.use('/', ownerRoutes);
 router.use('/dogs', dogRoutes);
-router.use('/events', eventRoutes);
+router.use('/', eventRoutes);
 router.use('/comments', commentRotues);
 
 module.exports = router;

@@ -9,12 +9,12 @@
 
 
     <div>
-        <h2>Events</h2>
         {{#if logged_in}}
         <a href="/#"><button class="btn">New Event</button></a>
         {{/if}}
         <section class="current-events">
-
+            <h2 class="my-events-title">Nearby Events</h2>
+            {{>eventcard}}
         </section>
     </div>
 
