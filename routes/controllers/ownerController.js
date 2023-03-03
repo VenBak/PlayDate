@@ -60,6 +60,7 @@ exports.login = function (req, res) {
         reject('Invalid password or email');
       }
     })
+    .catch(err => reject(err))
   })
 };
 
