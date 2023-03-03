@@ -8,6 +8,9 @@
       <div class="input-box-half">
         <input id="username-signup" type="text" required>
         <label>Username</label>
+        <div class="no-username-msg invalid-msg d-none">
+          Add a username
+        </div>
       </div>
 
       <div class="input-box-half">
@@ -16,6 +19,12 @@
         </span>
         <input id="password-signup" class="password" type="password" min="8" max="16" required>
         <label>Password</label>
+        <div class="no-password-msg invalid-msg d-none">
+          Add a password
+        </div>
+        <div class="password-length-msg invalid-msg d-none">
+          Passwords must be between 8 to 16 characters
+        </div>
       </div>
     </div>
 
@@ -23,11 +32,17 @@
       <div class="input-box-half">
         <input id="first_name-signup" type="text" required>
         <label>First Name</label>
+        <div class="no-firstname-msg invalid-msg d-none">
+          Add your first name
+        </div>
       </div>
 
       <div class="input-box-half">
         <input id="last_name-signup" type="text" required>
         <label>Last Name</label>
+        <div class="no-lastname-msg invalid-msg d-none">
+          Add your last name
+        </div>
       </div>
     </div>
 
@@ -45,6 +60,15 @@
       <div class="input-box-half">
         <input id="location_zip-signup" type="text" min="5" max="5" required>
         <label>Zip Code</label>
+        <div class="no-zipcode-msg invalid-msg d-none">
+          Add your zip code
+        </div>
+        <div class="string-zipcode-msg invalid-msg d-none">
+          Only use numbers
+        </div>
+        <div class="zipcode-length-msg invalid-msg d-none">
+          Zip codes must be 5 digits long
+        </div>
       </div>
     </div>
 
@@ -53,6 +77,9 @@
         <label id="description-label">Description</label>
       </div>
       <textarea id="description-signup" type="text" rows="6" required></textarea>
+      <div class="no-description-msg invalid-msg d-none">
+        Tell us about yourself!
+      </div>
     </div>
 
 
@@ -63,11 +90,23 @@
 
         <input id="dog-name-signup" type="text" required>
         <label>Name</label>
+        <div class="no-dog-name-msg invalid-msg d-none">
+          Add your dog's name
+        </div>
       </div>
 
       <div class="input-box-half">
         <input id="dog-age-signup" type="number" required>
         <label id="age-id">Age (in Years)</label>
+        <div class="no-dog-age-msg invalid-msg d-none">
+          Add your dog's age
+        </div>
+        <div class="string-age-msg invalid-msg d-none">
+          Only use numbers
+        </div>
+        <div class="max-dog-age-msg invalid-msg d-none">
+          Check dog's age
+        </div>
       </div>
     </div>
 
@@ -84,12 +123,16 @@
       <div class="input-box-half">
         <input id="dog-breed-signup" type="text" required>
         <label>Breed</label>
+        <div class="no-dog-breed-msg invalid-msg d-none">
+          Add your dog's breed
+        </div>
       </div>
     </div>
+
+    <button id="submit-btn" class="btn" type="submit">Sign Up</button>
   </form>
 
 </div>
 
-<button id="submit-btn" class="btn" type="submit">Sign Up</button>
 
 <script src="/js/signup.js"></script>
