@@ -1,22 +1,8 @@
 <div id="profile-page d-flex flex-column align-items-center">
 
-  <div>
-    <h1>Welcome {{username}}!</h1>
-    <h2>What would you like to do?</h2>
-      <div class="input-box-navigation-quarter">
-        <select id="profile-navigation" onchange="navFormHandler(this.value)" name="profile-navigation" class="form-input">
-            <option value="none" selected disabled hidden>Select an option</option>
-            <option id="userNav" value="userNav">View My User Info</option>
-            <option id="dogsNav" value="dogsNav">View My Dogs</option>
-            <option id="eventsNav" value="eventsNav">View My Events</option>
-        </select>
-      </div>
-  </div>
-
-
-
-  <div id="owner-section" style="display: none;">
-    <div class="d-flex flex-row">
+    <div id="owner-section" style="display: block;">
+        <h1>Welcome {{username}}!</h1>
+    <div class="d-flex flex-row align-items-center justify-content-center">
       {{> ownercard}}
     </div>
 
@@ -24,16 +10,16 @@
       <a class="owner-anchor" style="text-decoration: none" href="profile/owner/{{id}}"> <button class="btn">
           Update Profile</button></a>
     </div>
+    </div>  
 
-  </div>
-  <div id="dog-section" style="display: none;">
+  <div id="dog-section" style="display: block;">
     {{> dogcard}}
 
     {{> adddog}}
   </div>
 
 
-  <div id="events-section" style="display: none;">
+  <div id="events-section" style="display: block;">
     {{!-- Functionality to view all events created by user --}}
     {{> eventcard}}
 
@@ -42,8 +28,7 @@
 
 </div>
 
-{{!-- Allows users navigate the profile page --}}
-<script src="/js/profile-navigation.js"></script>
+
 
 {{!-- Allows users to add another dog or delete a dog --}}
 <script src="/js/profile-dog.js"></script>
