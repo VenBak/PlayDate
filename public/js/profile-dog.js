@@ -18,7 +18,7 @@ function showNewDogForm() {
 // Back button for the dog form if the user doesn't want to add another dog 
 function backDogForm() {
   location.reload();
-  dogSection.scrollIntoView({behavior: 'smooth', block: "start"});
+  dogSection.scrollIntoView({ behavior: 'smooth', block: "start" });
   document.querySelector('.dogForm').style.display = 'none';
 }
 
@@ -43,7 +43,7 @@ const addDogFormHandler = async (event) => {
     if (response.ok) {
       // when hitting submit, go to the part of the profile that is the dogsection
       location.reload();
-      dogSection.scrollIntoView({behavior: 'smooth'});
+      dogSection.scrollIntoView({ behavior: 'smooth' });
     } else {
       alert(response.statusText);
     }
@@ -67,7 +67,7 @@ const delButtonHandler = async (event) => {
 
     if (response.ok) {
       location.reload();
-      dogSection.scrollIntoView({behavior: 'smooth'});
+      dogSection.scrollIntoView({ behavior: 'smooth' });
     } else {
       alert('Failed to delete dog profile');
     }
