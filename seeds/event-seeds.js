@@ -33,6 +33,28 @@ const eventData = [
     start_date: '2023-05-14 16:00:00',
     end_date: '2023-05-14 18:30:00',
     host_id: '4'
+  },
+  {
+    name: 'Get Crunk!',
+    pic_hyperlink: './images/1',
+    location_zip: 20888,
+    location_name: 'Potomac Park',
+    description: 'Fun fun fun!',
+    time: '4:00pm',
+    start_date: '2023-05-12 16:00:00',
+    end_date: '2023-05-12 18:30:00',
+    host_id: '3'
+  },
+  {
+    name: 'Run around!',
+    pic_hyperlink: './images/1',
+    location_zip: 90001,
+    location_name: 'Hoover Park',
+    description: 'Let us have some fun with the pups!',
+    time: '6:30pm',
+    start_date: '2023-06-14 16:00:00',
+    end_date: '2023-06-14 18:30:00',
+    host_id: '2'
   }
 ];
 

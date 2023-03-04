@@ -8,54 +8,74 @@
     <div class="edit-owner-form card-body" style="display: block;">
         <h3 class="card-header"> Edit {{username}}'s Information</h3>
         <form>
-            <div class="d-flex flex-row align-items-center">
-                <div class="input-box-half">
-                    <input id="editowner-username" name="owner.username" type="text" value="{{username}}"
-                        class="form-input" required>
-                    <label for="owner.username" class="form-label">{{username}}'s username</label>
-                </div>
-
-                <div class="input-box-half">
-                    <input id="editowner-location_zip" name="owner.location_zip" type="text" value="{{location_zip}}"
-                        class="form-input" required>
-                    <label for="owner.location_zip" class="form-label">{{username}}'s Zip Code</label>
-                </div>
-
-            </div>
 
             <div class="d-flex flex-row align-items-center">
                 <div class="input-box-half">
                     <input id="editowner-first_name" name="owner.first_name" type="text" value="{{first_name}}"
                         class="form-input" required>
                     <label for="owner.first_name" class="form-label">{{username}}'s First Name</label>
+                    <div class="no-firstname-msg invalid-msg d-none">
+                        Add your first name
+                    </div>
                 </div>
 
                 <div class="input-box-half">
                     <input id="editowner-last_name" name="owner.last_name" type="text" value="{{last_name}}"
                         class="form-input" required>
                     <label for="owner.last_name" class="form-label">{{username}}'s Last Name</label>
+                    <div class="no-lastname-msg invalid-msg d-none">
+                        Add your last name
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row align-items-center">
+                <div class="input-box-gender">
+                    <select id="editowner-gender" name="owner.gender" class="form-input" required>
+                        {{!-- Set the value for the instruction to current gender if user does not make a change to gender --}}
+                        <option value="{{gender}}" selected disabled hidden>Select an option</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                    <label for="owner.gender" class="form-label">{{username}}'s Gender</label>
+                </div>
+
+                <div class="input-box-half">
+                    <input id="editowner-location_zip" name="owner.location_zip" type="number" value="{{location_zip}}"
+                        class="form-input" required>
+                    <label for="owner.location_zip" class="form-label">{{username}}'s Zip Code</label>
+                    <div class="no-zipcode-msg invalid-msg d-none">
+                        Add your zip code
+                    </div>
+                    <div class="zipcode-length-msg invalid-msg d-none">
+                        Zip codes must be 5 digits long
+                    </div>
                 </div>
             </div>
 
 
-            <div class="input-box-gender-quarter">
-                <select id="editowner-gender" name="owner.gender" class="form-input" required>
-                    {{!-- <option value="none" selected disabled hidden>Select an option</option> --}}
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                </select>
-                <label for="owner.gender" class="form-label">{{username}}'s Gender</label>
+            <div>
+                <div>
+                    <label id="description-label">{{username}}'s Description</label>
+                </div>
+                <textarea id="editowner-description" type="text" rows="6" required>{{description}}</textarea>
+                <div class="no-description-msg invalid-msg d-none">
+                    Tell us about yourself!
+                </div>
             </div>
         </form>
+
         {{!-- See note 1.2 above --}}
         {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditOwnerForm()" type="submit">Submit</button>
         --}}
-
-
-        <button id="delete-owner-btn" class="d-flex justify-content-start" onclick="delOwnerButtonHandler()">
-            <img class="delete-owner" data-id="{{id}}" src="/images/delete-Freepik-32px.png" alt="Trash Can"> Delete
-            Profile
-        </button>
+        <div class="d-flex justify-content-end">
+            <button id="delete-owner-btn" class="mt-5 d-flex justify-content-center align-items-center"
+                onclick="delOwnerButtonHandler()">
+                <img class="delete-owner" data-id="{{id}}" src="/images/delete-Freepik-32px-dkred.PNG" alt="Trash Can">
+                Delete
+                Profile
+            </button>
+        </div>
         <br> <br>
 
         <button id="submitOwnerEdit-btn" class="btn mt-3" type="submit">Submit Change to {{username}}'s

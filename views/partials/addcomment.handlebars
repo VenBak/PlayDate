@@ -1,0 +1,17 @@
+<form id="add-comment-form" class="post-form mt-3 d-flex flex-column d-none">
+    <label>Add Comment</label>
+    <textarea type="text" id="comment-text" class="form-control input-group mt-2" rows="5" aria-label="Post Contents"
+        aria-describedby="basic-addon1">{{comment.text}}</textarea>
+
+    {{!-- buttons --}}
+    <div class="buttons mt-2 d-flex justify-text-end">
+        {{!-- go back = reactivate new Post icon/dashboard's other posts if there is any --}}
+        <button class="back-button btn-quarter-alt me-2">Go Back</button>
+        {{!-- post = PUT route to update post --}}
+        {{#if logged_in}}
+        <button class="add-comment-button btn-quarter ps-3 pe-3">Add</button>
+        {{else}}
+        <button class="log-in-button ps-3 pe-3"><a href="/login">Log In</a></button>
+        {{/if}}
+    </div>
+</form>

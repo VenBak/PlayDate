@@ -16,7 +16,7 @@ Dog.init(
         pic_hyperlink: {
             type: DataTypes.STRING,
             allowNull: true,
-            defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737085/playdate-images/uhdfp3aq73sjmxxk7ezq.png"
+            defaultValue: "https://res.cloudinary.com/dcvtyvwii/image/upload/v1677891319/classImages/default-dog.png"
         },
         name: {
             type: DataTypes.STRING,
@@ -24,7 +24,10 @@ Dog.init(
         },
         age: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1, 2],
+            }
         },
         breed: {
             type: DataTypes.STRING,

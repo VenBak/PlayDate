@@ -1,6 +1,5 @@
 {{#if dogs.length}}
 <div>
-    <h2 class="my-dogs-title">My Dogs</h2>
     <div class="dog-card-container dog-list flex-wrap">
         {{#each dogs as |dog|}}
         <div class="card dog-cards">
@@ -8,8 +7,7 @@
             <div class="card-body">
                 <h5 class="dog-name card-title">{{dog.name}}</h5>
 
-                <p class="card-text">I am a {{age}} year old {{gender}} {{breed}}. Check out my family's profile for
-                    more!</p>
+                <p class="card-text">Hi! I am a {{age}} year old {{gender}} {{breed}}.</p>
 
                 <div class="buttons dog-buttons flex-row justify-content-between">
                     <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
