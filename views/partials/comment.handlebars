@@ -1,0 +1,25 @@
+{{!-- All comments template --}}
+<div class="d-flex flex-column comments"><!--the container for all the comments should be in column form-->
+    {{#if comments.length}}
+    {{#each comments as |comment|}}
+    <div class="d-flex align-item-center mt-3 p-2">
+        {{!-- profile icon --}}
+        <div class="circular--landscape pb-3 ps-4">
+            <img src="/images/default-owner.png" alt="Picture of {{comment.owner.username}}">
+        </div>
+
+        {{!-- body --}}
+        <div class="comment-main">
+            <h5 class="ps-2 comment-username">{{comment.owner.username}}</h5>
+            <p class="comment-text pt-1 ps-2">
+                {{comment.text}}
+            </p>
+        </div>
+    </div>
+    {{/each}}
+
+    {{else}}
+    <h2 class="text-center">No comments</h2>
+    {{/if}}
+
+</div>
