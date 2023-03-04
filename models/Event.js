@@ -46,10 +46,6 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false
     },
-    end_date: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
     host_id: {
       type: DataTypes.INTEGER,
       references: {

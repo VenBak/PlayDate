@@ -2,7 +2,6 @@
 
 // For the date picker
 start_datePickerId.min = new Date().toLocaleDateString('fr-ca');
-end_datePickerId.min = new Date().toLocaleDateString('fr-ca');
 
 // Show the event form and reset the fields
 function showEventForm() {
@@ -22,7 +21,7 @@ function hideEventForm() {
 // Back button for the event form if the user doesn't want to add another event 
 function backEventForm() {
   location.reload();
-  eventSection.scrollIntoView({behavior: 'smooth', block:'start'})
+  eventSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
   document.querySelector('.eventForm').style.display = 'none';
 }
 
@@ -34,16 +33,15 @@ const addEventFormHandler = async (event) => {
   const location_zip = document.querySelector('#event-location_zip').value.trim();
   const description = document.querySelector('#event-description').value.trim();
   const start_date = document.querySelector('.event-start_date').value.trim();
-  const end_date = document.querySelector('.event-end_date').value.trim();
   const time = document.querySelector('.addEvent-time').value.trim();
 
   const eventSection = document.querySelector('#events-section');
 
   // CREATE a event
-  if (name && location_zip && description && start_date && end_date && time) {
+  if (name && location_zip && description && start_date && time) {
     const response = await fetch('/api/events', {
       method: 'POST',
-      body: JSON.stringify({ name, location_zip, description, start_date, end_date, time }),
+      body: JSON.stringify({ name, location_zip, description, start_date, time }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -51,7 +49,7 @@ const addEventFormHandler = async (event) => {
 
     if (response.ok) {
       location.reload();
-      eventSection.scrollIntoView({behavior: 'smooth', block: "start"});
+      eventSection.scrollIntoView({ behavior: 'smooth', block: "start" });
     } else {
       console.log(response.statusText);
     }
@@ -92,18 +90,15 @@ function eventValidation(event) {
   const ziplength = location_zip.length;
   const description = document.querySelector("#event-description").value.trim();
   const start_date = document.querySelector(".event-start_date").value.trim();
-  const end_date = document.querySelector(".event-end_date").value.trim();
-  // const start_time = ();
-  // const end_time = ();
+  const time = document.querySelector('.addEvent-time').value.trim();
 
   const nameError = document.querySelector(".no-name-msg");
   const noZipError = document.querySelector('.no-zipcode-msg');
   const zipLengthError = document.querySelector('.zipcode-length-msg');
   const descriptionError = document.querySelector('.no-description-msg');
   const start_dateError = document.querySelector('.no-startdate-msg');
-  const end_dateError = document.querySelector('.no-enddate-msg');
-  // const start_time = document.querySelector('.');
-  // const end_time = document.querySelector('.');
+  const timeError = document.querySelector('.no-time-msg');
+
 
   if (!name) {
     nameError.classList.remove("d-none")
@@ -134,13 +129,13 @@ function eventValidation(event) {
     start_dateError.classList.add("d-none")
   }
 
-  if (!end_date) {
-    end_dateError.classList.remove("d-none")
+  if (!time) {
+    timeError.classList.remove("d-none")
   } else {
-    end_dateError.classList.add("d-none")
+    timeError.classList.add("d-none")
   }
 
-  if (!name || !location_zip || ziplength !== 5 || !description || !start_date || !end_date) {
+  if (!name || !location_zip || ziplength !== 5 || !description || !start_date || !time) {
     return
   }
 }
