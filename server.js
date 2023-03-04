@@ -12,6 +12,8 @@ const cloudinary = require("cloudinary").v2;
 const fs = require("fs");
 require("dotenv").config();
 
+const dogController = require('./routes/controllers/dogController');
+
 const app = express();
 const PORT = process.env.PORT || 3009;
 
@@ -56,7 +58,7 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 //Post route that captures file
-app.post("/api/upload", (req, res, next) => {
+app.post("/api/upload", async (req, res, next) => {
   const form = new formidable.IncomingForm();
   //Grabbing file path
   form.parse(req, function (err, fields, files) {
@@ -70,7 +72,8 @@ app.post("/api/upload", (req, res, next) => {
     fs.writeFile(newPath, rawData, function (err) {
       if (err) console.log(err);
       //Upload to Cloudinary
-      uploadImage(newPath);
+      uploadImage(req, res, newPath);
+      
       //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Suggestion from Gabe: make new function and call it here to send to mysql before image gets deleted from uploads folder
       //Delete file locally
       deletefile(newPath);
@@ -80,7 +83,7 @@ app.post("/api/upload", (req, res, next) => {
 });
 
 // Cloudinary Function that Uploads an image file
-const uploadImage = async (imagePath) => {
+const uploadImage = async (req, res, imagePath) => {
   // Use the uploaded file's name as the asset's public ID and
   // allow overwriting the asset with new versions
   const options = {
@@ -94,8 +97,13 @@ const uploadImage = async (imagePath) => {
   try {
     // Upload the image
     const result = await cloudinary.uploader.upload(imagePath, options);
-    console.log(result);
-    console.log(result.public_id);
+    let request = {...req};
+    request.body.pic_hyperlink = result.url;
+    request.params.id = req.session.dog_id;
+    //console.log(request);
+    dogController.update(request, res);
+    //console.log(result);
+    //console.log(result.public_id);
   } catch (error) {
     console.error(error);
   }

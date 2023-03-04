@@ -21,6 +21,7 @@ exports.getOne = function (req, res) {
     include: Owner
   })
     .then((dog) => {
+      req.session.dog_id = dog.id;
       res.status(200).json(dog);
     })
     .catch((err) => {
