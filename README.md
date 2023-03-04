@@ -121,10 +121,30 @@ Credit for tutorials and guides I utilized in my code
 
 [Restrict value for date input](https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today): Stackoverflow troubleshooting tip
 
-[date input bug fix reference] (https://stackoverflow.com/questions/20321202/not-showing-placeholder-for-input-type-date-field#:~:text=Just%20add%20onfocus%3D%22)
+[date input bug fix reference](https://stackoverflow.com/questions/20321202/not-showing-placeholder-for-input-type-date-field#:~:text=Just%20add%20onfocus%3D%22)
 
 [Horizontal Scrolling](https://blog.hubspot.com/website/horizontal-scrolling): Used for large number of cards to scroll horizontally
 
 [Numbers only Regex](https://uibakery.io/regex-library/numbers-only)
 
 [Scroll to View](https://stackoverflow.com/questions/3569329/javascript-to-make-the-page-jump-to-a-specific-location)
+
+[Circulate Images](https://www.webfx.com/blog/web-design/circular-images-css/)
+
+[Delete icon provided by Freepik from Flaticon](https://www.flaticon.com/free-icon/bin_484662)
+
+[Event icon provided by iconixar from Flaticon](https://www.flaticon.com/free-icon/event_2413035)
+
+[Unlocked padlock icon provided by Dave Gandy from Flaticon](https://www.flaticon.com/free-icon/padlock-unlock_25215)
+
+[Two paws icon provided by icongeek26 from Flaticon](https://www.flaticon.com/free-icon/paws_4787175)
+
+[Owner playing with dog and ball icon provided by Freepik from Flaticon](https://www.flaticon.com/free-icon/playing_6381352)
+
+[Man Throwing A Disc And Dog Jumping To Catch It icon by Freepik from Flaticon](https://www.flaticon.com/free-icon/man-throwing-a-disc-and-dog-jumping-to-catch-it_53082)
+
+[Profile icon provided by inkubators from Flaticon](https://www.flaticon.com/free-icon/profile_3106921)
+
+[Secured Lock icon provided by Freepik from Flaticon](https://www.flaticon.com/free-icon/secured-lock_17354)
+
+[navbar span icon provided by Alkhalifi Design Flaticon](https://www.flaticon.com/free-icon/menu_8212733)
