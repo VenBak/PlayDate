@@ -34,7 +34,7 @@ Owner.init(
     pic_hyperlink: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677737057/playdate-images/xotpwmc99ujpabb072v6.png"
+      defaultValue: "https://res.cloudinary.com/dcvtyvwii/image/upload/v1677891328/classImages/default-owner.png"
     },
     first_name: {
       type: DataTypes.STRING,
