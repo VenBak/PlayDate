@@ -1,11 +1,24 @@
 {{!-- MY EVENTS TAB --}}
 
 <div>
-    <a href="./profile"><button class="btn mb-4">Add Event</button></a>
 
     {{!-- Functionality to view all events created by user --}}
     <h2 class="my-events-title">My Events</h2>
-    {{>eventcard}}
+
+  {{#if events.length}}
+    <div class="event-card-container myEventsPage-list flex-wrap">
+        <div class="eCards-section"> 
+            <div class="eCards">
+                {{>eventcard}}
+            </div>
+        </div>
+    </div>
+  {{/if}}
+
+    <a href="./profile"><button class="btn mb-4">Add Event</button></a>
+
 </div>
-{{!-- Allows users to add an event or delete an event --}}
-<script src="/js/profile-event.js"></script>
+
+
+<script src="/js/myevent-page.js"></script>
+

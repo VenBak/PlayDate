@@ -34,11 +34,15 @@
 
   {{!-- if statement prevents the horizontal scroll showing if no cards --}}
   {{#if events.length}}
-    <div id="eCards-section" class="container"> 
-      <div id="eCards">
-        {{> eventcard}}
+  <div>
+    <div class="event-card-container event-list flex-wrap">
+      <div class="eCards-section"> 
+        <div class="eCards">
+          {{> eventcard}}
+        </div>
       </div>
     </div>
+  </div>
   {{/if}}
 
     {{> addevent}}

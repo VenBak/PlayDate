@@ -18,7 +18,7 @@ function showNewDogForm() {
 // Back button for the dog form if the user doesn't want to add another dog 
 function backDogForm() {
   location.reload();
-  dogSection.scrollIntoView({behavior: 'smooth'});
+  dogSection.scrollIntoView({behavior: 'smooth', block: "start"});
   document.querySelector('.dogForm').style.display = 'none';
 }
 

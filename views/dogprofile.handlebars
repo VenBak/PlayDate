@@ -14,21 +14,19 @@
                     <p class="card-text">{{age}}</p>
                     <p class="card-text">{{gender}}</p>
                     <p class="card-text">{{breed}}</p>
+                    <button id="editFromDogSummary" class="btn" onclick="editFromDogSummary()" type="submit"> Edit {{name}} </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-{{>uploadDog}}
-
-{{!-- NOTE 1.2: See edit-dog.js file for detailed note. Keeping below in case we change our minds --}}
-{{!-- <button onclick="showEditDogForm()" class="btn" type="submit" data-id="{{id}}">Edit Dog Info</button> --}}
-
-<div class="card">
+{{!-- {{#if ownsDog}} --}}
+<div id="dogEditCard" class="card" style="display: none;">
+    {{>uploadDog}}
     <div class="edit-dog-form card-body" style="display: block;">
         <h3 class="card-header"> Edit {{name}}'s Information</h3>
-        <form>
+        <form id="dogProfileForm">
             <div class="input-box">
                 <input id="editdog-name" name="dog.name" type="text" value="{{name}}" class="form-input" required>
                 <label for="dog.name" class="form-label">{{name}}'s Name</label>
@@ -58,21 +56,20 @@
 
             <div class="input-box-gender-quarter">
                 <select id="editdog-gender" name="dog.gender" class="form-input" required>
-                    {{!-- <option value="none" selected disabled hidden>Select an option</option> --}}
+                    {{!-- Set the value for the instruction to current gender if user does not make a change to gender --}}
+                    <option value="{{gender}}" selected disabled hidden>Select an option</option>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                 </select>
                 <label for="dog.gender" class="form-label">{{name}}'s Gender</label>
             </div>
         </form>
-        {{!-- See note 1.2 above --}}
-        {{!-- <button id="submitEdit-btn" class="btn mt-3" onclick="hideEditDogForm()" type="submit">Submit</button>
-        --}}
         <button id="submitEdit-btn" class="btn mt-3" type="submit">Submit Change to {{name}}'s Profile</button>
         <br> <br>
         <button id="back-btn" class="btn" onclick="backEditDogForm()" type="submit"> Go Back To Profile </button>
 
     </div>
 </div>
+{{!-- {{/if}} --}}
 
 <script src="/js/edit-dog.js"></script>

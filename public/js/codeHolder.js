@@ -1,18 +1,14 @@
 // ME TO DO: 
-// - profile edit button 
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
-// - EVENTS PAGE
-// ---- make delete button work
+// - events end date, cannot pick before start date
 
 
 // DONE
-// - added horizontal scrolling to my dogs 
-// - added horizontal scrolling to my events
-// - after submitting new dog, added scrollintoview for dogsection 
-// - after submitting new event, added scrollintoview for events section
-// - hide the add dog when the form (add new dog) unhides
-// - added time for event
-
+// -- My Events page delete works (had to change eventcard)
+// -- My Events page horizontal scrolling
+// -- PUT / UPDATE event: added time
+// - DOG summary for edit enable that and hide the edit form (change response.ok section)
+// - DOG & OWNER gender edit: shows instruction as default, if user does not pick a new gender, defaults to current gender in DB
 
 
 
@@ -44,3 +40,23 @@
 
 // {{!-- Allows users navigate the profile page
 //     <script src="/js/profile-navigation.js"></script> --}}
+
+// function datePicker(){
+//   const staDate = document.querySelector('.staDate').value.trim();
+//   const enDate = document.querySelector('.enDate').value.trim();
+
+//   enDate.max = staDate.datePicker(new Date().toLocaleDateString('fr-ca'));
+// }
+
+
+
+// staDate.datepicker({
+//   onSelect: function(dateText){
+//     enDate.datepicker('option','minDate',new Date(dateText));
+//   }
+// });
+// enDate.datepicker({
+//   onSelect: function(dateText){
+//     staDate.datepicker('option','maxDate',new Date(dateText));
+//   }
+// });
