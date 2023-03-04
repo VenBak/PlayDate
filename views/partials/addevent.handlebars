@@ -1,8 +1,9 @@
 {{!-- Form for adding events --}}
 <div>
-    <h3>Do you want to create an event? </h3>
-    <button onclick="showEventForm()" type="submit" class="btn-half">Add an EVENT!</button>
-
+    <div id="addEventSection" style="display:block;">
+        <h3>Do you want to create an event? </h3>
+        <button onclick="showEventForm()" type="submit" class="btn-half">Add an EVENT!</button>
+    </div>
     <form id="eventForm" class="mt-5 eventForm" style="display: none;">
 
         <div class="input-box">
@@ -47,6 +48,13 @@
             <label id="end-date-label">End Date</label>
             <div class="no-enddate-msg invalid-msg d-none">
                 Select a end date
+            </div>
+        </div>
+
+        <div class="input-box">
+            <input class="addEvent-time" type="text" required>
+            <label id="time-label">Time</label>
+            <div>
             </div>
         </div>
 

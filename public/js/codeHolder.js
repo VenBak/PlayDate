@@ -4,8 +4,19 @@
 // - EVENTS PAGE
 // ---- make delete button work
 
+
 // DONE
-// - 
+// - added horizontal scrolling to my dogs 
+// - added horizontal scrolling to my events
+// - after submitting new dog, added scrollintoview for dogsection 
+// - after submitting new event, added scrollintoview for events section
+// - hide the add dog when the form (add new dog) unhides
+
+
+
+
+
+
 
 // placeholder="{{start_date}}" onfocus="(this.type='date')"
 // placeholder="{{end_date}}" onfocus="(this.type='date')"

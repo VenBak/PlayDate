@@ -10,6 +10,7 @@ function showEventForm() {
   eventForm.reset();
   document.querySelector('.eventForm').style.display = 'block';
   document.querySelector('#submitEvent-btn').style.display = 'block';
+  document.querySelector('#addEventSection').style.display = 'none';
 }
 
 // Hide the event form after the form has been submitted
@@ -32,19 +33,23 @@ const addEventFormHandler = async (event) => {
   const description = document.querySelector('#event-description').value.trim();
   const start_date = document.querySelector('.event-start_date').value.trim();
   const end_date = document.querySelector('.event-end_date').value.trim();
+  const time = document.querySelector('.addEvent-time').value.trim();
+
+  const eventSection = document.querySelector('#events-section');
 
   // CREATE a event
-  if (name && location_zip && description && start_date && end_date) {
+  if (name && location_zip && description && start_date && end_date && time) {
     const response = await fetch('/api/events', {
       method: 'POST',
-      body: JSON.stringify({ name, location_zip, description, start_date, end_date }),
+      body: JSON.stringify({ name, location_zip, description, start_date, end_date, time }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      location.reload();
+      eventSection.scrollIntoView({behavior: 'smooth'});
     } else {
       console.log(response.statusText);
     }
@@ -58,6 +63,9 @@ document.querySelector('#submitEvent-btn').addEventListener('click', (event) => 
 
 // DELETE an event
 const delEventHandler = async (event) => {
+
+  const eventSection = document.querySelector('#events-section');
+
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -66,7 +74,8 @@ const delEventHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.reload();
+      location.reload();
+      eventSection.scrollIntoView({behavior: 'smooth'});    
     } else {
       alert('Failed to delete event profile');
     }

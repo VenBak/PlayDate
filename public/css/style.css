@@ -344,6 +344,36 @@ select~label {
     font-weight: 500;
 }
 
+#dCards-section {
+    background-color: var(--orange);
+    border: 1px solid black;
+    height: 100%;
+    width: 1000px;
+    overflow-x: scroll;
+    scrollbar-color:var(--nav-bar);
+}
+
+#dCards {
+height: 80%;
+width: 4000px;
+margin: 10px;
+}
+
+#eCards-section {
+    background-color: var(--orange);
+    border: 1px solid black;
+    height: 100%;
+    width: 1000px;
+    overflow-x: scroll;
+    scrollbar-color:var(--nav-bar);
+}
+
+#eCards {
+height: 80%;
+width: 4000px;
+margin: 10px;
+}
+
 .add-dog-btn {
     margin-left: 20px;
     width: 50%;
