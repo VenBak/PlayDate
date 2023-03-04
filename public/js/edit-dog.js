@@ -3,12 +3,12 @@ function backEditDogForm() {
   document.location.replace('/profile');
 }
 
-// Hide and appear  
+// Hide and appear Dog Edit Form
 function editFromDogSummary() {
   const dogEditForm = document.querySelector('.edit-dog-form');
 
   document.querySelector('#dogEditCard').style.display = 'block';
-  dogEditForm.scrollIntoView({behavior: 'smooth', block: "start"});
+  dogEditForm.scrollIntoView({ behavior: 'smooth', block: "start" });
 }
 
 const editDogFormHandler = async (event) => {
