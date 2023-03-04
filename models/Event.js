@@ -18,7 +18,7 @@ Event.init(
     pic_hyperlink: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "https://res.cloudinary.com/dlkk2oyhp/image/upload/v1677779592/playdate-images/default-event_ocl8t7.png"
+      defaultValue: "https://res.cloudinary.com/dcvtyvwii/image/upload/v1677891322/classImages/default-event.png"
     },
     location_name: {
       type: DataTypes.STRING,
