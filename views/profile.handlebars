@@ -14,11 +14,16 @@
 
   <div id="dog-section" style="display: block;">
     <h2 class="my-dogs-title">My Dogs</h2>
+
+  {{!-- if statement prevents the horizontal scroll showing if no cards --}}
+  {{#if dogs.length}}
     <div id="dCards-section" class="container"> 
       <div id="dCards">
         {{> dogcard}} 
       </div>
     </div>
+  {{/if}}
+
     {{> adddog}}
   </div>
 
@@ -26,11 +31,16 @@
   <div id="events-section" style="display: block;">
     {{!-- Functionality to view all events created by user --}}
     <h2 class="my-events-title">My Events</h2>
+
+  {{!-- if statement prevents the horizontal scroll showing if no cards --}}
+  {{#if events.length}}
     <div id="eCards-section" class="container"> 
       <div id="eCards">
         {{> eventcard}}
       </div>
     </div>
+  {{/if}}
+
     {{> addevent}}
   </div>
 
