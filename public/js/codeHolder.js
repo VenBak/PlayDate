@@ -1,14 +1,8 @@
 // ME TO DO: 
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
-// - events end date, cannot pick before start date
-
 
 // DONE
-// -- My Events page delete works (had to change eventcard)
-// -- My Events page horizontal scrolling
-// -- PUT / UPDATE event: added time
-// - DOG summary for edit enable that and hide the edit form (change response.ok section)
-// - DOG & OWNER gender edit: shows instruction as default, if user does not pick a new gender, defaults to current gender in DB
+// - CREATE, UPDATE, DELETE COMMENT from the EVENT page
 
 
 
