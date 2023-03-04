@@ -11,6 +11,7 @@
 // - after submitting new dog, added scrollintoview for dogsection 
 // - after submitting new event, added scrollintoview for events section
 // - hide the add dog when the form (add new dog) unhides
+// - added time for event
 
 
 
