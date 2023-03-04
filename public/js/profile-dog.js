@@ -6,6 +6,7 @@ function showNewDogForm() {
   dogForm.reset();
   document.querySelector('.dogForm').style.display = 'block';
   document.querySelector('#submitDog-btn').style.display = 'block';
+  document.querySelector('#addDogSection').style.display = 'none';
 }
 
 // // Hide the dog form after the form has been submitted
@@ -16,6 +17,8 @@ function showNewDogForm() {
 
 // Back button for the dog form if the user doesn't want to add another dog 
 function backDogForm() {
+  location.reload();
+  dogSection.scrollIntoView({behavior: 'smooth'});
   document.querySelector('.dogForm').style.display = 'none';
 }
 
@@ -27,6 +30,7 @@ const addDogFormHandler = async (event) => {
   const age = document.querySelector('#dog-age').value.trim();
   const breed = document.querySelector('#dog-breed').value.trim();
   const gender = document.querySelector('#dog-gender').value.trim();
+  const dogSection = document.querySelector('#dog-section');
 
   // CREATE-POST a dog from OWNER profile page
   if (name && age && breed && gender) {
@@ -37,7 +41,9 @@ const addDogFormHandler = async (event) => {
     });
     // IF response is successful, then go to the profile
     if (response.ok) {
-      document.location.replace('/profile');
+      // when hitting submit, go to the part of the profile that is the dogsection
+      location.reload();
+      dogSection.scrollIntoView({behavior: 'smooth'});
     } else {
       alert(response.statusText);
     }
@@ -50,6 +56,8 @@ document.querySelector('#submitDog-btn').addEventListener('click', (event) => {
 
 // DELETE a dog
 const delButtonHandler = async (event) => {
+  const dogSection = document.querySelector('#dog-section');
+
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -58,7 +66,8 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      location.reload();
+      dogSection.scrollIntoView({behavior: 'smooth'});
     } else {
       alert('Failed to delete dog profile');
     }
