@@ -21,6 +21,8 @@ function hideEventForm() {
 
 // Back button for the event form if the user doesn't want to add another event 
 function backEventForm() {
+  location.reload();
+  eventSection.scrollIntoView({behavior: 'smooth', block:'start'})
   document.querySelector('.eventForm').style.display = 'none';
 }
 
@@ -49,7 +51,7 @@ const addEventFormHandler = async (event) => {
 
     if (response.ok) {
       location.reload();
-      eventSection.scrollIntoView({behavior: 'smooth'});
+      eventSection.scrollIntoView({behavior: 'smooth', block: "start"});
     } else {
       console.log(response.statusText);
     }
@@ -64,8 +66,6 @@ document.querySelector('#submitEvent-btn').addEventListener('click', (event) => 
 // DELETE an event
 const delEventHandler = async (event) => {
 
-  const eventSection = document.querySelector('#events-section');
-
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -75,7 +75,6 @@ const delEventHandler = async (event) => {
 
     if (response.ok) {
       location.reload();
-      eventSection.scrollIntoView({behavior: 'smooth'});    
     } else {
       alert('Failed to delete event profile');
     }

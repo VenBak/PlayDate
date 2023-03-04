@@ -32,7 +32,8 @@
             <div class="d-flex flex-row align-items-center">
                 <div class="input-box-gender">
                     <select id="editowner-gender" name="owner.gender" class="form-input" required>
-                        {{!-- <option value="none" selected disabled hidden>Select an option</option> --}}
+                        {{!-- Set the value for the instruction to current gender if user does not make a change to gender --}}
+                        <option value="{{gender}}" selected disabled hidden>Select an option</option>
                         <option value="female">Female</option>
                         <option value="male">Male</option>
                     </select>

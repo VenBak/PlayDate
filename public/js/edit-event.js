@@ -1,10 +1,18 @@
-// For the date picker
+// For the date picker - prevent picking days before today's date
 editEventStart_datePickerId.min = new Date().toLocaleDateString('fr-ca');
 editEventEnd_datePickerId.min = new Date().toLocaleDateString('fr-ca');
 
-// Back button for the event form if the user doesn't want to add another event 
+// Back button for the event form if the user doesn't want to edit event 
 function backEditEventForm() {
   document.location.replace('/profile');
+}
+
+// Hide and appear  
+function editFromSummary() {
+  const eventEditForm = document.querySelector('.edit-event-form');
+
+  document.querySelector('#eventEditCard').style.display = 'block';
+  eventEditForm.scrollIntoView({behavior: 'smooth', block: "start"});
 }
 
 const editEventFormHandler = async (event) => {
@@ -15,6 +23,7 @@ const editEventFormHandler = async (event) => {
   const description = document.querySelector('#editevent-description').value.trim();
   const start_date = document.querySelector('.editevent-start_date').value.trim();
   const end_date = document.querySelector('.editevent-end_date').value.trim();
+  const time = document.querySelector('#editevent-time').value.trim();
 
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
@@ -24,7 +33,7 @@ const editEventFormHandler = async (event) => {
 
   const response = await fetch(`/api/events/${id}`, {
     method: 'PUT',
-    body: JSON.stringify({ name, location_zip, description, start_date, end_date }),
+    body: JSON.stringify({ name, location_zip, description, start_date, end_date, time }),
     headers: { 'Content-Type': 'application/json' },
   });
 

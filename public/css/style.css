@@ -348,29 +348,29 @@ select~label {
     background-color: var(--orange);
     border: 1px solid black;
     height: 100%;
-    width: 1000px;
+    width: 100%;
     overflow-x: scroll;
     scrollbar-color:var(--nav-bar);
 }
 
 #dCards {
 height: 100%;
-width: 4000px;
+width: 200%;
 margin: 10px;
 }
 
-#eCards-section {
+.eCards-section {
     background-color: var(--orange);
     border: 1px solid black;
     height: 100%;
-    width: 1000px;
+    width: 100%;
     overflow-x: scroll;
     scrollbar-color:var(--nav-bar);
 }
 
-#eCards {
+.eCards {
 height: 100%;
-width: 4000px;
+width: 200%;
 margin: 10px;
 }
 
