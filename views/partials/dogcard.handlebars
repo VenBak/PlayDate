@@ -6,10 +6,11 @@
             <img class="card-img-top" src="{{pic_hyperlink}}" alt="Dog Profile icon">
             <div class="card-body">
                 <h5 class="dog-name card-title">{{dog.name}}</h5>
-
-                <p class="card-text">Hi! I am a {{format_age_years age}} year and {{format_age_months age}} month old
-                    {{gender}} {{breed}}.</p>
-
+                {{#if (format_age_years age) includeZero = false}}
+                <p class="card-text">Hi! I am a {{format_age_years age}} year old {{gender}} {{breed}}.</p>
+                {{else}}
+                <p class="card-text">Hi! I am a {{format_age_months age}} month old {{gender}} {{breed}}.</p>
+                {{/if}}
                 <div class="buttons dog-buttons flex-row justify-content-between">
                     <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
                         <button class="edit-dog-btn btn-sm btn-danger"> Edit </button>
