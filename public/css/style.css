@@ -13,14 +13,29 @@
     font-family: 'Raleway', sans-serif;
 }
 
-button:hover {
-    cursor: pointer;
+.navbar-nav {
+    align-items: center;
 }
 
+.navbar .navbar-nav li {
+    font-size: 1.1em;
+    padding: 0.5em 2em;
+}
 
-body {
-    padding: 100px;
-    margin: 70px;
+.navbar .navbar-nav li a {
+    color: var(--nav-text-color);
+    font-size: 1.1em;
+}
+
+@media screen and (min-width:992px) {
+    .navbar-brand {
+        margin-right: 0;
+        padding: 0 1em;
+    }
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 #main-area {
@@ -102,8 +117,8 @@ header a,
     transform-origin: left;
 }
 
-.navigation .login-btn,
-.navigation .logout-btn {
+.login-btn,
+.logout-btn {
     width: 130px;
     height: 50px;
     background: transparent;
@@ -117,8 +132,8 @@ header a,
     transition: .5s;
 }
 
-.navigation .login-btn:hover,
-.navigation .logout-btn:hover {
+.login-btn:hover,
+.logout-btn:hover {
     background-color: var(--dark-orange);
     color: var(--nav-bar);
     cursor: pointer;
@@ -548,7 +563,7 @@ textarea {
     border: 2px solid rgb(255, 29, 29);
     border-radius: 5px;
     padding: 4px;
-    background-color: rgb(255, 107, 107);
+    background-color: rgb(255, 184, 184);
     color: #7B0000;
     font-weight: 550;
 }
