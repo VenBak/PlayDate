@@ -18,7 +18,7 @@ exports.getOne = function (req, res) {
 
 exports.create = function (req, res) {
   let data = { ...req.body };
-  data.user_id = req.session.user_id;
+  data.owner_id = req.session.user_id;
   data.event_id = req.session.event_id;
   return Comment
   .create(data)
