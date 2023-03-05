@@ -150,3 +150,7 @@ Credit for tutorials and guides I utilized in my code
 [Secured Lock icon provided by Freepik from Flaticon](https://www.flaticon.com/free-icon/secured-lock_17354)
 
 [navbar span icon provided by Alkhalifi Design Flaticon](https://www.flaticon.com/free-icon/menu_8212733)
+
+[Rounding numbers](https://pawelgrzybek.com/rounding-and-truncating-numbers-in-javascript/)
+
+[Handlebar built-in helpers: includesZero](https://handlebarsjs.com/guide/builtin-helpers.html#if)

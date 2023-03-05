@@ -4,7 +4,7 @@ const dogData = [
     {
         pic_hyperlink: "./#blank",
         name: "Sparks",
-        age: "1",
+        age: "8", //months old
         breed: "chihuahua",
         gender: "Female",
         owner_id: 1,
@@ -12,7 +12,7 @@ const dogData = [
     {
         pic_hyperlink: "./#blank",
         name: "Biscuit",
-        age: "4",
+        age: "48", //months old (4 years old)
         breed: "boxer",
         gender: "Male",
         owner_id: 2,
@@ -20,7 +20,7 @@ const dogData = [
     {
         pic_hyperlink: "./#blank",
         name: "Chief",
-        age: "1",
+        age: "12",//months old (1 year old)
         breed: "heeler",
         gender: "Male",
         owner_id: 3,
@@ -28,7 +28,7 @@ const dogData = [
     {
         pic_hyperlink: "./#blank",
         name: "Chief",
-        age: "3",
+        age: "36", //months old (3 years old)
         breed: "Boxer",
         gender: "Male",
         owner_id: 4,
