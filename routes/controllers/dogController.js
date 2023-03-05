@@ -24,14 +24,14 @@ exports.getOne = function (req, res) {
     where: { id: req.params.id },
     include: Owner
   })
-    .then((dog) => {
-      req.session.dog_id = dog.id;
-      res.status(200).json(dog);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json(err);
-    });
+  .then((dog) => {
+    req.session.dog_id = dog.id;
+    res.status(200).json(dog);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
 };
 
 exports.create = function (req, res) {
