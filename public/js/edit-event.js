@@ -1,3 +1,5 @@
+// EVENT PAGE: EDIT & DELETE an EVENT
+
 // For the date picker - prevent picking days before today's date
 editEvent_datePickerId.min = new Date().toLocaleDateString('fr-ca');
 
