@@ -1,7 +1,6 @@
 // For the date picker - prevent picking days before today's date
 editEvent_datePickerId.min = new Date().toLocaleDateString('fr-ca');
 
-
 // Back button for the event form if the user doesn't want to edit event 
 function backEditEventForm() {
   document.location.replace('/profile');
@@ -49,6 +48,7 @@ document.querySelector('#submitEventEdit-btn').addEventListener('click', (event)
   eventValidation(event);
   editEventFormHandler(event);
 });
+
 
 //Validations
 function eventValidation(event) {
