@@ -1,6 +1,7 @@
+// EVENT PAGE: EDIT & DELETE an EVENT
+
 // For the date picker - prevent picking days before today's date
 editEvent_datePickerId.min = new Date().toLocaleDateString('fr-ca');
-
 
 // Back button for the event form if the user doesn't want to edit event 
 function backEditEventForm() {
@@ -72,6 +73,7 @@ document.querySelector('#deleteFromSummary-btn').addEventListener('click', (even
   eventValidation(event);
   deleteEventPage(event);
 });
+
 
 //Validations
 function eventValidation(event) {
