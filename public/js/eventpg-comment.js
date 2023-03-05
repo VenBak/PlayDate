@@ -5,10 +5,11 @@ const addCommentFormHandler = async (event) => {
     event.preventDefault();
 
     const text = document.querySelector('#comment-text').value.trim();
+    console.log(text);
 
     // CREATE-POST a COMMENT 
     if (text) {
-        const response = await fetch('/api/events', {
+        const response = await fetch(`/api/comments`, {
             method: 'POST',
             body: JSON.stringify({ text }),
             headers: { 'Content-Type': 'application/json' },
@@ -20,7 +21,7 @@ const addCommentFormHandler = async (event) => {
         }
     }
 };
-document.querySelector('.add-comment-button').addEventListener('click', (event) => {
+document.querySelector('#submitComment-btn').addEventListener('click', (event) => {
     addCommentFormHandler(event);
 });
 
