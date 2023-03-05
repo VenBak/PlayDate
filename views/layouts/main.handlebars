@@ -20,29 +20,58 @@
 </head>
 
 <body>
-    <header class="navbar-static-top">
-        <h2 class="nav-logo">
-            PLAY
-            <img class="logo-img" src="/images/paws-icongeek26.png" alt="Two paw prints diagonally ajar">
-            DATE
-        </h2>
-        <nav class="navigation">
-            <a id="home-anchor" href="/">Home</a>
-            {{#if logged_in}}
-            <a id="events-anchor" href="/events">My Events</a>
-            <a id="profile-anchor" href="/profile">Profile</a>
-            <!--a id="logout-anchor" href="/logout"-->
-            <button class="logout-btn">Log Out</button></a>
-            {{else}}
-            <a id="login-anchor" href="/login"> <button class="login-btn">Log In</button></a>
-            {{/if}}
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary pb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-logo d-lg-none">
+                PLAY
+                <img src="/images/paws-icongeek26.png" alt="Two paw prints diagonally ajar">
+                DATE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <img src="/images/nav-alkhalifi_design.png" alt="navbar icon">
+                </span>
+            </button>
+            <div class="collapse navbar-collapse ml-5" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a id="home-anchor" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        {{#if logged_in}}
+                        <a id="events-anchor" href="/events">My Events</a>
+                        {{/if}}
+                    </li>
+                    <a class="navbar-brand nav-logo ml-4 d-none d-lg-block">
+                        PLAY
+                        <img src="/images/paws-icongeek26.png" alt="Two paw prints diagonally ajar">
+                        DATE
+                    </a>
+                    <li class="nav-item">
+                        {{#if logged_in}}
+                        <a id="profile-anchor" href="/profile">Profile</a>
+                        {{/if}}
+                    </li>
+                    <li class="nav-item">
+                        {{#if logged_in}}
+                        <button class="logout-btn">Log Out</button>
+                        {{else}}
+                        <a id="login-anchor" href="/login"> <button class="login-btn">Log In</button></a>
+                        {{/if}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <main class="container-fluid">
         {{{ body }}}
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <!-- Render script for logged in users only - Allows the Log Out button to function -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>

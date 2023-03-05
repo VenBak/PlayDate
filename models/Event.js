@@ -42,11 +42,7 @@ Event.init(
       allowNull: false,
       defaultValue: "All day, come when you can"
     },
-    start_date: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    end_date: {
+    date: {
       type: DataTypes.DATE,
       allowNull: false
     },

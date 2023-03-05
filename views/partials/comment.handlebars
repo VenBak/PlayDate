@@ -5,7 +5,7 @@
     <div class="d-flex align-item-center mt-3 p-2">
         {{!-- profile icon --}}
         <div class="circular--landscape pb-3 ps-4">
-            <img src="/images/default-owner.png" alt="Picture of {{comment.owner.username}}">
+            <img src="{{comment.owner.pic_hyperlink}}" alt="Picture of {{comment.owner.username}}">
         </div>
 
         {{!-- body --}}
@@ -20,21 +20,24 @@
                     src="/images/delete-Freepik-32px.png" alt="Trash Can">
             </button>
             <button>
-                <img id="edit-comment-btn" class="edit-comment" data-id="{{comment.id}}" onclick="eventEditForm()" type="submit">
+                <img id="edit-comment-btn" class="edit-comment" data-id="{{comment.id}}" onclick="eventEditForm()"
+                    type="submit">
             </button>
-                <div id="commentEditCard" class="card" style="display: none;">
-                    <div class="edit-comment-form card-body" style="display: block;">
-                        <h3 class="card-header"> Edit {{name}}'s Information</h3>
-                        <form class="edit-comment-form">
-                            <div class="input-box">
-                                <input id="editcomment-text" name="comment.text" type="text" value="{{text}}" class="form-input" required>
-                                <label for="comment.text" class="form-label">{{text}}</label>
-                            </div>
-                        </form>
-                        <button id="submitEditComment-btn" class="btn mt-3" type="submit">Submit Change to My Comment</button>
-                        <br> <br>
-                    </div>
+            <div id="commentEditCard" class="card" style="display: none;">
+                <div class="edit-comment-form card-body" style="display: block;">
+                    <h3 class="card-header"> Edit {{name}}'s Information</h3>
+                    <form class="edit-comment-form">
+                        <div class="input-box">
+                            <input id="editcomment-text" name="comment.text" type="text" value="{{text}}"
+                                class="form-input" required>
+                            <label for="comment.text" class="form-label">{{text}}</label>
+                        </div>
+                    </form>
+                    <button id="submitEditComment-btn" class="btn mt-3" type="submit">Submit Change to My
+                        Comment</button>
+                    <br> <br>
                 </div>
+            </div>
             {{/if}}
         </div>
     </div>
