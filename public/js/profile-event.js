@@ -1,7 +1,7 @@
 // EVENT - ADD & DELETE
 
 // For the date picker
-start_datePickerId.min = new Date().toLocaleDateString('fr-ca');
+datePickerId.min = new Date().toLocaleDateString('fr-ca');
 
 // Show the event form and reset the fields
 function showEventForm() {
@@ -32,16 +32,16 @@ const addEventFormHandler = async (event) => {
   const name = document.querySelector('#event-name').value.trim();
   const location_zip = document.querySelector('#event-location_zip').value.trim();
   const description = document.querySelector('#event-description').value.trim();
-  const start_date = document.querySelector('.event-start_date').value.trim();
+  const date = document.querySelector('.event-date').value.trim();
   const time = document.querySelector('.addEvent-time').value.trim();
 
   const eventSection = document.querySelector('#events-section');
 
   // CREATE a event
-  if (name && location_zip && description && start_date && time) {
+  if (name && location_zip && description && date && time) {
     const response = await fetch('/api/events', {
       method: 'POST',
-      body: JSON.stringify({ name, location_zip, description, start_date, time }),
+      body: JSON.stringify({ name, location_zip, description, date, time }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -89,14 +89,14 @@ function eventValidation(event) {
   const location_zip = document.querySelector('#event-location_zip').value.trim();
   const ziplength = location_zip.length;
   const description = document.querySelector("#event-description").value.trim();
-  const start_date = document.querySelector(".event-start_date").value.trim();
+  const date = document.querySelector(".event-date").value.trim();
   const time = document.querySelector('.addEvent-time').value.trim();
 
   const nameError = document.querySelector(".no-name-msg");
   const noZipError = document.querySelector('.no-zipcode-msg');
   const zipLengthError = document.querySelector('.zipcode-length-msg');
   const descriptionError = document.querySelector('.no-description-msg');
-  const start_dateError = document.querySelector('.no-startdate-msg');
+  const dateError = document.querySelector('.no-date-msg');
   const timeError = document.querySelector('.no-time-msg');
 
 
@@ -123,10 +123,10 @@ function eventValidation(event) {
     descriptionError.classList.add("d-none")
   }
 
-  if (!start_date) {
-    start_dateError.classList.remove("d-none")
+  if (!date) {
+    dateError.classList.remove("d-none")
   } else {
-    start_dateError.classList.add("d-none")
+    dateError.classList.add("d-none")
   }
 
   if (!time) {
@@ -135,7 +135,7 @@ function eventValidation(event) {
     timeError.classList.add("d-none")
   }
 
-  if (!name || !location_zip || ziplength !== 5 || !description || !start_date || !time) {
+  if (!name || !location_zip || ziplength !== 5 || !description || !date || !time) {
     return
   }
 }
