@@ -1,24 +1,34 @@
 {{!-- HOMEPAGE --}}
+
+
 <div class="d-flex flex-column">
-    <div>
+    {{!-- Commenting this out until we get Andre API portion --}}
+    {{!-- <div>
         <h2>Recommended Parks</h2>
         <section class="recc-parks">
 
         </section>
-    </div>
+    </div> --}}
 
 
     <div>
-        {{#if logged_in}}
-        <a href="/#"><button class="btn">New Event</button></a>
-        {{/if}}
         <section class="current-events">
-            <h2 class="my-events-title">Nearby Events</h2>
+            <h2 class="my-events-title">All Events</h2>
             {{!-- {{#if events.length}} --}}
-            {{>eventcard}}
+            <div class="event-card-container eventsHomePage-list flex-wrap">
+                <div class="eCards-section"> 
+                    <div class="eCards">            
+                        {{>eventcard}}
+                    </div>
+                </div>
+            </div>
             {{!-- {{/if}} --}}
         </section>
     </div>
+
+    {{#if logged_in}}
+    <a href="/profile"><button class="btn">Add a New Event</button></a>
+    {{/if}}
 
     {{#unless logged_in}}
     <div>
@@ -34,12 +44,14 @@
 <br><br>
 
 <div class="d-flex flex-column">
-    <div>
+    {{!-- Commenting this out until we get a filter by zipcode --}}
+
+    {{!-- <div>
         <h2>All Local Events</h2>
         <section class="recc-parks">
 
         </section>
-    </div>
+    </div> --}}
 
 
 
