@@ -57,6 +57,11 @@ router.get('/results/:zip', (req, res) => {
     
     const zip = req.params.zip
 
+    req.session.save(() => { 
+        req.params.zip = zip
+    })
+
+
     // console.log(req.params.zip)
     // console.log(process.env)
 
