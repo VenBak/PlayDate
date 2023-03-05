@@ -143,7 +143,7 @@ exports.uploadPic = function (req, res) {
           eventData.save();
           let event = eventData.get({plain: true})
           console.log(event)
-          res.status(200).render('eventprofile', {
+          res.status(200).location('eventprofile', {
             ...event,
             logged_in: req.session.logged_in
           });
