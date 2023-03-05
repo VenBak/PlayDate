@@ -599,8 +599,13 @@ textarea {
     pointer-events: none;
 }
 
-.delete-btn{
+.delete-btn {
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
 }
+
+/* #dog-card-body {
+    flex: auto 1 1 !important;
+} */
+
