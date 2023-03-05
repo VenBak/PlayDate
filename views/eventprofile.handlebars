@@ -14,7 +14,13 @@ If owned by user, allow edit; otherwise, view public info --}}
                     <p class="card-text">Description: {{description}}</p>
                     <p class="card-text">Date: {{format_date date}}</p>
                     <p class="card-text">Time: {{time}}</p>
+                    {{#if ownsEvent}}
                     <button id="editFromSummary" class="btn" onclick="editFromSummary()" type="submit"> Edit Event
+                    <button>
+                        <img id="deleteFromSummary-btn" class="delete-event" data-id="{{event.id}}"
+                            src="/images/delete-Freepik-32px.png" alt="Trash Can">
+                    </button>
+                    {{/if}}
                     </button>
                 </div>
             </div>

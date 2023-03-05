@@ -14,6 +14,7 @@ function editFromSummary() {
   eventEditForm.scrollIntoView({ behavior: 'smooth', block: "start" });
 }
 
+// EDIT event from the THIS event's page
 const editEventFormHandler = async (event) => {
   event.preventDefault();
 
@@ -44,9 +45,31 @@ const editEventFormHandler = async (event) => {
 
 };
 
-document.querySelector('#submitEventEdit-btn').addEventListener('click', (event) => {
+// DELETE event from the THIS event's page
+
+const deleteEventPage = async (event) => {
+  event.preventDefault();
+
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
+
+  console.log(id);
+
+  const response = await fetch(`/api/events/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (response.ok) {
+    location.reload();
+  } else {
+    alert('Failed to delete event');
+  }
+};
+
+document.querySelector('#deleteFromSummary-btn').addEventListener('click', (event) => {
   eventValidation(event);
-  editEventFormHandler(event);
+  deleteEventPage(event);
 });
 
 
