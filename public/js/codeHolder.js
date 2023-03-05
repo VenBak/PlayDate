@@ -1,9 +1,8 @@
 // ME TO DO: 
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
-// - My Events: change the Add Event to actual form on the My Events page
 
 // DONE
-// - Moved delete button out of the homepage
+// - updated homepage with horizontal scrolling and commented out some sections that are under construction
 //
 
 
