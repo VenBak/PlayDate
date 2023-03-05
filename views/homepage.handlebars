@@ -3,7 +3,7 @@
     <div>
         <h2>Recommended Parks</h2>
         <section class="recc-parks">
-
+            {{>recparks}}
         </section>
     </div>
 
@@ -46,11 +46,11 @@
 {{!-- ALL LOCAL EVENTS OF THE OWNER'S ZIP WILL SHOW UP HERE --}}
 
 
-    {{!-- <div>
-        <h2>Events</h2>
-        {{#if logged_in}}
-        <a href="/#"><button class="btn">New Event</button></a>
-        {{/if}}
-        <section class="current-events">
-        </section>
-    </div> --}}
+<div>
+    <h2>Events</h2>
+    {{#if logged_in}}
+    <a href="/#"><button class="btn">New Event</button></a>
+    {{/if}}
+    <section class="current-events">
+    </section>
+</div>

@@ -28,6 +28,8 @@ const editOwnerFormHandler = async (event) => {
     headers: { 'Content-Type': 'application/json' },
   });
 
+
+
   // IF response is successful, then reload
   if (response.ok) {
     document.location.replace(`/profile`);
@@ -98,6 +100,59 @@ async function ownerValidation(event) {
     return
   }
 }
+
+
+function Zipper (event) {
+
+  event.preventDefault();
+
+  // const zip = document.querySelector('#input-zip');
+
+  // console.log(zip.value)
+  // fetch(`/api/zip`, {
+  //   method: 'POST',
+  //   body: JSON.stringify({
+  //     zip: zip.value,
+  //   }),
+  //   headers: {'Content-Type': 'application/json'}
+  // });
+
+
+
+  fetch('http://localhost:3009/results/'+`${ZIPcode.value}`)
+  .then(response => response.json())
+  .then(data => {
+      // console.log(data)
+      console.log(data.local_results)
+      console.log()
+
+      // var imgURL = data.local_results[0].photos_link
+
+
+
+      for (let index = 0; index < data.local_results.length; index++) {
+
+          // Title of the park
+          const title = data.local_results[index].title;
+
+          // Gets the image of the park
+          // const imgURL = data.local_results[index].photos_link
+          // fetch(imgURL)
+          // .then(response => response.json())
+          // .then(data => {
+          //     console.log(data.photos[0])
+          // })
+
+          // Creates HTML element for said title
+          const element = document.createElement('div');
+          element.textContent = title;
+          container.appendChild(element)
+      }
+  })
+
+
+
+};
 
 
 
