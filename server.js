@@ -21,9 +21,9 @@ const PORT = process.env.PORT || 3009;
 //Cloudinary.configuration
 cloudinary.config({
   secure: true,
-  cloud_name: process.env.Cloud_Name,
-  api_key: process.env.Api_Key,
-  api_secret: process.env.Api_Secret,
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
 });
 
 const sess = {

@@ -1,6 +1,6 @@
 const { Event, Owner, Dog, Comment } = require('../../models');
 const formidable = require("formidable");
-const cloudinary = require("cloudinary").v2;
+const { cloudinary } = require('../../config/cloudinary');
 const fs = require("fs");
 const path = require('path');
 
