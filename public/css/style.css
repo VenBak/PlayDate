@@ -545,8 +545,7 @@ textarea {
     font-weight: 600;
 }
 
-#start-date-label,
-#end-date-label {
+#date-label{
     top: -15px;
 }
 
