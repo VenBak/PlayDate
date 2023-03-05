@@ -7,7 +7,8 @@
             <div class="card-body">
                 <h5 class="dog-name card-title">{{dog.name}}</h5>
 
-                <p class="card-text">Hi! I am a {{age}} year old {{gender}} {{breed}}.</p>
+                <p class="card-text">Hi! I am a {{format_age_years age}} year and {{format_age_months age}} month old
+                    {{gender}} {{breed}}.</p>
 
                 <div class="buttons dog-buttons flex-row justify-content-between">
                     <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
