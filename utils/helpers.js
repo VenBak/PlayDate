@@ -5,7 +5,11 @@ module.exports = {
     },
     format_age_years: (age) => {
         const ageToYears = parseInt(age) / 12
-        const ageinYears = Math.round(ageToYears)
+        if (ageToYears < 1) {
+            var ageinYears = Math.floor(ageToYears)
+        } else {
+            var ageinYears = Math.round(ageToYears)
+        }
         return ageinYears
     },
     format_age_months: (age) => {
