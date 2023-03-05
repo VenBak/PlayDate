@@ -108,7 +108,6 @@ exports.testFind = function (req, res) {
       include: { model: Owner, attributes: ['first_name'] }
     }]
   })
-<<<<<<< HEAD
   .then((event) => {
     res.status(200).json(event);
   })
@@ -187,10 +186,3 @@ const deletefile = async (filePath) => {
     }
   });
 };
-=======
-    .then((event) => {
-      res.status(200).json(event);
-    })
-    .catch((err) => res.status(400).json(err));
-}
->>>>>>> main
