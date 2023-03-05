@@ -14,7 +14,7 @@ exports.getAll = function (req, res) {
 exports.getAllforZip = function (req, res) {
   let location_zip = req.session.location_zip || 20016;
   return Event.findAll({
-    where: {location_zip},
+    where: { location_zip },
     include: {
       model: Owner,
       as: 'host',
@@ -25,28 +25,28 @@ exports.getAllforZip = function (req, res) {
 
 exports.getAllforUser = function (req, res) {
   return Event.findAll({
-    where: {host_id: req.session.user_id}
+    where: { host_id: req.session.user_id }
   })
 };
 
 exports.getOne = function (req, res) {
   // find one event by their `id` value (primary key)
   return Event.findOne({
-    where: {id: req.params.id},
+    where: { id: req.params.id },
     include: [{
       model: Owner,
       as: 'host',
       attributes: ['first_name', 'last_name', 'pic_hyperlink'],
       include: { model: Dog }
-    }, 
+    },
     {
       model: Owner,
       as: 'attendees',
-      attributes: ['first_name','last_name', 'pic_hyperlink']
+      attributes: ['first_name', 'last_name', 'pic_hyperlink']
     }, {
       model: Comment,
       attributes: ['text'],
-      include: { model: Owner, attributes: ['first_name'] }
+      include: { model: Owner, attributes: ['username', 'pic_hyperlink'] }
     }]
   });
 };
@@ -81,24 +81,24 @@ exports.delete = function (req, res) {
 
 exports.testFind = function (req, res) {
   Event.findByPk(req.params.id, {
-  include: [{
-    model: Owner,
-    as: 'host',
-    attributes: ['first_name', 'last_name', 'pic_hyperlink'],
-    include: { model: Dog }
-  }, 
-  {
-    model: Owner,
-    as: 'attendees',
-    attributes: ['first_name','last_name', 'pic_hyperlink']
-  }, {
-    model: Comment,
-    attributes: ['text'],
-    include: { model: Owner, attributes: ['first_name'] }
-  }]
+    include: [{
+      model: Owner,
+      as: 'host',
+      attributes: ['first_name', 'last_name', 'pic_hyperlink'],
+      include: { model: Dog }
+    },
+    {
+      model: Owner,
+      as: 'attendees',
+      attributes: ['first_name', 'last_name', 'pic_hyperlink']
+    }, {
+      model: Comment,
+      attributes: ['text'],
+      include: { model: Owner, attributes: ['first_name'] }
+    }]
   })
-  .then((event) => {
-    res.status(200).json(event);
-  })
-  .catch((err) => res.status(400).json(err));
+    .then((event) => {
+      res.status(200).json(event);
+    })
+    .catch((err) => res.status(400).json(err));
 }
