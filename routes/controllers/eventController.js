@@ -51,7 +51,7 @@ exports.getOne = function (req, res) {
       }, {
         model: Comment,
         attributes: ['text'],
-        include: { model: Owner, attributes: ['first_name'] }
+        include: { model: Owner, attributes: ['username', 'pic_hyperlink', 'first_name'] }
       }]
     })
     .then(event => {
