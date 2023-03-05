@@ -74,7 +74,6 @@ app.post("/api/upload", async (req, res, next) => {
       //Upload to Cloudinary
       uploadImage(req, res, newPath);
       
-      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Suggestion from Gabe: make new function and call it here to send to mysql before image gets deleted from uploads folder
       //Delete file locally
       deletefile(newPath);
       return console.log("Successfully uploaded");
