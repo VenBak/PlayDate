@@ -393,7 +393,6 @@ select~label {
     height: 100%;
     width: 100%;
     overflow-x: scroll;
-    scrollbar-color: var(--nav-bar);
 }
 
 #dCards {
@@ -408,7 +407,6 @@ select~label {
     height: 100%;
     width: 100%;
     overflow-x: scroll;
-    scrollbar-color: var(--nav-bar);
 }
 
 .eCards {

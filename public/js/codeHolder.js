@@ -2,7 +2,7 @@
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
 
 // DONE
-// - CREATE, UPDATE, DELETE COMMENT from the EVENT page
+// - Fixed horizontal scrolling div: uncommented two necessary divs with tag attributes that are needed for event cards
 
 
 
