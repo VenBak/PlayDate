@@ -598,3 +598,9 @@ textarea {
     /* Disables pointer clicking and selecting/highlighting text */
     pointer-events: none;
 }
+
+.delete-btn{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
