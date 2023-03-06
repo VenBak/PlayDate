@@ -13,7 +13,7 @@
                 {{/if}}
                 {{#if (ownsDog dog @root.user_id)}}
                 <div class="buttons dog-buttons flex-row justify-content-between">
-                    <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
+                    <a class="dog-anchor" style="text-decoration: none" href="../profile/dog/{{dog.id}}">
                         <button class="edit-dog-btn btn-sm btn-danger"> Edit </button>
                     </a>
                     <button>
@@ -28,3 +28,6 @@
     </div>
 </div>
 {{/if}}
+
+{{!-- Delete dogs --}}
+<script src="/js/singleProfile.js"></script>

@@ -25,41 +25,27 @@ document.querySelector('#submitComment-btn').addEventListener('click', (event) =
     addCommentFormHandler(event);
 });
 
-// DELETE a COMMENT
-const delCommentButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
-
-        const response = await fetch(`/api/comments/${id}`, {
-            method: 'DELETE',
-        });
-
-        if (response.ok) {
-            location.reload();
-        } else {
-            alert('Failed to delete comment');
-        }
-    }
-};
-document.querySelector('.comments').addEventListener('click', delCommentButtonHandler);
-
 // EDIT A COMMENT
 // User clicks on edit comment button IF user OWNs the comment - see handlebar for {{if ownsComment}}
 function editComment() {
     document.querySelector('#commentEditCard').style.display = 'block';
 
     const commentEditForm = document.querySelector('.edit-comment-form');
-    commentEditForm.scrollIntoView({ behavior: 'smooth', block: "start" });
+    commentEditForm.scrollIntoView({ behavior: 'smooth', block: "end" });
 }
 
 // PUT for DB
 const editCommentFormHandler = async (event) => {
     event.preventDefault();
 
-    const text = document.querySelector('#editcomment-text').value.trim();
+    console.log('EDIT FUNCTION');
 
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
+
+    console.log(id);
+
+    const text = document.querySelector('#editcomment-text').value.trim();
 
         const response = await fetch(`/api/comments/${id}`, {
             method: 'PUT',
@@ -80,3 +66,23 @@ const editCommentFormHandler = async (event) => {
 document.querySelector('#submitEditComment-btn').addEventListener('click', (event) => {
     editCommentFormHandler(event);
 });
+
+// DELETE a COMMENT
+const delCommentButtonHandler = async (event) => {
+    event.preventDefault();
+
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/comments/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            location.reload();
+        } else {
+            alert('Failed to delete comment');
+        }
+    }
+};
+document.querySelector('#delete-comment-btn').addEventListener('click', delCommentButtonHandler);

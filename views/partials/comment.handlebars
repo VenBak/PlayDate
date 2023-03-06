@@ -17,18 +17,17 @@
                 {{comment.text}}
             </p>
             {{#if (ownsComment comment @root.user_id)}}
+
+            {{!-- Edit Comment btn --}}
+            <button id="edit-comment-btn">
+                <img id="edit-comment-btn-img" class="edit-comment" data-id="{{comment.id}}"
+                    src="/images/edit-Freepik-32px.png" alt="Edit Icon" onclick="editComment()" type="button">
+            </button>
             {{!-- Delete Comment btn --}}
             <button id="delete-comment-btn">
                 <img id="delete-comment-btn-img" class="delete-comment" data-id="{{comment.id}}"
                     src="/images/delete-Freepik-32px.png" alt="Trash Can">
             </button>
-
-            {{!-- Edit Comment btn --}}
-            <button id="edit-comment-btn">
-                <img id="edit-comment-btn-img" class="edit-comment" data-id="{{comment.id}}"
-                    src="/images/edit-Freepik-32px.png" alt="Trash Can" onclick="eventEditForm()" type="button">
-            </button>
-
             {{!-- Edit Comment form --}}
             <div id="commentEditCard" class="card" style="display: none;">
                 <div class="edit-comment-form card-body" style="display: block;">
@@ -40,8 +39,9 @@
                             <label for="comment.text" class="form-label">{{text}}</label>
                         </div>
                     </form>
-                    <button id="submitEditComment-btn" class="btn mt-3" type="submit">Submit Change to My
-                        Comment</button>
+                    <button id="submitEditComment-btn" class="btn mt-3" type="submit" data-id="{{comment.id}}">
+                        Submit Change to My Comment
+                    </button>
                     <br> <br>
                 </div>
             </div>
