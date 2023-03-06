@@ -8,24 +8,23 @@ If owned by user, allow edit; otherwise, view public info --}}
                 <img src="{{pic_hyperlink}}" class="card-img" alt="Pic of {{name}}">
             </div>
             <div class="col-md-7">
-                <div class="card-body event-information">
+                <div class="card-body event-information d-flex flex-column">
                     <p class="card-title">{{name}}</p>
                     <p class="card-text">Location: {{location_zip}}</p>
                     <p class="card-text">Description: {{description}}</p>
                     <p class="card-text">Date: {{format_date date}}</p>
                     <p class="card-text">Time: {{time}}</p>
-                    {{#if ownsEvent}}
-                    <div class="d-flex flex-row">
-                        <button id="editFromSummary" class="btn-quarter mr-4" onclick="editFromSummary()" type="submit"> Edit
-                            Event
-                            <button class=" delete-btn">
-                                <img id="deleteFromSummary-btn" class="delete-event" data-id="{{event.id}}"
-                                    src="/images/delete-Freepik-32px.png" alt="Trash Can">
-                            </button>
-                    </div>
-                    {{/if}}
+                </div>
+                {{#if ownsEvent}}
+                <div class="d-flex flex-row">
+                    <button id="editFromSummary" class="btn-quarter mr-4" onclick="editFromSummary()" type="submit">
+                        Edit Event </button>
+                    <button class=" delete-btn">
+                        <img id="deleteFromSummary-btn" class="delete-event" data-id="{{event.id}}"
+                            src="/images/delete-Freepik-32px.png" alt="Trash Can">
                     </button>
                 </div>
+                {{/if}}
             </div>
         </div>
     </div>
