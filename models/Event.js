@@ -22,7 +22,7 @@ Event.init(
     },
     location_name: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     location_zip: {
       type: DataTypes.INTEGER,

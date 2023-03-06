@@ -5,7 +5,11 @@
 // - updated homepage with horizontal scrolling and commented out some sections that are under construction
 //
 
-
+// datePickerId.min = new Date().toLocaleDateString('fr-CA', {
+//     year: 'numeric',
+//     month: '2-digit',
+//     day: '2-digit'
+//   });
 
 
 
