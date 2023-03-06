@@ -16,7 +16,7 @@ If owned by user, allow edit; otherwise, view public info --}}
                     <p class="card-text"> At {{location_name}}</p>
                     <p class="card-text">ZIP Code: {{location_zip}}</p>
                     <p class="card-text">Description: {{description}}</p>
-                    <p class="card-text">Date: {{format_date date}}</p>
+                    <p class="card-text">Date: {{date}}</p>
                     <p class="card-text">Time: {{time}}</p>
                 </div>
                 {{#if ownsEvent}}
@@ -83,7 +83,7 @@ If owned by user, allow edit; otherwise, view public info --}}
 
             <div class="input-box">
                 <input id="editEvent_datePickerId" class="staDate editevent-date" name="event.date" type="text"
-                    value="{{format_date date}}" placeholder="{{format_date date}}" onfocus="(this.type='date')"
+                    value="{{date}}" placeholder="{{date}}" onfocus="(this.type='date')"
                     class="form-input">
                 <label for="event.date" class="form-label">Date:</label>
                 <div class="no-date-msg invalid-msg d-none">
