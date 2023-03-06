@@ -605,7 +605,6 @@ textarea {
     padding: 5px;
 }
 
-/* #dog-card-body {
-    flex: auto 1 1 !important;
-} */
-
+#dog-card-body {
+line-height: 2em;
+}
