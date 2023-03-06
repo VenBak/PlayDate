@@ -80,7 +80,7 @@ const deleteEventPage = async (event) => {
   });
 
   if (response.ok) {
-    location.location.replace("../events");
+    document.location.replace("../events");
   } else {
     alert('Failed to delete event');
   }

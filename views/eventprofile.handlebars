@@ -11,10 +11,10 @@ If owned by user, allow edit; otherwise, view public info --}}
                 <div class="card-body event-information d-flex flex-column">
                     <p class="card-title">{{name}}</p>
                     <p class="card-host">Hosted by:
-                        <a href="../../profile/{{host_id}}" class="host-profile-link">{{host.username}}</a>
+                        <a href="../../profile/{{host_id}}" class="host-profile-link">{{host.first_name}} {{host.last_name}} ({{host.username}})</a>
                     </p>
-                    <p class="card-text">Location zip code: {{location_zip}}</p>
-                    <p class="card-text">Location name: {{location_name}}</p>
+                    <p class="card-text"> At {{location_name}}</p>
+                    <p class="card-text">ZIP Code: {{location_zip}}</p>
                     <p class="card-text">Description: {{description}}</p>
                     <p class="card-text">Date: {{format_date date}}</p>
                     <p class="card-text">Time: {{time}}</p>
@@ -63,12 +63,12 @@ If owned by user, allow edit; otherwise, view public info --}}
             <div class="input-box">
                 <input id="editevent-location_zip" name="event.location_zip" type="number" value="{{location_zip}}"
                     class="form-input">
-                <label for="event.location_zip" class="form-label">Location zip code:</label>
+                <label for="event.location_zip" class="form-label">Location ZIP Code:</label>
                 <div class="no-zipcode-msg invalid-msg d-none">
-                    Add your event's zip code
+                    Add your event's ZIP Code
                 </div>
                 <div class="zipcode-length-msg invalid-msg d-none">
-                    Zip codes must be 5 digits long
+                    ZIP Codes must be 5 digits long
                 </div>
             </div>
 
