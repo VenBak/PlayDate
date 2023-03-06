@@ -3,12 +3,24 @@
 
 <div class="d-flex flex-column">
     {{!-- Commenting this out until we get Andre API portion --}}
-    {{!-- <div>
+    <div>
         <h2>Recommended Parks</h2>
         <section class="recc-parks">
-
+            <div class="row">
+                {{#each suggestions}}
+                <div class="col-sm-4" style="height: 160px;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.title}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{this.address}}</h6>
+                            <img class="card-img" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
         </section>
-    </div> --}}
+    </div>
 
     {{#unless logged_in}}
     <div class="register-msg mt-5 mb-5">
