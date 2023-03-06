@@ -611,3 +611,13 @@ textarea {
 #dog-card-body {
     line-height: 2em;
 }
+
+.username-profile-link {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+.username-profile-link:hover {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
