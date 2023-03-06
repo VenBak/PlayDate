@@ -24,8 +24,6 @@ router.get('/:id', (req, res) => {
   .then(event => {
     plainEvent = event.get({ plain: true });
     let ownsEvent = plainEvent.host_id == req.session.user_id;
-    console.log('----------------')
-    console.log(req.session.user_id);
     res.status(200).render('eventprofile', {...plainEvent,
       logged_in: req.session.logged_in,
       user_id: req.session.user_id,

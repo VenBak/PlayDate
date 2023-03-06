@@ -9,9 +9,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
     eventController.getAll(req, res)
         .then(events => {
-            console.log("----- INSIDE EVENT CONTROLLER -----")
             plainEvents = events.map(event => event.get({ plain: true }));
-            console.log(plainEvents);
             res.status(200).render('homepage', {
                 events: plainEvents,
                 logged_in: req.session.logged_in,
@@ -57,7 +55,6 @@ router.get('/signup-2', withAuth, (req, res) => {
 router.get('/signup-3', withAuth, async (req, res) => {
     // Send the rendered Handlebars.js template back as the response
     try {
-        console.log(req.session.user_id)
         // Find the user's dog based on the request parameter called dog_id
         const userData = await Owner.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
@@ -65,8 +62,6 @@ router.get('/signup-3', withAuth, async (req, res) => {
         });
         // res.status(200).json(userData); //For testing only
         const user = userData.get({ plain: true });
-        console.log(user)
-        console.log(user.dogs[0].id)
         req.session.dog_id = user.dogs[0].id
         //Renders signup handlebars template on the signup page
         res.render('signup-3', {
