@@ -1,15 +1,7 @@
 // EVENT PAGE: EDIT & DELETE an EVENT
 
 // For the date picker - prevent picking days before today's date
-// editEvent_datePickerId.min = new Date().toLocaleDateString('en-US', {
-//   month: 'long',
-//   day: '2-digit',
-//   year: 'numeric',
-//   hour: '2-digit',
-//   timeZone: 'America/Denver' // 6 hours behind UTC
-// });
-editEvent_datePickerId.min = new Date().toLocaleDateString();
-
+editEvent_datePickerId.min = new Date().toLocaleDateString('fr-ca');
 
 // Back button for the event form if the user doesn't want to edit event 
 function backEditEventForm() {
