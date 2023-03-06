@@ -590,6 +590,7 @@ textarea {
     font-weight: 700;
 }
 
+.add-comment-label,
 .image-label {
     font-size: 1.2em;
     color: var(--nav-text-color);
