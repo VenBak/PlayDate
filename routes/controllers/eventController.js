@@ -41,7 +41,7 @@ exports.getOne = function (req, res) {
       include: [{
         model: Owner,
         as: 'host',
-        attributes: ['first_name', 'last_name', 'pic_hyperlink'],
+        attributes: ['username','first_name', 'last_name', 'pic_hyperlink'],
         include: { model: Dog }
       }, 
       {
