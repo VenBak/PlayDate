@@ -20,7 +20,10 @@ router.get('/', async (req, res) => {
         // API function to add object to handlebars
         geocode = function (zip) {
             // const zipformat = JSON.parse(zip)
+            console.log('Geocoding with zip:', zip);
+
             const formattedCoords = '@'
+
         
             const options = {
             method: 'GET',
@@ -33,6 +36,7 @@ router.get('/', async (req, res) => {
             };
         
             axios.request(options).then(function (response) {
+                console.log('Axios response:', response)
         
                 let lat = JSON.stringify(response.data.results[0].geometry.location.lat)
                 let long = JSON.stringify(response.data.results[0].geometry.location.lng)
@@ -55,6 +59,8 @@ router.get('/', async (req, res) => {
                 const callback = function(data) {
                         // console.log(data);
                         // res.json(data)
+                    console.log('Callback called with data:', data);
+
                     res.status(200).render('homepage', {
                         events: plainEvents,
                         logged_in: req.session.logged_in,
@@ -62,8 +68,8 @@ router.get('/', async (req, res) => {
                         suggestions: data.local_results
                     });
                     // Show result as JSON
-                    search.json(params, callback);
                 }
+                search.json(params, callback)
             })
             .catch(err => {
                 console.log(err);
