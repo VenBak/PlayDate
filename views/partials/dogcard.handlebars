@@ -2,9 +2,6 @@
 <div>
     <div class="dog-card-container dog-list flex-wrap">
         {{#each dogs as |dog|}}
-        {{#if (ownsDog dog @root.user_id)}}
-        <p>Dog IS owned by logged in user</p>
-        {{/if}}
         <div class="card dog-cards">
             <img class="card-img-top" src="{{pic_hyperlink}}" alt="Dog Profile icon">
             <div class="card-body d-flex flex-column justify-content-end">
@@ -14,6 +11,7 @@
                 {{else}}
                 <p class="card-text">Hi! I am a {{format_age_months age}} month old {{gender}} {{breed}}.</p>
                 {{/if}}
+                {{#if (ownsDog dog @root.user_id)}}
                 <div class="buttons dog-buttons flex-row justify-content-between">
                     <a class="dog-anchor" style="text-decoration: none" href="profile/dog/{{dog.id}}">
                         <button class="edit-dog-btn btn-sm btn-danger"> Edit </button>
@@ -23,7 +21,7 @@
                             src="/images/delete-Freepik-32px.png" alt="Trash Can">
                     </button>
                 </div>
-
+                {{/if}}
             </div>
         </div>
         {{/each}}
