@@ -6,9 +6,9 @@
     <div>
         <h2>Recommended Parks</h2>
         <section class="recc-parks">
-            <div class="row">
+            <div class="row rCards flex-wrap">
                 {{#each suggestions}}
-                <div class="col-sm-4" style="height: 160px;">
+                <div class="col-sm-4" style="height: auto;">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{this.title}}</h5>
@@ -32,6 +32,7 @@
     </div>
     {{/unless}}
 
+<br><br>
     <div>
         <section class="current-events">
             <h2 class="my-events-title">All Events</h2>
