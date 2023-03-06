@@ -11,14 +11,16 @@ router.get('/', async (req, res) => {
         console.log(plainEvents);
         res.status(200).render('homepage', {
             events: plainEvents,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
       })
       .catch(err => {
         console.log(err);
         res.render('homepage', {
             events: [],
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
       })
 });
@@ -36,7 +38,8 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     //Renders signup handlebars template on the signup page
     res.render('signup', {
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        user_id: req.session.user_id
     });
 });
 

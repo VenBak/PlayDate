@@ -1,5 +1,6 @@
 {{!-- All comments template --}}
 <div class="d-flex flex-column comments mt-5"><!--the container for all the comments should be in column form-->
+<p>HELLo {{user_id}}</p>
     {{#if comments.length}}
     {{#each comments as |comment|}}
     <div class=" d-flex align-item-center mt-3 p-2">
@@ -16,7 +17,7 @@
                 <p class="comment-text pt-1 ps-2">
                     {{comment.text}}
                 </p>
-                {{#if ownsComment}}
+                {{#if (ownsComment comment @root.user_id)}}
                 <button>
                     <img id="delete-comment-btn" class="delete-comment" data-id="{{comment.id}}"
                         src="/images/delete-Freepik-32px.png" alt="Trash Can">

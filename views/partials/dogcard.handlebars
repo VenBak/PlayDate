@@ -2,6 +2,9 @@
 <div>
     <div class="dog-card-container dog-list flex-wrap">
         {{#each dogs as |dog|}}
+        {{#if (ownsDog dog @root.user_id)}}
+        <p>Dog IS owned by logged in user</p>
+        {{/if}}
         <div class="card dog-cards">
             <img class="card-img-top" src="{{pic_hyperlink}}" alt="Dog Profile icon">
             <div class="card-body d-flex flex-column justify-content-end">
