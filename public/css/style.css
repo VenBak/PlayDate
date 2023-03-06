@@ -648,3 +648,19 @@ textarea {
     text-decoration: none;
     color: var(--nav-text-color);
 }
+
+#delete-comment-btn-img {
+    padding: 5px;
+}
+
+#delete-comment-btn {
+    border-radius: 5px;
+}
+
+#edit-comment-btn-img {
+    padding: 5px;
+}
+
+#edit-comment-btn {
+    border-radius: 5px;
+}

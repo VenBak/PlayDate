@@ -21,7 +21,8 @@ router.get('/', withAuth, async (req, res) => {
         let objForRender = {
             ...userObj,
             events,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         };
         res.render('profile', objForRender);
     } catch (err) {
@@ -39,12 +40,11 @@ router.get('/dog/:id', async (req, res) => {
         });
         //  res.status(200).json(dogData); //For testing only
         const dog = dogData.get({ plain: true });
-        console.log("------------- HERE IN DOG ID RENDER ROUTE -----------");
-        console.log(req.params.id);
         req.session.dog_id = req.params.id
         res.render('dogprofile', {
             ...dog,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);
@@ -66,7 +66,8 @@ router.get('/owner/:id', withAuth, async (req, res) => {
 
         res.render('profileowner', {
             ...user,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);
@@ -87,7 +88,8 @@ router.get('/:id', async (req, res) => {
         const user = userData.get({ plain: true });
         res.render('profilesingle', {
             ...user,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);

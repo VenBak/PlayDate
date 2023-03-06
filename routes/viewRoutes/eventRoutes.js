@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
     plainEvents = events.map(event => event.get({ plain: true }));
     res.status(200).render('events', {
       events: plainEvents,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id
     });
   })
   .catch(err => {
@@ -25,6 +26,7 @@ router.get('/:id', (req, res) => {
     let ownsEvent = plainEvent.host_id == req.session.user_id;
     res.status(200).render('eventprofile', {...plainEvent,
       logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
       ownsEvent
     });
   })

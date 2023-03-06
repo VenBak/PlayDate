@@ -10,7 +10,15 @@
         </section>
     </div> --}}
 
+    {{#unless logged_in}}
+    <div class="register-msg mt-5 mb-5">
+        <h2 class="text-center">
+            Set up your account today!
+        </h2>
 
+        <a href="/signup"><button class="btn">Get Started</button></a>
+    </div>
+    {{/unless}}
 
     <div>
         <section class="current-events">
@@ -31,15 +39,7 @@
     </div>
 
 
-    {{#unless logged_in}}
-    <div>
-        <h2 class="text-center">
-            Set up your account today!
-        </h2>
 
-        <a href="/signup"><button class="btn">Get Started</button></a>
-    </div>
-    {{/unless}}
 </div>
 
 <br><br>
