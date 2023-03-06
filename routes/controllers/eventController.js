@@ -41,7 +41,7 @@ exports.getOne = function (req, res) {
       include: [{
         model: Owner,
         as: 'host',
-        attributes: ['first_name', 'last_name', 'pic_hyperlink'],
+        attributes: ['username','first_name', 'last_name', 'pic_hyperlink'],
         include: { model: Dog }
       }, 
       {
@@ -50,8 +50,8 @@ exports.getOne = function (req, res) {
         attributes: ['first_name','last_name', 'pic_hyperlink']
       }, {
         model: Comment,
-        attributes: ['text'],
-        include: { model: Owner, attributes: ['username', 'pic_hyperlink'] }
+        attributes: ['id', 'text'],
+        include: { model: Owner, attributes: ['id', 'username', 'pic_hyperlink'] }
       }]
     })
     .then(event => {
