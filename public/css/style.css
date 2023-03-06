@@ -389,7 +389,8 @@ select~label {
 
 #dCards-section {
     background-color: var(--orange);
-    border: 1px solid black;
+    border: 5px solid #bf720f50;
+    border-radius: 5px;
     height: 100%;
     width: 100%;
     overflow-x: scroll;
@@ -403,7 +404,8 @@ select~label {
 
 .eCards-section {
     background-color: var(--orange);
-    border: 1px solid black;
+    border: 5px solid #bf720f50;
+    border-radius: 5px;
     height: 100%;
     width: 100%;
     overflow-x: scroll;
@@ -607,5 +609,5 @@ textarea {
 }
 
 #dog-card-body {
-line-height: 2em;
+    line-height: 2em;
 }
