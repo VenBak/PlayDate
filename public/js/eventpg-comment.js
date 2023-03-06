@@ -77,9 +77,6 @@ const editCommentFormHandler = async (event) => {
     };
 };
 
-const submitEditCommentBtn = document.querySelector('#submitEditComment-btn');
-if (submitEditCommentBtn) {
-    submitEditCommentBtn.addEventListener('click', (event) => {
-        editCommentFormHandler(event);
-    });
-}
+document.querySelector('#submitEditComment-btn').addEventListener('click', (event) => {
+    editCommentFormHandler(event);
+});
