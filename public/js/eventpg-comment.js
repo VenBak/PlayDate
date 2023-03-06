@@ -1,13 +1,5 @@
 // CREATE & UPDATE & DELETE a COMMENT on an Event's Page
 
-// Open COMMENT form
-const commentFormBtn = document.querySelector(".button-form-toggle");
-commentFormBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    document.querySelector('.add-comment-form-section').style.display = 'block';
-    document.querySelector('.button-form-toggle').style.display = 'none';
-})
-
 // POST a new COMMENT to table
 const addCommentFormHandler = async (event) => {
     event.preventDefault();

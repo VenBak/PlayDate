@@ -1,8 +1,5 @@
 {{!-- All comments template --}}
-<div class="d-flex flex-column comments"><!--the container for all the comments should be in column form-->
-    <div class="d-flex justify-content-center mt-5 mb-5">
-        <button class="button-form-toggle btn-quarter" style="display:block;">Add Comment</button>
-    </div>
+<div class="d-flex flex-column comments mt-5"><!--the container for all the comments should be in column form-->
     {{#if comments.length}}
     {{#each comments as |comment|}}
     <div class=" d-flex align-item-center mt-3 p-2">
