@@ -8,6 +8,8 @@
                 <h5 class="event-name card-title pl-2 pr-2 mb-auto ">{{event.name}}</h5>
             </div>
             <div id="dog-card-body" class="card-body mt-1 d-flex flex-column justify-content-start">
+                <p class="event-owner-fullName card-subtitle  mb-2">Host name: {{event.host.first_name}} {{event.host.last_name}}</p>
+                <p class="event-owner-username card-subtitle  mb-2">Profile name: {{event.host.username}}</p>
                 <p class="event-location card-subtitle  mb-2">Zip code: {{event.location_zip}}</p>
                 <p class="event-locationName card-subtitle  mb-2">Location: {{event.location_name}}</p>
                 <p class="event-date card-subtitle mb-2">Date: {{format_date event.date}}</p>
