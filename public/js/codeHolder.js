@@ -3,7 +3,8 @@
 
 // DONE
 // - updated homepage with horizontal scrolling and commented out some sections that are under construction
-//
+// - CRUD testing for comments PASSED
+// - CRUD testing for events
 
 // datePickerId.min = new Date().toLocaleDateString('fr-CA', {
 //     year: 'numeric',

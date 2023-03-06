@@ -388,33 +388,37 @@ select~label {
 }
 
 #dCards-section {
-    background-color: var(--orange);
+    background: linear-gradient(to bottom right, #339966 -1%, #ccff99 91%);
     border: 5px solid #bf720f50;
     border-radius: 5px;
     height: 100%;
     width: 100%;
     overflow-x: scroll;
+    white-space: nowrap;
 }
 
 #dCards {
     height: 100%;
-    width: 200%;
+    width: 1000%;
     margin: 10px;
+    white-space: normal;
 }
 
 .eCards-section {
-    background-color: var(--orange);
+    background: linear-gradient(to bottom right, #339966 -1%, #ccff99 91%);
     border: 5px solid #bf720f50;
     border-radius: 5px;
     height: 100%;
     width: 100%;
     overflow-x: scroll;
+    white-space: nowrap;
 }
 
 .eCards {
     height: 100%;
-    width: 200%;
+    width: 1000%;
     margin: 10px;
+    white-space: normal;
 }
 
 .add-dog-btn {

@@ -1,14 +1,7 @@
 // PROFILE PAGE: ADD & DELETE an EVENT and FORM show/hide
 
 // For the date picker
-datePickerId.min = new Date().toLocaleDateString();
-// datePickerId.min = new Date().toLocaleDateString('en-US', {
-//   month: 'long',
-//   day: '2-digit',
-//   year: 'numeric',
-//   hour: '2-digit',
-//   timeZone: 'America/Denver' // 6 hours behind UTC
-// });
+datePickerId.min = new Date().toLocaleDateString('fr-ca');
 
 // Show the event form and reset the fields
 function showEventForm() {
