@@ -7,7 +7,7 @@ PlayDate is a social application where users, dog owners, can connect with other
 ## Table of Contents
 [1. Installation](#installation)
 
-[2. Link](#link)
+[2. Links](#links)
 
 [3. Usage](#usage)
 
@@ -32,8 +32,10 @@ Next seed the data into the MySQL database.
 ```bash
 npm run seed
 ```
-## Link
+## Links
 PlayDate application is deployed live [here](https://boiling-temple-57076.herokuapp.com/)
+
+Demo video found [here](https://drive.google.com/file/d/1lArQd1P-gzBKI0VJfTCuhtxK9SYanNCV/view)
 
 ## Usage 
 The application will be invoked by using the following command:
@@ -44,11 +46,9 @@ node server.js OR npm start
 
 ```
 PlayDate:
- - uses Node.js and Express.js to create a RESTful API
- - uses Handlebars.js as the template engine
- - uses MySQL and the Sequelize ORM for the database
- - uses {{PLACEHOLDER FOR THE NEW LIBRARY, PACKAGE, OR TECHNOLOGY}}
- - uses FULL CRUD to GET, POST, PUT, and DELETE routes for retrieving and adding new data
+ - uses Express, Fileupload, Handlebars, Session, Sequelize, MySQL, Connect session, sequelize, Cloudinary, Axios, Google searchAPI, Formidable, bcrypt, flaticon, paint, sai -icons, JShint, dotenv
+ - uses FULL CRUD to GET, POST, PUT, and DELETE routes for:
+ Dogs, Events, Owners, and Comments models
  - has a folder structure that meets the MVC paradigm
  - includes authentication (express-session and cookies)
  - protects API keys and sensitive information with environment variables
@@ -60,7 +60,7 @@ PlayDate:
 
 ## Contributing 
 Contributions are welcomed for future versions with features such as:
-- {{Add future enhancement ideas here and below}}
+- Pagination, Search, Filter
 
 For all contributions, please refer to [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) for contributing guidelines.
 
@@ -69,16 +69,16 @@ For all contributions, please refer to [Contributor Covenant Code of Conduct](ht
 Check our our GitHub accounts for our other work.
 If you have additional questions, please find us on LinkedIn!
 
-Andre {LAST NAME?} | [GitHub](https://github.com/VenBak) | [LinkedIn/Email?](PLACEHOLDER)
+Andre Brahin | [GitHub](https://github.com/VenBak) 
 
-Claire Lee | [GitHub](https://github.com/leeclaire156) | [LinkedIn/Email?](PLACEHOLDER)
+Claire Lee | [GitHub](https://github.com/leeclaire156) 
 
-MaSandra Ewing | [GitHub](https://github.com/mewing0328) | [LinkedIn](https://www.linkedin.com/in/masandra-ewing/)
+MaSandra Ewing | [GitHub](https://github.com/mewing0328) 
 
-Myles Smith | [GitHub](https://github.com/smithm4949) | [LinkedIn/Email?](PLACEHOLDER)
+Myles Smith | [GitHub](https://github.com/smithm4949) 
 
 ## License 
-eSale application is covered by MIT license. 
+PlayDate application is covered by MIT license. 
 
  To view the most current and full license description in opensource.org, click on the license name below.  
 
@@ -86,29 +86,35 @@ eSale application is covered by MIT license.
 
  ## Screenshots 
 
-1. Creating database in MySQL workbench
+1. Signing up a new owner
 
-    <img src="./assets/placeholder" style="width:30rem">
+    <img src="./assets/signup.png" style="width:15rem">
 
-2. Seeding data into database and starting application
+2. Adding a dog at signup
 
-    <img src="./assets/placeholder" style="width:30rem">
+    <img src="./assets/dogsignup.png" style="width:15rem">
 
-3. CREATE (POST) a new Dog
+3. Login
 
-    <img src="./assets/placeholder" style="width:30rem">
+    <img src="./assets/login.png" style="width:15rem">
 
-4. READ (GET) all Events
+**Note: Events, Dogs, Comments, and Owners: Full CRUD**
 
-    <img src="./assets/placeholder" style="width:30rem">
+3. CREATE (POST) a new Event 
 
-5. UPDATE (PUT) an Event
+    <img src="./assets/addevent.png" style="width:15rem">
 
-    <img src="./assets/placeholder" style="width:30rem">
+4. READ (GET) all Comments
 
-6. DELETE a Dog
+    <img src="./assets/allComments.png" style="width:15rem">
 
-    <img src="./assets/placeholder" style="width:30rem">
+5. UPDATE (PUT) a Dog
+
+    <img src="./assets/editDog.png" style="width:15rem">
+
+6. DELETE an Owner (user)
+
+    <img src="./assets/deleteOwner.png" style="width:15rem">
 
 ## Credits
 Credit for tutorials and guides I utilized in my code
