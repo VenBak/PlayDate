@@ -33,7 +33,7 @@ Next seed the data into the MySQL database.
 npm run seed
 ```
 ## Link
-PlayDate application is deployed live [here](PLACEHOLDER)
+PlayDate application is deployed live [here](https://boiling-temple-57076.herokuapp.com/)
 
 ## Usage 
 The application will be invoked by using the following command:
@@ -134,6 +134,8 @@ Credit for tutorials and guides I utilized in my code
 [Circulate Images](https://www.webfx.com/blog/web-design/circular-images-css/)
 
 [Delete icon provided by Freepik from Flaticon](https://www.flaticon.com/free-icon/bin_484662)
+
+[Edit icon provided by Freepik from Flaticon](https://www.flaticon.com/free-icon/editing_2356780)
 
 [Event icon provided by iconixar from Flaticon](https://www.flaticon.com/free-icon/event_2413035)
 

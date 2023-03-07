@@ -22,7 +22,7 @@ Event.init(
     },
     location_name: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     location_zip: {
       type: DataTypes.INTEGER,
@@ -43,7 +43,7 @@ Event.init(
       defaultValue: "All day, come when you can"
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     },
     host_id: {

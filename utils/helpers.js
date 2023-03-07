@@ -16,5 +16,13 @@ module.exports = {
         const ageRemainderMonths = parseInt(age) % 12
         const ageMonths = Math.round(ageRemainderMonths)
         return ageMonths
+    },
+    ownsComment: (comment, user_id) => {
+        return (comment.owner.id == user_id);
+    },
+    ownsDog: (dog, user_id) => {
+        console.log(dog)
+        console.log(user_id)
+        return (dog.owner_id == user_id);
     }
 };

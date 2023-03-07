@@ -1,4 +1,4 @@
-// EVENT - ADD & DELETE
+// PROFILE PAGE: ADD & DELETE an EVENT and FORM show/hide
 
 // For the date picker
 datePickerId.min = new Date().toLocaleDateString('fr-ca');
@@ -25,23 +25,22 @@ function backEventForm() {
   document.querySelector('.eventForm').style.display = 'none';
 }
 
-// POST a new EVENT to table
+// CREATE a new EVENT to table
 const addEventFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#event-name').value.trim();
+  const location_name = document.querySelector('#event-location_name').value.trim();
   const location_zip = document.querySelector('#event-location_zip').value.trim();
   const description = document.querySelector('#event-description').value.trim();
-  const date = document.querySelector('.event-date').value.trim();
-  const time = document.querySelector('.addEvent-time').value.trim();
-
+  const date = document.querySelector('.new-event-date').value.trim();
+  const time = document.querySelector('#addEvent-time').value.trim();
   const eventSection = document.querySelector('#events-section');
 
-  // CREATE a event
-  if (name && location_zip && description && date && time) {
+  if (name && location_name && location_zip && description && date && time) {
     const response = await fetch('/api/events', {
       method: 'POST',
-      body: JSON.stringify({ name, location_zip, description, date, time }),
+      body: JSON.stringify({ name, location_name, location_zip, description, date, time }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -86,13 +85,15 @@ document
 function eventValidation(event) {
   event.preventDefault();
   const name = document.querySelector("#event-name").value.trim();
+  const location_name = document.querySelector("#event-location_name").value.trim();
   const location_zip = document.querySelector('#event-location_zip').value.trim();
   const ziplength = location_zip.length;
   const description = document.querySelector("#event-description").value.trim();
-  const date = document.querySelector(".event-date").value.trim();
-  const time = document.querySelector('.addEvent-time').value.trim();
+  const date = document.querySelector(".new-event-date").value;
+  const time = document.querySelector('#addEvent-time').value.trim();
 
   const nameError = document.querySelector(".no-name-msg");
+  const location_nameError = document.querySelector(".no-location_name-msg");
   const noZipError = document.querySelector('.no-zipcode-msg');
   const zipLengthError = document.querySelector('.zipcode-length-msg');
   const descriptionError = document.querySelector('.no-description-msg');
@@ -104,6 +105,12 @@ function eventValidation(event) {
     nameError.classList.remove("d-none")
   } else {
     nameError.classList.add("d-none")
+  }
+
+  if (!location_name) {
+    location_nameError.classList.remove("d-none")
+  } else {
+    location_nameError.classList.add("d-none")
   }
 
   if (!location_zip) {
@@ -135,7 +142,7 @@ function eventValidation(event) {
     timeError.classList.add("d-none")
   }
 
-  if (!name || !location_zip || ziplength !== 5 || !description || !date || !time) {
+  if (!name || !location_nameError || !location_zip || ziplength !== 5 || !description || !date || !time) {
     return
   }
 }

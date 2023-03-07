@@ -1,8 +1,8 @@
-<div>
+<div class="d-flex flex-row justify-content-center align-items-center">
 
-    <div class="d-flex flex-row justify-content-center align-items-center p-3">
+    <div class="d-flex flex-row justify-content-center align-items-center p-3 owner-card">
 
-        <div class="card owner-card p-3">
+        <div class="card owner-card p-4">
             {{!-- no-gutters gets rid of grid gutters --}}
             <div class="row no-gutters">
                 <div class="col-md-5 d-flex justify-content-center align-items-center">
@@ -11,10 +11,9 @@
                 <div class="col-md-7">
                     <div class="card-body owner-information">
                         <p class="card-title">{{username}}</p>
-                        <p class="card-text">{{first_name}}</p>
-                        <p class="card-text">{{last_name}}</p>
+                        <p class="card-text">My Name is {{first_name}} {{last_name}}</p>
                         <p class="card-text">{{gender}}</p>
-                        <p class="card-text">{{location_zip}}</p>
+                        <p class="card-text">Located in {{location_zip}}</p>
                         <p class="card-text">{{description}}</p>
                     </div>
                 </div>

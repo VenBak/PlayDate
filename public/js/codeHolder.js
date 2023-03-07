@@ -2,9 +2,15 @@
 // --- form for editing the user fields (password needs to have placeholder of "Enter New Password")
 
 // DONE
-// - Fixed horizontal scrolling div: uncommented two necessary divs with tag attributes that are needed for event cards
+// - updated homepage with horizontal scrolling and commented out some sections that are under construction
+// - CRUD testing for comments PASSED
+// - CRUD testing for events
 
-
+// datePickerId.min = new Date().toLocaleDateString('fr-CA', {
+//     year: 'numeric',
+//     month: '2-digit',
+//     day: '2-digit'
+//   });
 
 
 

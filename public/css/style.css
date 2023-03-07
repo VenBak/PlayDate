@@ -388,31 +388,54 @@ select~label {
 }
 
 #dCards-section {
-    background-color: var(--orange);
-    border: 1px solid black;
+    background: linear-gradient(to bottom right, #339966 -1%, #ccff99 91%);
+    border: 5px solid #bf720f50;
+    border-radius: 5px;
     height: 100%;
     width: 100%;
     overflow-x: scroll;
+    white-space: nowrap;
 }
 
 #dCards {
     height: 100%;
-    width: 200%;
+    width: 1000%;
     margin: 10px;
+    white-space: normal;
 }
 
 .eCards-section {
-    background-color: var(--orange);
-    border: 1px solid black;
+    background: linear-gradient(to bottom right, #339966 -1%, #ccff99 91%);
+    border: 5px solid #bf720f50;
+    border-radius: 5px;
     height: 100%;
     width: 100%;
     overflow-x: scroll;
+    white-space: nowrap;
 }
 
 .eCards {
     height: 100%;
-    width: 200%;
+    width: 1000%;
     margin: 10px;
+    white-space: normal;
+}
+
+.recc-parks {
+    background: linear-gradient(to bottom right, #339966 -1%, #ccff99 91%);
+    border: 5px solid #bf720f50;
+    border-radius: 5px;
+    height: 200px;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.rCards {
+    height: 50%;
+    width: 100%;
+    margin: 10px;
+    white-space: normal;
 }
 
 .add-dog-btn {
@@ -530,7 +553,7 @@ textarea {
 }
 
 .owner-card {
-    max-width: 80%;
+    max-width: 1000px;
 }
 
 .dog-information>*,
@@ -543,7 +566,7 @@ textarea {
     font-weight: 600;
 }
 
-#date-label{
+#date-label {
     top: -15px;
 }
 
@@ -573,7 +596,8 @@ textarea {
     width: 80px;
     height: 80px;
     overflow: hidden;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    margin-right: 10px;
     /* border: 1px solid blue; */
 
 }
@@ -587,4 +611,73 @@ textarea {
 
 .comment-username {
     font-weight: 700;
+}
+
+
+.image-label {
+    font-size: 1.2em;
+    color: var(--nav-text-color);
+    opacity: 90%;
+    font-weight: 600;
+    /* Disables pointer clicking and selecting/highlighting text */
+    pointer-events: none;
+}
+
+.delete-btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#dog-card-body {
+    line-height: 2em;
+}
+
+.username-profile-link {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+.username-profile-link:hover {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+.card-host {
+    font-size: 2.0rem;
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+
+.card-host:hover a {
+    font-size: 2.0rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+.event-information .card-text {
+    font-size: 1.5rem;
+}
+
+.host-profile-link {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+#delete-comment-btn-img {
+    padding: 5px;
+}
+
+#delete-comment-btn {
+    border-radius: 5px;
+}
+
+#edit-comment-btn-img {
+    padding: 5px;
+}
+
+#edit-comment-btn {
+    border-radius: 5px;
 }
